@@ -26,11 +26,11 @@ export const MenuList = ref([
     },
 ])
 export const slides = ref([
-    "src/assets/img/01.jpg",
-    "src/assets/img/02.png",
-    "src/assets/img/03.jpg",
-    "src/assets/img/04.jpg",
-    "src/assets/img/05.jpg",
+    "/img/01.jpg",
+    "/img/02.png",
+    "/img/03.jpg",
+    "/img/04.jpg",
+    "/img/05.jpg",
 ])
 export const isDrawer = ref(false)
 export const isChat = ref(false)
@@ -55,43 +55,43 @@ export const clientList = ref([
 export const achievementList = ref([
     {
         brand: "ALEXZA",
-        img: "../src/assets/achievements/01.jpg",
+        img: "/achievements/01.jpg",
         type: "VIP",
         designers: ["Chan Vannak","Phol Dyna","Sok Koemsien"]
     },
     {
         brand: "CANA SECURITIES CO.,LTD",
-        img: "../src/assets/achievements/02.jpg",
+        img: "/achievements/02.jpg",
         type: "Normal",
         designers: ["Sopha","Phanoy"]
     },
     {
         brand: "DW Brand",
-        img: "../src/assets/achievements/03.jpg",
+        img: "/achievements/03.jpg",
         type: "Normal",
         designers: ["Raingsey","J Mean"]
     },
     {
         brand: "HW Brand",
-        img: "../src/assets/achievements/04.jpg",
+        img: "/achievements/04.jpg",
         type: "Normal",
         designers: ["Chanra","Chanthorn"]
     },
     {
         brand: "MONIROTH",
-        img: "../src/assets/achievements/05.jpg",
+        img: "/achievements/05.jpg",
         type: "Normal",
         designers: ["Chan Vannak","Sok Koemsien"]
     },
     {
         brand: "REBACCA",
-        img: "../src/assets/achievements/06.jpg",
+        img: "/achievements/06.jpg",
         type: "Normal",
         designers: ["Phol Dyna","Sok Koemsien"]
     },
     {
         brand: "TRE Brand",
-        img: "../src/assets/achievements/07.jpg",
+        img: "/achievements/07.jpg",
         type: "Normal",
         designers: ["Chan Vannak","Chanra","J Mean"]
     },
@@ -100,46 +100,46 @@ export const designerList = ref([
     {
         name: "Chan Vannak",
         position: "Design Manager",
-        img: "../src/assets/staff/vannak.jpg",
+        img: "/staff/vannak.jpg",
     },
     {
         name: "Phol Dyna",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/dyna.jpg",
+        img: "/staff/dyna.jpg",
     },
     {
         name: "Sok Koemsien",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/koemsien.jpg",
+        img: "/staff/koemsien.jpg",
     },
     {
         name: "Kann Sokmean",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/sokmean.jpg",
+        img: "/staff/sokmean.jpg",
     },
     {
         name: "Mun Chanra",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/chanra.jpg",
+        img: "/staff/chanra.jpg",
     },
     {
         name: "Chea Sopha",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/Sopha.jpg",
+        img: "/staff/Sopha.jpg",
     },
     {
         name: "Rith Phanoy",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/phanoy.jpg",
+        img: "/staff/phanoy.jpg",
     },
     {
         name: "LOK Kimreachraingsey",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/raingsey.jpg",
+        img: "/staff/raingsey.jpg",
     },
     {
         name: "No name available",
         position: "Graphic Desinger",
-        img: "../src/assets/staff/no-image-available.png",
+        img: "/staff/no-image-available.png",
     }
 ])
