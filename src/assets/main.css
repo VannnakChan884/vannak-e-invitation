@@ -1,0 +1,93 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Kantumruy Pro';
+  background-image: linear-gradient(rgba(0, 128, 0, 0.3), white);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ul,h1,h2,h3,p{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width:1200px) {
+  .menu-bar .menu-box .menu .hamburger-menu {
+    display: none;
+  }
+  .menu-bar .menu-box .menu-action{
+    width: 16% !important;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width:992px) and (max-width: 1199.98px) {
+  .menu-bar .menu-box .menu{
+    display: flex;
+    justify-content: right;
+  }
+  .menu-bar .menu-box .menu .menu-list{
+    display: none;
+  }
+  .menu-bar .menu-box .menu ul li.hamburger-menu {
+    display: block;
+  }
+  .menu-bar .menu-box .menu-action{
+    width: 19% !important;
+  }
+}
+
+/* Medium devices (tables, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .menu-bar .menu-box .menu{
+    width: 63% !important;
+    display: flex;
+    justify-content: right;
+  }
+  .menu-bar .menu-box .menu .menu-list{
+    display: none;
+  }
+  .menu-bar .menu-box .menu-action{
+    width: 28% !important;
+  }
+}
+
+/* Small devices(landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .menu-bar .menu-box .menu{
+    width: 45% !important;
+    display: flex;
+    justify-content: right;
+  }
+  .menu-bar .menu-box .menu .menu-list{
+    display: none;
+  }
+  .menu-bar .menu-box .menu-action{
+    width: 34% !important;
+  }
+}
+
+/* Extra small devices(portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .menu-bar .menu-box .menu{
+    width: 75% !important;
+    display: flex;
+    justify-content: right;
+    border-right: none !important;
+  }
+  .menu-bar .menu-box .menu .menu-list{
+    display: none;
+  }
+  .menu-bar .menu-box .menu .hamburger-menu {
+    display: block;
+  }
+  .menu-bar .menu-box .menu-action{
+    display: none;
+  }
+}
