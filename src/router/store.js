@@ -35,22 +35,22 @@ export const slides = ref([
 export const isDrawer = ref(false)
 export const isChat = ref(false)
 export const clientList = ref([
-        "src/assets/logos/client logo_CCN.jpg",
-        "src/assets/logos/client logo_CNS.jpg",
-        "src/assets/logos/client logo_DW.jpg",
-        "src/assets/logos/client logo_FF.jpg",
-        "src/assets/logos/client logo_GM.jpg",
-        "src/assets/logos/client logo_HW.jpg",
-        "src/assets/logos/client logo_JC.jpg",
-        "src/assets/logos/client logo_LG.jpg",
-        "src/assets/logos/client logo_M.jpg",
-        "src/assets/logos/client logo_RB.jpg",
-        "src/assets/logos/client logo_RBC.jpg",
-        "src/assets/logos/client logo_RYD.jpg",
-        "src/assets/logos/client logo_SL.jpg",
-        "src/assets/logos/client logo_SPK.jpg",
-        "src/assets/logos/client logo_TRE.jpg",
-        "src/assets/logos/client logo_VLCC.jpg",
+        "/logos/client logo_CCN.jpg",
+        "/logos/client logo_CNS.jpg",
+        "/logos/client logo_DW.jpg",
+        "/logos/client logo_FF.jpg",
+        "/logos/client logo_GM.jpg",
+        "/logos/client logo_HW.jpg",
+        "/logos/client logo_JC.jpg",
+        "/logos/client logo_LG.jpg",
+        "/logos/client logo_M.jpg",
+        "/logos/client logo_RB.jpg",
+        "/logos/client logo_RBC.jpg",
+        "/logos/client logo_RYD.jpg",
+        "/logos/client logo_SL.jpg",
+        "/logos/client logo_SPK.jpg",
+        "/logos/client logo_TRE.jpg",
+        "/logos/client logo_VLCC.jpg",
 ])
 export const achievementList = ref([
     {
