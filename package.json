@@ -1,3 +1,4 @@
+
 {
   "name": "nak",
   "version": "0.0.0",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "gh-pages": "^6.1.1",
     "vite": "^5.1.6"
   }
 }
