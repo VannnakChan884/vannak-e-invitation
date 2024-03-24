@@ -5,7 +5,7 @@
                 <div class="col-md-4 col-12">
                     <div class="footer-logo">
                         <a>
-                            <img src="./src/assets/logo.png" alt="">
+                            <img src="../assets/logo.png" alt="">
                         </a>
                     </div>
                     <p class="footer-slogain">My design achievement.</p>
