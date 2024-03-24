@@ -13,7 +13,7 @@ import Footer from '../components/Footer.vue'
     <div class="container mt-5" style="margin-bottom: 150px;">
         <div class="row about-detail mb-5">
             <div class="col-md-12 col-12">
-                <h2 class="heading-title">My Clients</h2>
+                <h2 class="heading-title">MY Clients</h2>
                 <p class="title-underline"></p>
             </div>
         </div>
