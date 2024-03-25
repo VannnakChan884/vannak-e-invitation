@@ -17,7 +17,7 @@
                         <a href="https://t.me/chanvannak408" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 col-12"></div>
+                <div class="col-md-4 col-12 mb-5"></div>
                 <div class="col-md-4 col-12">
                     <div class="footer-contact">
                         <h3 class="footer-contact-title">My Contact</h3>
@@ -78,11 +78,10 @@
         gap: 12px
     }
     .container-fluid .footer-container .footer-social-link a{
-        width: 55px;
-        height: 55px;
+        display: block;
+        padding: 10px;
         background-color: green;
         border-radius: 100%;
-        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -93,7 +92,7 @@
         color: #fff;
     }
     .container-fluid .footer-container .footer-copyright{
-        margin-top: 100px;
+        margin-top: 20px;
     }
     .footer-contact{
         width: 100%;

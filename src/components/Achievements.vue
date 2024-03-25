@@ -125,8 +125,8 @@
         padding: 5px 0 5px 0;
     }
     .container .swiper-main .achievement-card{
-        width: 300px;
-        /* height: 400px; */
+        /* width: 300px; */
+        height: 450px;
         background-color: #f9f9f9;
         border-radius: 20px;
         overflow: hidden;
@@ -139,7 +139,7 @@
         width: 100%;
         height: 200px;
         background-color: orange;
-        border-radius: 20px;
+        /* border-radius: 20px; */
         overflow: hidden;
         cursor: pointer;
     }

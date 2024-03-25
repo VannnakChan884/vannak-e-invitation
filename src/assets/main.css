@@ -8,6 +8,7 @@ body{
   background-image: linear-gradient(rgba(0, 128, 0, 0.3), white);
   background-repeat: no-repeat;
   background-position: center;
+  box-sizing: border-box;
 }
 ul,h1,h2,h3,p{
   list-style-type: none;

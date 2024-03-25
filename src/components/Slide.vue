@@ -73,6 +73,7 @@ onMounted(() => {
   bottom: 20px !important;
   left: 50%;
   transform: translate(-50%) !important;
+  z-index: 1;
 }
 
 ::v-deep .swiper-pagination-bullet-active {

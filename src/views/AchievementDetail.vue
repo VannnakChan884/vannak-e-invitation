@@ -56,7 +56,7 @@ const displayedPages = computed(() => {
     <div class="container-fluid mt-5" style="margin-bottom: 150px">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mb-4" v-for="(achievement, i) in achievementList"
+                <div class="col-md-3 col-sm-12 col-6 mb-4" v-for="(achievement, i) in achievementList"
                     :key="i">
                     <div class="achievement-card">
                         <div class="acheivement-card-img">
@@ -121,9 +121,14 @@ const displayedPages = computed(() => {
     <Footer />
 </template>
 <style scoped>
+.container{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
 .achievement-card {
-    width: 300px;
-    /* height: 400px; */
+    /* width: 300px; */
+    /* height: 450px; */
     background-color: #f9f9f9;
     border-radius: 20px;
     overflow: hidden;

@@ -52,7 +52,7 @@ import GoToTop from '../components/GoToTop.vue'
             <div class="col-md-6 col-12">
                 <div class="contact-form">
                     <h2 class="contact-form-title">Contact Form</h2>
-                    <form>
+                    <form class="contact-form-info">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="floatingInput" placeholder="Chan Vannak"
                                 required>
@@ -130,5 +130,8 @@ ul li span {
 
 .contact-form-title {
     margin-bottom: 16px;
+}
+.contact-form-info label{
+    z-index: 1;
 }
 </style>
