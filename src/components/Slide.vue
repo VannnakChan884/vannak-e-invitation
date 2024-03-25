@@ -11,6 +11,11 @@ Swiper.use([EffectFade, Pagination, Navigation]);
 onMounted(() => {
   const swiperSlideTop = new Swiper(".top-slide", {
     loop: true, // Enable loop mode
+    breakpoints: {
+      576: {
+
+      }
+    },
     autoplay: {
       delay: 10000, // Autoplay delay in milliseconds
       disableOnInteraction: false,
@@ -32,7 +37,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="container-fluid bg-danger p-0">
+  <div class="container-fluid p-0">
     <div class="container">
       <div class="swiper-container top-slide">
         <div class="swiper-wrapper">
@@ -52,7 +57,11 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.container- {
+.container-fluid {
+  position: relative;
+}
+
+.container {
   margin-bottom: 20px;
   overflow: hidden;
 }
