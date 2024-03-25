@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="container-fluid bg-danger p-0">
-    <div class="container p-0">
+    <div class="container">
       <div class="swiper-container top-slide">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(slide, i) in slides" :key="i">
@@ -144,7 +144,7 @@ onMounted(() => {
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .top-slide {
-    height: 180px;
+    height: 250px;
   }
 
   .swiper-btn-back,
