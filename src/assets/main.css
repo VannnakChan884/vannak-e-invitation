@@ -95,13 +95,14 @@ p {
     top: 0 !important;
     z-index: 2;
     background-color: #fff;
+    box-shadow: 0 6px 10px rgba(0, 128, 0, 0.3) !important;
   }
 
   .menu-bar .menu-box {
     padding: 0 !important;
     background-color: transparent !important;
-    box-shadow: 0 6px 10px rgba(0, 128, 0, 0.3) !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
   .menu-bar .menu-box .logo img {
