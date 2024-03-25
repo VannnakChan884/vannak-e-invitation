@@ -1,15 +1,21 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
+
+body {
   font-family: 'Kantumruy Pro';
   background-image: linear-gradient(rgba(0, 128, 0, 0.3), white);
   background-repeat: no-repeat;
   background-position: center;
 }
-ul,h1,h2,h3,p{
+
+ul,
+h1,
+h2,
+h3,
+p {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -20,73 +26,108 @@ ul,h1,h2,h3,p{
   .menu-bar .menu-box .menu .hamburger-menu {
     display: none;
   }
-  .menu-bar .menu-box .menu-action{
+
+  .menu-bar .menu-box .menu-action {
     width: 16% !important;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width:992px) and (max-width: 1199.98px) {
-  .menu-bar .menu-box .menu{
+  .menu-bar .menu-box .menu {
     display: flex;
     justify-content: right;
   }
-  .menu-bar .menu-box .menu .menu-list{
+
+  .menu-bar .menu-box .menu .menu-list {
     display: none;
   }
+
   .menu-bar .menu-box .menu ul li.hamburger-menu {
     display: block;
   }
-  .menu-bar .menu-box .menu-action{
+
+  .menu-bar .menu-box .menu-action {
     width: 19% !important;
   }
 }
 
 /* Medium devices (tables, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .menu-bar .menu-box .menu{
+  .menu-bar .menu-box .menu {
     width: 63% !important;
     display: flex;
     justify-content: right;
   }
-  .menu-bar .menu-box .menu .menu-list{
+
+  .menu-bar .menu-box .menu .menu-list {
     display: none;
   }
-  .menu-bar .menu-box .menu-action{
+
+  .menu-bar .menu-box .menu-action {
     width: 28% !important;
   }
 }
 
 /* Small devices(landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .menu-bar .menu-box .menu{
+  .menu-bar .menu-box .menu {
     width: 45% !important;
     display: flex;
     justify-content: right;
   }
-  .menu-bar .menu-box .menu .menu-list{
+
+  .menu-bar .menu-box .menu .menu-list {
     display: none;
   }
-  .menu-bar .menu-box .menu-action{
+
+  .menu-bar .menu-box .menu-action {
     width: 34% !important;
   }
 }
 
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  .menu-bar .menu-box .menu{
+  .menu-bar {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    position: sticky;
+    top: 0 !important;
+    z-index: 2;
+    background-color: #fff;
+  }
+
+  .menu-bar .menu-box {
+    padding: 0 !important;
+    background-color: transparent !important;
+    box-shadow: 0 6px 10px rgba(0, 128, 0, 0.3) !important;
+    border-radius: 0 !important;
+  }
+
+  .menu-bar .menu-box .logo img {
+    height: 40px !important;
+  }
+
+  .menu-bar .menu-box .menu ul li a {
+    padding: 10px !important;
+  }
+
+  .menu-bar .menu-box .menu {
     width: 75% !important;
     display: flex;
     justify-content: right;
     border-right: none !important;
   }
-  .menu-bar .menu-box .menu .menu-list{
+
+  .menu-bar .menu-box .menu .menu-list {
     display: none;
   }
+
   .menu-bar .menu-box .menu .hamburger-menu {
     display: block;
   }
-  .menu-bar .menu-box .menu-action{
+
+  .menu-bar .menu-box .menu-action {
     display: none;
   }
 }

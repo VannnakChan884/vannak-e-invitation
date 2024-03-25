@@ -175,11 +175,11 @@ import { socialLinks } from "../router/store";
         width: 100%;
         height: 100%;
         font-size: 28px;
-        color: green;
+        color: #fff;
         display: block;
         padding: 10px;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
         text-align: center;
     }
 

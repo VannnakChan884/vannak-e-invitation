@@ -32,7 +32,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid bg-danger p-0">
     <div class="container p-0">
       <div class="swiper-container top-slide">
         <div class="swiper-wrapper">
@@ -52,14 +52,14 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.container {
+.container- {
   margin-bottom: 20px;
   overflow: hidden;
 }
 
 .top-slide {
   position: relative;
-  background-color: red;
+  background-color: green;
   width: 100%;
   height: 500px;
 }
@@ -144,7 +144,21 @@ onMounted(() => {
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .top-slide {
-    height: 200px;
+    height: 180px;
+  }
+
+  .swiper-btn-back,
+  .swiper-btn-next {
+    display: none;
+  }
+
+  .swiper-pagination {
+    bottom: 10px !important;
+  }
+
+  ::v-deep .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 6px !important;
   }
 }
 </style>

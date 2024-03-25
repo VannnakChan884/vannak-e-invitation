@@ -169,6 +169,10 @@
         width: 53%;
         display: table-cell;
     }
+
+    .swiper-button-prev, .swiper-button-next{
+        z-index: 1;
+    }
     .swiper-button-prev::after, .swiper-button-next::after {
         content: "";
     }

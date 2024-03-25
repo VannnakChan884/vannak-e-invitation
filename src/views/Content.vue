@@ -10,19 +10,20 @@ import Footer from "../components/Footer.vue";
 import GotoTop from "../components/GoToTop.vue";
 </script>
 <template>
-  <div class="container-fluid">
-    <div>
-      <Drawer />
-      <Popup />
-      <Slide />
-      <Achievement />
-      <ClientList />
-      <ChatBox />
-      <FriendList />
-      <GotoTop />
-      <Footer />
-    </div>
+  <div class="body-content">
+    <Drawer />
+    <Popup />
+    <Slide />
+    <Achievement />
+    <ClientList />
+    <ChatBox />
+    <FriendList />
+    <GotoTop />
+    <Footer />
   </div>
 </template>
 <style scoped>
+.body-content {
+  overflow: hidden;
+}
 </style>
