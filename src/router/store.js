@@ -100,7 +100,7 @@ export const designerList = ref([
     {
         name: "Chan Vannak",
         position: "Design Manager",
-        img: "/staff/vannak.jpg",
+        img: "/staff/vannak.JPG",
     },
     {
         name: "Phol Dyna",
