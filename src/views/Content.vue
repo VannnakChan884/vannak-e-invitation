@@ -10,13 +10,19 @@ import Footer from "../components/Footer.vue";
 import GotoTop from "../components/GoToTop.vue";
 </script>
 <template>
-  <Drawer />
-  <Popup />
-  <Slide />
-  <Achievement />
-  <ClientList />
-  <ChatBox />
-  <FriendList />
-  <GotoTop />
-  <Footer />
+  <div class="container-fluid">
+    <div>
+      <Drawer />
+      <Popup />
+      <Slide />
+      <Achievement />
+      <ClientList />
+      <ChatBox />
+      <FriendList />
+      <GotoTop />
+      <Footer />
+    </div>
+  </div>
 </template>
+<style scoped>
+</style>

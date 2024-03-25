@@ -1,5 +1,5 @@
 <script setup>
-    import { socialLinks } from "../router/store";
+import { socialLinks } from "../router/store";
 </script>
 <template>
     <footer class="container-fluid">
@@ -145,47 +145,50 @@
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width:1200px) {
-  
-}
+@media (min-width:1200px) {}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width:992px) and (max-width: 1199.98px) {
-  
-}
+@media (min-width:992px) and (max-width: 1199.98px) {}
 
 /* Medium devices (tables, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  
-}
+@media (min-width: 768px) and (max-width: 991.98px) {}
 
 /* Small devices(landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  
-}
+@media (min-width: 576px) and (max-width: 767.98px) {}
 
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .container-fluid{
+    .container-fluid {
         background-image: none;
         background-color: green;
     }
+
+    .container-fluid .footer-container .footer-logo img {
+        filter: invert(100%) brightness(200%);
+    }
+
+    .container-fluid .footer-container .footer-slogain {
+        color: #fff;
+    }
+
     .container-fluid .footer-container .footer-social-link a i {
-    width: 100%;
-    height: 100%;
-    font-size: 28px;
-    color: green;
-    display: block;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    text-align: center;
-}
-  .spacing{
-    display: none;
-  }
-  .footer-contact{
-    color: #fff;
-  }
+        width: 100%;
+        height: 100%;
+        font-size: 28px;
+        color: green;
+        display: block;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .spacing {
+        display: none;
+    }
+
+    .footer-contact {
+        color: #fff;
+    }
 }
 </style>

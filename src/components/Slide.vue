@@ -32,20 +32,22 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="container">
-    <div class="swiper-container top-slide">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(slide, i) in slides" :key="i">
-          <img :src="slide" alt="">
+  <div class="container-fluid">
+    <div class="container p-0">
+      <div class="swiper-container top-slide">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(slide, i) in slides" :key="i">
+            <img :src="slide" alt="">
+          </div>
         </div>
+        <div class="swiper-btn-back">
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+        <div class="swiper-btn-next">
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-btn-back">
-        <i class="fa-solid fa-angle-left"></i>
-      </div>
-      <div class="swiper-btn-next">
-        <i class="fa-solid fa-angle-right"></i>
-      </div>
-      <div class="swiper-pagination"></div>
     </div>
   </div>
 </template>
@@ -123,5 +125,26 @@ onMounted(() => {
 .top-slide:hover .swiper-btn-back,
 .top-slide:hover .swiper-btn-next {
   opacity: 1;
+}
+
+/* Responsive by devices */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width:1200px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width:992px) and (max-width: 1199.98px) {}
+
+/* Medium devices (tables, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Small devices(landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/* Extra small devices(portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .top-slide {
+    height: 200px;
+  }
 }
 </style>
