@@ -143,3 +143,25 @@ export const designerList = ref([
         img: "/staff/no-image-available.png",
     }
 ])
+export const socialLinks = ref({
+    Facebook: {
+        url: 'https://www.facebook.com/vannakchan4544/',
+        icon: "fa-facebook"
+    },
+    Tittok: {
+        url: 'https://www.tiktok.com/@vannakchan884',
+        icon: "fa-tiktok"
+    },
+    Instagram: {
+        url: 'https://www.instagram.com/vannakchan884/',
+        icon: "fa-instagram"
+    },
+    Linkin: {
+        url: 'https://www.linkedin.com/in/chan-vannak/',
+        icon: "fa-linkedin-in"
+    },
+    Telegram: {
+        url: 'https://t.me/chanvannak408',
+        icon: "fa-telegram"
+    }
+})
