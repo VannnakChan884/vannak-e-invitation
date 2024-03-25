@@ -139,16 +139,40 @@ onMounted(() => {
 /* Responsive by devices */
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width:1200px) {}
+@media (min-width:1200px) {
+  .top-slide {
+    height: 500px;
+  }
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width:992px) and (max-width: 1199.98px) {}
+@media (min-width:992px) and (max-width: 1199.98px) {
+  .top-slide {
+    height: 450px;
+  }
+}
 
 /* Medium devices (tables, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .top-slide {
+    height: 350px;
+  }
+  .swiper-btn-back,
+  .swiper-btn-next {
+    display: none;
+  }
+}
 
 /* Small devices(landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .top-slide {
+    height: 270px;
+  }
+  .swiper-btn-back,
+  .swiper-btn-next {
+    display: none;
+  }
+}
 
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

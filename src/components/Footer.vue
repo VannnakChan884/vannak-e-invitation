@@ -5,7 +5,7 @@ import { socialLinks } from "../router/store";
     <footer class="container-fluid">
         <div class="container footer-container">
             <div class="row">
-                <div class="col-md-4 col-12 mb-4">
+                <div class="col-md-4 col-12 mb-4 footer-left">
                     <div class="footer-logo">
                         <a>
                             <img src="../assets/logo.png" alt="">
@@ -22,8 +22,8 @@ import { socialLinks } from "../router/store";
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-12 mb-5 spacing bg-danger"></div>
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12 mb-5 spacing"></div>
+                <div class="col-md-4 col-12 footer-right">
                     <div class="footer-contact">
                         <h3 class="footer-contact-title">My Contact</h3>
                         <div class="footer-contact-detail">
@@ -148,13 +148,44 @@ import { socialLinks } from "../router/store";
 @media (min-width:1200px) {}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width:992px) and (max-width: 1199.98px) {}
+@media (min-width:992px) and (max-width: 1199.98px) {
+    .footer-left{
+        width: 50%;
+    }
+    .spacing {
+        display: none;
+    }
+    .footer-right{
+        width: 50%;
+    }
+}
 
 /* Medium devices (tables, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .footer-left{
+        width: 50%;
+    }
+    .spacing {
+        display: none;
+    }
+    .footer-right{
+        width: 50%;
+    }
+}
 
 /* Small devices(landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .footer-left{
+        width: 50%;
+    }
+    .spacing {
+        width: 0;
+        display: none;
+    }
+    .footer-right{
+        width: 50%;
+    }
+}
 
 /* Extra small devices(portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
