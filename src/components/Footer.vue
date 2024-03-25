@@ -78,9 +78,6 @@
         gap: 12px
     }
     .container-fluid .footer-container .footer-social-link a{
-        display: block;
-        padding: 10px;
-        background-color: green;
         border-radius: 100%;
         display: flex;
         justify-content: center;
@@ -90,6 +87,10 @@
     .container-fluid .footer-container .footer-social-link a i{
         font-size: 28px;
         color: #fff;
+        display: block;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: green;
     }
     .container-fluid .footer-container .footer-copyright{
         margin-top: 20px;
