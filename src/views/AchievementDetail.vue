@@ -56,7 +56,7 @@ const displayedPages = computed(() => {
     <div class="container-fluid mt-5" style="margin-bottom: 150px">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-3 col-sm-12 col-6 mb-4" v-for="(achievement, i) in achievementList"
+                <div class="col-md-3 col-sm-12 col-12 mb-4" v-for="(achievement, i) in achievementList"
                     :key="i">
                     <div class="achievement-card">
                         <div class="acheivement-card-img">
