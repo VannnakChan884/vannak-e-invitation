@@ -101,7 +101,7 @@ const displayedPages = computed(() => {
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 col-12">
+                <div class="col-12">
                     <div class="pagination">
                         <a class="prev" @click="goToPage(currentPage - 1)"
                             :class="{ disabled: currentPage === 1 }">Prev</a>

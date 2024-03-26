@@ -162,6 +162,11 @@ onMounted(() => {
     object-fit: cover;
 }
 
+.card .card-title{
+    font-size: 20px;
+    font-weight: 600
+}
+
 ul li {
     display: flex;
     align-items: center;
