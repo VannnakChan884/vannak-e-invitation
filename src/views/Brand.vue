@@ -116,8 +116,5 @@ import Footer from '../components/Footer.vue'
         width: 25%;
         height: 5px;
     }
-    .client-logo-card {
-        
-    }
 }
 </style>

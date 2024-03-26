@@ -165,3 +165,7 @@ export const socialLinks = ref({
         icon: "fa-telegram"
     }
 })
+export const languages = ref([
+    { code: 'en', name: 'English'},
+    { code: 'kh', name: 'Khmer'}
+])
