@@ -154,11 +154,12 @@ onMounted(() => {
     width: 100%;
     height: 450px;
     overflow: hidden;
+    border: 1px solid greenyellow;
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 235px;
     object-fit: cover;
 }
 
@@ -225,6 +226,8 @@ ul li p {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    border-top: none;
+    background-color: transparent;
 }
 
 .acheivement-card-footer .designer a {

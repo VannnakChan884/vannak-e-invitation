@@ -17,7 +17,7 @@ import { designerList } from "../router/store.js";
                 <p class="title-underline"></p>
             </div>
         </div>
-        <div class="row mt-3" style="margin-bottom: 150px">
+        <div class="row mt-5" style="margin-bottom: 150px">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
                     <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E"
@@ -59,7 +59,7 @@ import { designerList } from "../router/store.js";
                     <div class="card-body">
                         <h5 class="card-title">{{ designer.name }}</h5>
                         <p class="card-text">{{ designer.position }}</p>
-                        <a href="#" class="btn btn-explore mt-4">
+                        <a class="btn-explore mt-4">
                             <span>Explore</span>
                             <i class="fa-solid fa-angle-down"></i>
                         </a>
@@ -200,6 +200,9 @@ blockquote::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    outline: none;
+    border: none;
+    text-decoration: none;
 }
 
 .btn-explore span {
@@ -208,6 +211,7 @@ blockquote::after {
     transition: 0.3s all ease;
     color: green;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .btn-explore i {
@@ -219,6 +223,8 @@ blockquote::after {
     justify-content: center;
     font-size: 15px;
     transition: 0.3s all ease;
+    cursor: pointer;
+    color: green;
 }
 
 .btn-explore span:hover,
