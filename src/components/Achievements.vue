@@ -157,10 +157,20 @@ onMounted(() => {
     border: 1px solid greenyellow;
 }
 
-.card img {
+.acheivement-card-link{
+    cursor: pointer;
     width: 100%;
-    height: 235px;
+    height: 55%;
+}
+.card .acheivement-card-link img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+}
+
+.card .acheivement-card-content{
+    width: 100%;
+    height: 35% !important;
 }
 
 .card .card-title{
@@ -223,6 +233,7 @@ ul li p {
 
 .acheivement-card-footer {
     width: 100%;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     padding: 10px;
