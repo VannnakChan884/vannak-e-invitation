@@ -1,4 +1,4 @@
-import {ref} from 'vue'
+import { ref } from 'vue'
 export const MenuList = ref([
     {
         id: 1,
@@ -35,65 +35,65 @@ export const slides = ref([
 export const isDrawer = ref(false)
 export const isChat = ref(false)
 export const clientList = ref([
-        "/logos/client logo_CCN.jpg",
-        "/logos/client logo_CNS.jpg",
-        "/logos/client logo_DW.jpg",
-        "/logos/client logo_FF.jpg",
-        "/logos/client logo_GM.jpg",
-        "/logos/client logo_HW.jpg",
-        "/logos/client logo_JC.jpg",
-        "/logos/client logo_LG.jpg",
-        "/logos/client logo_M.jpg",
-        "/logos/client logo_RB.jpg",
-        "/logos/client logo_RBC.jpg",
-        "/logos/client logo_RYD.jpg",
-        "/logos/client logo_SL.jpg",
-        "/logos/client logo_SPK.jpg",
-        "/logos/client logo_TRE.jpg",
-        "/logos/client logo_VLCC.jpg",
+    "/logos/client logo_CCN.jpg",
+    "/logos/client logo_CNS.jpg",
+    "/logos/client logo_DW.jpg",
+    "/logos/client logo_FF.jpg",
+    "/logos/client logo_GM.jpg",
+    "/logos/client logo_HW.jpg",
+    "/logos/client logo_JC.jpg",
+    "/logos/client logo_LG.jpg",
+    "/logos/client logo_M.jpg",
+    "/logos/client logo_RB.jpg",
+    "/logos/client logo_RBC.jpg",
+    "/logos/client logo_RYD.jpg",
+    "/logos/client logo_SL.jpg",
+    "/logos/client logo_SPK.jpg",
+    "/logos/client logo_TRE.jpg",
+    "/logos/client logo_VLCC.jpg",
 ])
 export const achievementList = ref([
     {
         brand: "ALEXZA",
         img: "/achievements/01.jpg",
         type: "VIP",
-        designers: ["Chan Vannak","Phol Dyna","Sok Koemsien"]
+        designers: ["Chan Vannak", "Phol Dyna", "Sok Koemsien"]
     },
     {
         brand: "CANA SECURITIES CO.,LTD",
         img: "/achievements/02.jpg",
         type: "Normal",
-        designers: ["Sopha","Phanoy"]
+        designers: ["Sopha", "Phanoy"]
     },
     {
         brand: "DW Brand",
         img: "/achievements/03.jpg",
         type: "Normal",
-        designers: ["Raingsey","J Mean"]
+        designers: ["Raingsey", "J Mean"]
     },
     {
         brand: "HW Brand",
         img: "/achievements/04.jpg",
         type: "Normal",
-        designers: ["Chanra","Chanthorn"]
+        designers: ["Chanra", "Chanthorn"]
     },
     {
         brand: "MONIROTH",
         img: "/achievements/05.jpg",
         type: "Normal",
-        designers: ["Chan Vannak","Sok Koemsien"]
+        designers: ["Chan Vannak", "Sok Koemsien"]
     },
     {
         brand: "REBACCA",
         img: "/achievements/06.jpg",
         type: "Normal",
-        designers: ["Phol Dyna","Sok Koemsien"]
+        designers: ["Phol Dyna", "Sok Koemsien"]
     },
     {
         brand: "TRE Brand",
         img: "/achievements/07.jpg",
         type: "Normal",
-        designers: ["Chan Vannak","Chanra","J Mean"]
+        designers: ["Chan Vannak", "Chanra", "J Mean"]
     },
 ])
 export const designerList = ref([
@@ -101,7 +101,7 @@ export const designerList = ref([
         name: "Chan Vannak",
         position: "Design Manager",
         img: "/staff/vannak.JPG",
-        info: "This is the information that will be shown when the button is clicked.",
+        info: "Was born in Takeo, Cambodia. Finished a Management Information System Bachelor's degree at SETEC Institute. Has been working with RBG and Graphic Design for almost 6 months at Perfect People Co., Ltd as well as Addbook Computer Centre. He believes that everyone has talents if they work hard with passion to show the results. His personal mission at RBG is “ Upgrade better version of GD Team ” His personal mission is to “ Make the world recognize Cambodian tech talents skills ”",
         showInfo: false
     },
     {
@@ -184,6 +184,6 @@ export const socialLinks = ref({
     }
 })
 export const languages = ref([
-    { id: 1, code: 'en', name: 'English'},
-    { id: 2, code: 'kh', name: 'Khmer'}
+    { id: 1, code: 'en', name: 'English' },
+    { id: 2, code: 'kh', name: 'Khmer' }
 ])

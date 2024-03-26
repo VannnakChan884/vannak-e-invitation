@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed } from "vue";
 import Footer from "../components/Footer.vue";
 import GoToTop from "../components/GoToTop.vue";
 import { designerList } from "../router/store.js";
@@ -7,23 +7,22 @@ import { designerList } from "../router/store.js";
 const activeCard = ref(null);
 
 // Define computed property for button label
-const buttonLabel = computed(() => (i) =>
-  designerList.value[i].showInfo && activeCard.value === i? 'Hide' : 'Show'
+const buttonLabel = computed(
+    () => (i) =>
+        designerList.value[i].showInfo && activeCard.value === i ? "Hide" : "Show"
 );
-
 
 // Function to toggle showing information for a specific card
 const toggleInfo = (i) => {
     designerList.value[i].showInfo = !designerList.value[i].showInfo;
     activeCard.value = designerList.value[i].showInfo ? i : null;
 };
-
 </script>
 <template>
-    <div class="container-fluid" style="height: 250px;background-color: green;margin-top: -125px;">
-        <div class="container" style="padding-top: 150px; color: #fff;">
+    <div class="container-fluid" style="height: 250px; background-color: green; margin-top: -125px">
+        <div class="container" style="padding-top: 150px; color: #fff">
             <h1>ទំព័រអំពីខ្ញុំ</h1>
-            <h3 style="font-size: 18px;">About me</h3>
+            <h3 style="font-size: 18px">About me</h3>
         </div>
     </div>
     <div class="container mt-5 mb-5">
@@ -33,11 +32,11 @@ const toggleInfo = (i) => {
                 <p class="title-underline"></p>
             </div>
         </div>
-        <div class="row mt-5 mb-5">
+        <div class="row mt-5 mb-5 about-detail">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
                     <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E"
-                        alt="">
+                        alt="" />
                 </div>
             </div>
             <div class="col-md-6 col-12 about-me">
@@ -62,22 +61,22 @@ const toggleInfo = (i) => {
                 </blockquote>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 150px;">
+        <div class="row" style="margin-bottom: 150px">
             <div class="Team-heading-title mb-5">
                 <h2 class="title">My Team</h2>
                 <p class="title-underline"></p>
             </div>
-            <div class="col-md-3 card-container" v-for="(designer, i) in designerList" :key="i">
+            <div class="col-md-3 col-sm-6 card-container" v-for="(designer, i) in designerList" :key="i">
                 <div class="card">
                     <div class="img-box">
-                        <img :src="designer.img" alt="">
+                        <img :src="designer.img" alt="" />
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ designer.name }}</h5>
                         <p class="card-text">{{ designer.position }}</p>
                         <a class="btn-explore mt-4" @click="toggleInfo(i)">
                             <span>{{ buttonLabel(i) }}</span>
-                            <i class="fa-solid fa-angle-down"></i>
+                            <i :class="['fa-solid', designer.showInfo ? 'fa-angle-up' : 'fa-angle-down']"></i>
                         </a>
                     </div>
                     <div v-if="activeCard === i && designer.showInfo" class="card-footer info-container">
@@ -127,7 +126,9 @@ blockquote {
     position: relative;
     padding: 1.2em 30px 1.2em 50px;
     color: green;
-    background-image: linear-gradient(to left, rgba(0, 128, 0, 0.2), rgba(0, 128, 0, 0.1));
+    background-image: linear-gradient(to left,
+            rgba(0, 128, 0, 0.01),
+            rgba(0, 128, 0, 0.09));
     font-size: 24px;
     font-weight: 500;
 }
@@ -284,7 +285,34 @@ blockquote::after {
         margin-bottom: 0;
     }
 
+    .about-title-heading h2 {
+        font-size: 30px !important;
+    }
+
     .about-title-heading .title-underline {
+        width: 25%;
+        height: 5px;
+    }
+
+    .about-detail {
+        margin-top: 30px !important;
+    }
+
+    .card .img-box {
+        width: 100%;
+        height: 400px;
+    }
+
+    .Team-heading-title {
+        text-align: center;
+        margin-bottom: 30px !important;
+    }
+
+    .Team-heading-title .title {
+        font-size: 30px;
+    }
+
+    .Team-heading-title .title-underline {
         width: 25%;
         height: 5px;
     }
