@@ -11,15 +11,18 @@ import { designerList } from "../router/store.js";
         </div>
     </div>
     <div class="container mt-5 mb-5">
-        <div class="row about-detail mb-5">
+        <div class="row about-title-heading">
             <div class="col-md-12 col-12">
                 <h2 class="heading-title">Who I Am</h2>
                 <p class="title-underline"></p>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 150px">
-            <div class="col-md-6 col-12">
-                <div class="my-img"></div>
+        <div class="row mt-3" style="margin-bottom: 150px">
+            <div class="col-md-6 col-12 mb-4">
+                <div class="my-img">
+                    <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E"
+                        alt="">
+                </div>
             </div>
             <div class="col-md-6 col-12 about-me">
                 <h2 class="mb-3 heading">About Vannak</h2>
@@ -69,20 +72,20 @@ import { designerList } from "../router/store.js";
     <Footer />
 </template>
 <style scoped>
-.about-detail {
+.about-title-heading {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.about-detail .heading-title {
+.about-title-heading .heading-title {
     text-transform: uppercase;
     font-size: 25px;
     margin-bottom: 5px;
     font-weight: 600;
 }
 
-.about-detail .title-underline {
+.about-title-heading .title-underline {
     width: 5%;
     height: 2px;
     background-color: green;
@@ -135,10 +138,13 @@ blockquote::after {
 .my-img {
     height: 100%;
     width: 100%;
-    background-image: url("https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.my-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card {
@@ -218,5 +224,33 @@ blockquote::after {
 .btn-explore span:hover,
 .btn-explore i:hover {
     background-color: rgba(0, 128, 0, 0.2);
+}
+
+/* Extra small devices(portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .page-heading {
+        height: 210px;
+    }
+
+    .page-title h1 {
+        font-size: 20px;
+    }
+
+    .page-title h3 {
+        font-size: 15px !important;
+    }
+
+    .brand-container {
+        margin-top: 20px !important;
+    }
+
+    .about-title-heading {
+        margin-bottom: 0;
+    }
+
+    .about-title-heading .title-underline {
+        width: 25%;
+        height: 5px;
+    }
 }
 </style>
