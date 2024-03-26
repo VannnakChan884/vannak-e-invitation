@@ -166,6 +166,6 @@ export const socialLinks = ref({
     }
 })
 export const languages = ref([
-    { code: 'en', name: 'English'},
-    { code: 'kh', name: 'Khmer'}
+    { id: 1, code: 'en', name: 'English'},
+    { id: 2, code: 'kh', name: 'Khmer'}
 ])
