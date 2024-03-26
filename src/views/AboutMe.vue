@@ -1,7 +1,23 @@
 <script setup>
+import { ref, computed } from 'vue';
 import Footer from "../components/Footer.vue";
 import GoToTop from "../components/GoToTop.vue";
 import { designerList } from "../router/store.js";
+
+const activeCard = ref(null);
+
+// Define computed property for button label
+const buttonLabel = computed(() => (i) =>
+  designerList.value[i].showInfo && activeCard.value === i? 'Hide' : 'Show'
+);
+
+
+// Function to toggle showing information for a specific card
+const toggleInfo = (i) => {
+    designerList.value[i].showInfo = !designerList.value[i].showInfo;
+    activeCard.value = designerList.value[i].showInfo ? i : null;
+};
+
 </script>
 <template>
     <div class="container-fluid" style="height: 250px;background-color: green;margin-top: -125px;">
@@ -17,7 +33,7 @@ import { designerList } from "../router/store.js";
                 <p class="title-underline"></p>
             </div>
         </div>
-        <div class="row mt-5" style="margin-bottom: 150px">
+        <div class="row mt-5 mb-5">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
                     <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E"
@@ -51,7 +67,7 @@ import { designerList } from "../router/store.js";
                 <h2 class="title">My Team</h2>
                 <p class="title-underline"></p>
             </div>
-            <div class="col-md-3" v-for="(designer, i) in designerList" :key="i">
+            <div class="col-md-3 card-container" v-for="(designer, i) in designerList" :key="i">
                 <div class="card">
                     <div class="img-box">
                         <img :src="designer.img" alt="">
@@ -59,10 +75,13 @@ import { designerList } from "../router/store.js";
                     <div class="card-body">
                         <h5 class="card-title">{{ designer.name }}</h5>
                         <p class="card-text">{{ designer.position }}</p>
-                        <a class="btn-explore mt-4">
-                            <span>Explore</span>
+                        <a class="btn-explore mt-4" @click="toggleInfo(i)">
+                            <span>{{ buttonLabel(i) }}</span>
                             <i class="fa-solid fa-angle-down"></i>
                         </a>
+                    </div>
+                    <div v-if="activeCard === i && designer.showInfo" class="card-footer info-container">
+                        <p>{{ designer.info }}</p>
                     </div>
                 </div>
             </div>
@@ -147,9 +166,13 @@ blockquote::after {
     object-fit: cover;
 }
 
+.card-container {
+    position: relative;
+}
+
 .card {
     background-color: #f9f9f9;
-    height: 500px;
+    /* height: 400px; */
     margin-bottom: 20px;
     border-radius: 20px;
     overflow: hidden;
@@ -157,7 +180,8 @@ blockquote::after {
 }
 
 .card .img-box {
-    height: 70%;
+    width: 100%;
+    height: 300px;
 }
 
 .card .img-box img {
@@ -173,6 +197,12 @@ blockquote::after {
 
 .card .card-body .card-title {
     font-weight: 600;
+}
+
+.info-container {
+    background-color: transparent;
+    text-align: justify;
+    border-top: 1px solid greenyellow;
 }
 
 .Team-heading-title {

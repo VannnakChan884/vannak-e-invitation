@@ -101,46 +101,64 @@ export const designerList = ref([
         name: "Chan Vannak",
         position: "Design Manager",
         img: "/staff/vannak.JPG",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Phol Dyna",
         position: "Graphic Desinger",
         img: "/staff/dyna.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Sok Koemsien",
         position: "Graphic Desinger",
         img: "/staff/koemsien.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Kann Sokmean",
         position: "Graphic Desinger",
         img: "/staff/sokmean.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Mun Chanra",
         position: "Graphic Desinger",
         img: "/staff/chanra.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Chea Sopha",
         position: "Graphic Desinger",
         img: "/staff/Sopha.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "Rith Phanoy",
         position: "Graphic Desinger",
         img: "/staff/phanoy.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "LOK Kimreachraingsey",
         position: "Graphic Desinger",
         img: "/staff/raingsey.jpg",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     },
     {
         name: "No name available",
         position: "Graphic Desinger",
         img: "/staff/no-image-available.png",
+        info: "This is the information that will be shown when the button is clicked.",
+        showInfo: false
     }
 ])
 export const socialLinks = ref({
