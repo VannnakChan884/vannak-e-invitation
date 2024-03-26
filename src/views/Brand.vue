@@ -18,7 +18,7 @@ import Footer from '../components/Footer.vue'
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-lg-2 col-md-3 col-sm-4 col-6" v-for="(logo, i) in clientList" :key="i">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-4" v-for="(logo, i) in clientList" :key="i">
                 <div class="client-logo-card">
                     <img :src="logo" alt="" class="client-logo">
                 </div>
