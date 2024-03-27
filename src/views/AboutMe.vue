@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
+import ExcelJS from 'exceljs';
 import Footer from "../components/Footer.vue";
 import GoToTop from "../components/GoToTop.vue";
 import { designerList } from "../router/store.js";
@@ -17,6 +18,50 @@ const toggleInfo = (i) => {
     designerList.value[i].showInfo = !designerList.value[i].showInfo;
     activeCard.value = designerList.value[i].showInfo ? i : null;
 };
+
+const exportToExcel = async () => {
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Designer Info');
+
+    // Set header row with custom cell styles
+    const headerRow = worksheet.addRow(['Name', 'Positon', 'Info']);
+    headerRow.font = {
+        bold: true,
+        size: 14,
+        color: { argb: 'FFFFFF' }
+    };
+    headerRow.fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: '008000' }
+    };
+
+    // Set custom width and height for all cells
+    worksheet.columns.forEach(column => {
+        column.width = 30; // Set custom width for columns
+    });
+
+    // Add data rows
+    designerList.value.forEach(user => {
+        const row = worksheet.addRow([user.name, user.position, user.info]);
+        row.height = 30; // Set custom height for each row
+    });
+
+    // Save workbook to Excel file
+    const buffer = await workbook.xlsx.writeBuffer();
+    saveAs(new Blob([buffer]), 'designer_info.xlsx');
+};
+
+// Function to simulate file download
+const saveAs = (blob, fileName) => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    window.URL.revokeObjectURL(url);
+};
+
 </script>
 <template>
     <div class="container-fluid" style="height: 250px; background-color: green; margin-top: -125px">
@@ -61,11 +106,19 @@ const toggleInfo = (i) => {
                 </blockquote>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 150px">
-            <div class="Team-heading-title mb-5">
+        <div class="row mb-5">
+            <div class="col-md-9 col-12 Team-heading-title text-start">
                 <h2 class="title">My Team</h2>
                 <p class="title-underline"></p>
             </div>
+            <div class="col-md-3 col-12 text-end">
+                <button class="btn btn-export" @click="exportToExcel">
+                    <i class="fa-solid fa-file-excel pe-2"></i>
+                    <span>Export</span>
+                </button>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 150px">
             <div class="col-md-3 col-sm-6 card-container" v-for="(designer, i) in designerList" :key="i">
                 <div class="card">
                     <div class="img-box">
@@ -106,7 +159,7 @@ const toggleInfo = (i) => {
 .about-title-heading .title-underline {
     width: 5%;
     height: 2px;
-    background-color: green;
+    background-color: #008000;
     border-radius: 50px;
     margin: auto;
 }
@@ -212,17 +265,28 @@ blockquote::after {
 
 .Team-heading-title .title {
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 28px;
     margin-bottom: 5px;
     font-weight: 600;
 }
 
 .Team-heading-title .title-underline {
-    width: 5%;
+    width: 10%;
     height: 2px;
     background-color: green;
     border-radius: 50px;
-    margin: auto;
+}
+
+.btn-export {
+    color: green;
+    font-size: 18px;
+    background-color: rgba(0, 128, 0, 0.2);
+    transition: 0.3s all ease;
+}
+
+.btn-export:hover {
+    background-color: green;
+    color: #fff;
 }
 
 .btn-explore {

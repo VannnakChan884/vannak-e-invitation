@@ -108,7 +108,7 @@ export const designerList = ref([
         name: "Phol Dyna",
         position: "Graphic Desinger",
         img: "/staff/dyna.jpg",
-        info: "This is the information that will be shown when the button is clicked.",
+        info: "ផល ឌីណា This is the information that will be shown when the button is clicked.",
         showInfo: false
     },
     {
