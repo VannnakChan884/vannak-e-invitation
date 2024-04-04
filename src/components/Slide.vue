@@ -157,6 +157,7 @@ onMounted(() => {
   .top-slide {
     height: 350px;
   }
+
   .swiper-btn-back,
   .swiper-btn-next {
     display: none;
@@ -168,6 +169,7 @@ onMounted(() => {
   .top-slide {
     height: 270px;
   }
+
   .swiper-btn-back,
   .swiper-btn-next {
     display: none;

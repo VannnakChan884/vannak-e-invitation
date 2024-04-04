@@ -80,7 +80,7 @@ const saveAs = (blob, fileName) => {
         <div class="row mt-5 mb-5 about-detail">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
-                    <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421110469_1076160310095460_2617407108266214787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFNI8xjTUoSUQLXiDm0FKUCuax8X694K-a5rHxfr3gr5tXA54eP1G6Ic1fU05q_uLkqRsBZFgiW2LOrMGNL-JMG&_nc_ohc=y-06ve6-YNkAX-Xs35P&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfBudar3FYjIx-KtFArjhsPCAJCFRFiqJwIPN-G0mTVUmg&oe=6603B91E"
+                    <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421066914_1076150873429737_8720733372656632861_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH2ZdJMh7SWO5KSVonOExqt_L2FBQUB4VT8vYUFBQHhVFWnctAyEq2jeBCxTyDsz_FvUHoRmih2Ss1Lau0LwaaX&_nc_ohc=DhoBNOwBA54Ab4Z3kCW&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfDal_PYxFxppa266XBL0_EK6m9L0L0_r-wdOPf8xhM0oQ&oe=66143DB6"
                         alt="" />
                 </div>
             </div>
@@ -209,8 +209,8 @@ blockquote::after {
 }
 
 .my-img {
-    height: 100%;
     width: 100%;
+    height: 400px;
     overflow: hidden;
 }
 
