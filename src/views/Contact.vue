@@ -52,11 +52,11 @@ import GoToTop from "../components/GoToTop.vue";
             ></iframe>
             <div class="overlay">
               <h2>Chan Vannak</h2>
-              <a
+              <!-- <a
                 href="https://www.google.com/maps/place/11%C2%B034'06.3%22N+104%C2%B050'02.1%22E/@11.56841,104.813327,13z/data=!4m4!3m3!8m2!3d11.5684167!4d104.8339167?hl=en&entry=ttu"
                 target=" _blank"
                 >View larger map</a
-              >
+              > -->
             </div>
           </div>
         </div>
