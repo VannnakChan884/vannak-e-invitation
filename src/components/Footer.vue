@@ -30,7 +30,7 @@ import { socialLinks } from "../router/store";
                             <ul>
                                 <li>
                                     <i class="fa-solid fa-location-dot"></i>
-                                    <span>#16, Street 01(8m), Phum Morl, Sangkat Dongkar, Khan Dongkar, Phnom Penh,
+                                    <span>#F12, Street 432K, Phum Morl, Sangkat Kakab, Khan Porsenchey, Phnom Penh,
                                         Cambodia</span>
                                 </li>
                                 <li>
