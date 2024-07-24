@@ -53,7 +53,7 @@ import GoToTop from "../components/GoToTop.vue";
             <div class="overlay">
               <h2>Chan Vannak</h2>
               <a
-                href="https://www.google.com/maps/dir/11.5246589,104.8818914/11.5246549,104.8818823/@11.5246589,104.8818914,16z/data=!4m6!4m5!1m1!4e1!1m1!4e1!3e9?hl=en&entry=ttu"
+                href="https://www.google.com/maps/place/11%C2%B034'06.3%22N+104%C2%B050'02.1%22E/@11.56841,104.813327,13z/data=!4m4!3m3!8m2!3d11.5684167!4d104.8339167?hl=en&entry=ttu"
                 target=" _blank"
                 >View larger map</a
               >
