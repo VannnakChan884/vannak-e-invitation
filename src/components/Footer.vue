@@ -43,7 +43,7 @@ import { socialLinks } from "../router/store";
                                 </li>
                                 <li>
                                     <i class="fa-solid fa-clock"></i>
-                                    <span>Monday - Sunday<br>9:00am - 5:00pm </span>
+                                    <span>Monday - Sunday<br>8:00am - 5:00pm </span>
                                 </li>
                             </ul>
                         </div>
