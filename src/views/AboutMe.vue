@@ -80,7 +80,7 @@ const saveAs = (blob, fileName) => {
         <div class="row mt-5 mb-5 about-detail">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
-                    <img src="https://scontent.fpnh20-1.fna.fbcdn.net/v/t39.30808-6/421066914_1076150873429737_8720733372656632861_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH2ZdJMh7SWO5KSVonOExqt_L2FBQUB4VT8vYUFBQHhVFWnctAyEq2jeBCxTyDsz_FvUHoRmih2Ss1Lau0LwaaX&_nc_ohc=DhoBNOwBA54Ab4Z3kCW&_nc_ht=scontent.fpnh20-1.fna&oh=00_AfDal_PYxFxppa266XBL0_EK6m9L0L0_r-wdOPf8xhM0oQ&oe=66143DB6"
+                    <img src="https://scontent.fpnh18-4.fna.fbcdn.net/v/t39.30808-6/449033384_1164838794560944_8384960721107580584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHHBkpk7G7bDaRo6Zn0Km-cR7PUcn_p9OtHs9Ryf-n06zBbUrczWEhihW6mGTHScNPYYl22JyGYmmu_AcT8Rn2N&_nc_ohc=lzvGGbu5RLQQ7kNvgEXjK-1&_nc_zt=23&_nc_ht=scontent.fpnh18-4.fna&oh=00_AYAXD_tS_lX0IDJxY1zssdurgrvrwj6kqc0UwFwa8ecJaQ&oe=66A6C04F"
                         alt="" />
                 </div>
             </div>
