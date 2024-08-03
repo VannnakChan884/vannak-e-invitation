@@ -116,6 +116,12 @@ export const achievementList = ref([
     {
         brand: "Rosseta Brand",
         img: "/achievements/10.jpg",
+        type: "Normal",
+        designers: ["Chan Vannak"]
+    },
+    {
+        brand: "VLCC Brand",
+        img: "/achievements/12.jpg",
         type: "VIP",
         designers: ["Chan Vannak"]
     }
