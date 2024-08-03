@@ -95,6 +95,12 @@ export const achievementList = ref([
         type: "Normal",
         designers: ["Chan Vannak", "Chanra", "J Mean"]
     },
+    {
+        brand: "JL Brand",
+        img: "/achievements/08.jpg",
+        type: "Normal",
+        designers: ["Chan Vannak"]
+    }
 ])
 export const designerList = ref([
     {
