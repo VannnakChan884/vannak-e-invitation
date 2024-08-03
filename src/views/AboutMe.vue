@@ -80,7 +80,7 @@ const saveAs = (blob, fileName) => {
         <div class="row mt-5 mb-5 about-detail">
             <div class="col-md-6 col-12 mb-4">
                 <div class="my-img">
-                    <img src="https://scontent.fpnh18-4.fna.fbcdn.net/v/t39.30808-6/449033384_1164838794560944_8384960721107580584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHHBkpk7G7bDaRo6Zn0Km-cR7PUcn_p9OtHs9Ryf-n06zBbUrczWEhihW6mGTHScNPYYl22JyGYmmu_AcT8Rn2N&_nc_ohc=lzvGGbu5RLQQ7kNvgEXjK-1&_nc_zt=23&_nc_ht=scontent.fpnh18-4.fna&oh=00_AYAXD_tS_lX0IDJxY1zssdurgrvrwj6kqc0UwFwa8ecJaQ&oe=66A6C04F"
+                    <img src="https://scontent.fpnh18-4.fna.fbcdn.net/v/t39.30808-6/449033384_1164838794560944_8384960721107580584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHHBkpk7G7bDaRo6Zn0Km-cR7PUcn_p9OtHs9Ryf-n06zBbUrczWEhihW6mGTHScNPYYl22JyGYmmu_AcT8Rn2N&_nc_ohc=QgC6Mybv2Z4Q7kNvgGybPhn&_nc_zt=23&_nc_ht=scontent.fpnh18-4.fna&oh=00_AYBhx1cQ08marE4zL2YQGtMap8LAvhktyR1tNhhM0nmIQA&oe=66B3EF4F"
                         alt="" />
                 </div>
             </div>
