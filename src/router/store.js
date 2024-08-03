@@ -100,6 +100,12 @@ export const achievementList = ref([
         img: "/achievements/08.jpg",
         type: "Normal",
         designers: ["Chan Vannak"]
+    },
+    {
+        brand: "Pearl Nail Salon",
+        img: "/achievements/09.jpg",
+        type: "Normal",
+        designers: ["Chan Vannak"]
     }
 ])
 export const designerList = ref([
