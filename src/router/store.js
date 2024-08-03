@@ -106,6 +106,12 @@ export const achievementList = ref([
         img: "/achievements/09.jpg",
         type: "Normal",
         designers: ["Chan Vannak"]
+    },
+    {
+        brand: "Preap Sovath Brand",
+        img: "/achievements/10.jpg",
+        type: "VIP",
+        designers: ["Chan Vannak"]
     }
 ])
 export const designerList = ref([
