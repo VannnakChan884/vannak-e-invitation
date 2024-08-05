@@ -51,6 +51,7 @@ export const clientList = ref([
     "/logos/client logo_SPK.jpg",
     "/logos/client logo_TRE.jpg",
     "/logos/client logo_VLCC.jpg",
+    "/logos/client logo_alexza.jpg",
 ])
 export const achievementList = ref([
     {
