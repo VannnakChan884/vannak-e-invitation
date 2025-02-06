@@ -3,7 +3,7 @@ import { socialLinks } from "../router/store";
 </script>
 <template>
     <footer class="container-fluid text-center">
-        <div class="container footer-container w-50">
+        <div class="container footer-container">
             <div class="row">
                 <div class="col-md-12 col-12 mb-4">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>

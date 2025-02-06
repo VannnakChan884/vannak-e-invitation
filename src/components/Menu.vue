@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-3">
-        <div class="container w-50 p-5">
+        <div class="container p-5">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
