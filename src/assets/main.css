@@ -6,9 +6,11 @@
 
 body {
   font-family: 'Khmer OS Moulpali', adelia;
-  /* background-image: url("logo.png"); */
+  background-image: url("/logo.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 0;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 ul,
