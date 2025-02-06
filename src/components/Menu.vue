@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid menu-bar">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="text-center">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                     <h3>The Wedding Day</h3>
