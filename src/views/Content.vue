@@ -3,7 +3,6 @@ import Footer from "../components/Footer.vue";
 </script>
 <template>
   <div class="body-content">
-    <Drawer />
     <Footer />
   </div>
 </template>
