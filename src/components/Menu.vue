@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-3">
         <div class="container w-50 p-5">
             <div class="row text-center">
                 <div class="col-lg-12">
@@ -57,44 +57,36 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 box">
                     <div class="text-center">
-                        <div class="row mb-3">
-                            <div class="col-12">
+                        <div class="row mb-2 m-0">
+                            <div class="col-12 mb-3">
                                 <p>កូនប្រុសនាម</p>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-12">
-                                <h2>ចាន់ វណ្ណៈ</h2>
+                                <h4 class="fw-bold">ចាន់ វណ្ណៈ</h4>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="box-img">
-                                <div class="col-lg-12 p-0">
-                                    <img src="../assets/groom.jpg" alt="">
-                                </div>
+                        <div class="row m-0">
+                            <div class="box-img col-lg-12 p-0">
+                                <img src="../assets/groom.jpg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6 box">
                     <div class="text-center">
-                        <div class="row mb-3">
-                            <div class="col-12">
+                        <div class="row mb-2 m-0">
+                            <div class="col-12 mb-3">
                                 <p>កូនស្រីនាម</p>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-12">
-                                <h2>ឃិន ស្រីណយ</h2>
+                                <h4 class="fw-bold">ឃិន ស្រីណយ</h4>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="box-img">
-                                <div class="col-lg-12 p-0">
-                                    <img src="../assets/bride.jpg" alt="">
-                                </div>
+                        <div class="row m-0">
+                            <div class="box-img col-lg-12 p-0">
+                                <img src="../assets/bride.JPG" alt="">
                             </div>
                         </div>
                     </div>
@@ -113,16 +105,26 @@
         text-align: justify;
         text-align-last: center;
     }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .box-img{
-        width: 250px;
-        height: 300px;
+        width: 300px;
+        height: 390px;
         border: 2px solid skyblue;
+        box-shadow: 1px 1px 20px 0 skyblue;
         border-radius: 3%;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .box-img img{
-        width: 100%;
-        height: 100%;
+        width: 99%;
+        height: 99%;
         object-fit: cover;
+        border-radius: 2%;
     }
 </style>
