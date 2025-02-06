@@ -8,7 +8,7 @@ import { socialLinks } from "../router/store";
                 <div class="col-md-12 col-12 mb-4">
                     <h2 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h2>
                     <div class="footer-social-link">
-                        <div class="row bg-info text-center">
+                        <div class="row">
                             <div class="col-md-2 col-2 mb-4" v-for="(link, i) in socialLinks" :key="i">
                                 <a :href="link.url" target="_blank">
                                     <i :class="['fa-brands', link.icon]"></i>
