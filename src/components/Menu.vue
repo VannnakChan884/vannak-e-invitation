@@ -69,7 +69,7 @@
                         </div>
                         <div class="row m-0">
                             <div class="box-img col-lg-12 p-0">
-                                <img src="../assets/groom.jpg" alt="">
+                                <img src="/images/groom.jpg" alt="Groom">
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="row m-0">
                             <div class="box-img col-lg-12 p-0">
-                                <img src="../assets/bride.JPG" alt="">
+                                <img src="/images/bride.jpg" alt="Bride">
                             </div>
                         </div>
                     </div>
