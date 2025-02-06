@@ -1,6 +1,9 @@
+<script setup>
+import { socialLinks } from "../router/store";
+</script>
 <template>
     <div class="container-fluid">
-        <div class="container mt-5">
+        <div class="container">
             <div class="row text-center">
                     <div class="col-lg-12">
                         <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
@@ -94,8 +97,33 @@
             </div>
         </div>
     </div>
+    <footer class="container-fluid text-center">
+        <div class="container footer-container">
+            <div class="row">
+                <div class="col-md-12 col-12 mb-4">
+                    <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
+                    <div class="footer-social-link">
+                        <div class="row">
+                            <div class="col-md-2 col-2 mb-4" v-for="(link, i) in socialLinks" :key="i">
+                                <a :href="link.url" target="_blank">
+                                    <i :class="['fa-brands', link.icon]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <span>Build by Chan Vannak</span>
+            </div>
+        </div>
+    </footer>
 </template>
 <style scoped>
+    .container-fluid{
+        background-color: #000000c7;
+        padding: 50px;
+    }
     .text-modify{
         text-align: justify;
         text-align-last: center;
@@ -122,4 +150,37 @@
         object-fit: cover;
         border-radius: 2%;
     }
+    .footer-container {
+    padding: 50px 0;
+}
+
+.container-fluid .footer-container .footer-slogain {
+    /* font-size: 18px; */
+    margin-bottom: 15px;
+}
+
+.container-fluid .footer-container .footer-social-link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+}
+
+.container-fluid .footer-container .footer-social-link a i {
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    color: skyblue;
+    display: block;
+    padding: 10px;
+    border-radius: 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.container-fluid .footer-container .footer-copyright {
+    margin-top: 20px;
+}
 </style>
