@@ -101,4 +101,7 @@ p {
   .fs-5{
     font-size: 12px !important;
   }
+  .location-img{
+    height: 250px !important;
+  }
 }

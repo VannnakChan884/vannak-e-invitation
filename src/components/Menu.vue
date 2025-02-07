@@ -225,7 +225,7 @@
     </div>
     <!--Footer-->
     <div class="container-fluid text-center">
-        <div class="container footer-container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12 mb-4">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
@@ -273,9 +273,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .footer-container{
-        padding: 50px 0;
     }
 
     .container-fluid .footer-container .footer-slogain{
