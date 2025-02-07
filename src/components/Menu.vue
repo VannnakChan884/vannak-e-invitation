@@ -210,6 +210,16 @@
                     <h3>ទីតាំងកម្មវិធី</h3>
                     <p class="lh-lg mt-2">ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត</p>
                 </div>
+                <div class="col-12 text-center mt-3">
+                    <button type="button" class="btn btn-outline-warning btn-lg">
+                        <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" class="text-warning text-decoration-none">
+                        ទីតាំងផ្ទះការ <i class="fa-solid fa-map fa-bounce fa-xl"></i>
+                        </a>
+                    </button>
+                    <div class="location-img mt-5">
+                        <img src="/images/location.jpg" class="img-fluid" alt="Location">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -286,5 +296,28 @@
     }
     .table tr td:nth-child(2){
         width: 30px;
+    }
+    button{
+        box-shadow: 1px 1px 10px 0 #fff;
+    }
+    button:hover .text-warning{
+        color: #fff !important;
+    }
+    .location-img{
+        width: 100%;
+        height: 600px;
+        border: 1px solid#fff;
+        box-shadow: 1px 1px 10px 0#ffffff4b;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .location-img img{
+        width: 98%;
+        height: 98%;
+        object-fit: cover;
+        border-radius: 5px;
     }
 </style>
