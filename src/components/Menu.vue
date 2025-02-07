@@ -235,7 +235,7 @@
     }
     .text-modify{
         text-align: justify;
-        text-align-last: center;
+        text-align-last: left;
     }
     .box{
         display: flex;
