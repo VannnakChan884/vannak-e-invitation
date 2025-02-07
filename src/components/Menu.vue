@@ -49,7 +49,7 @@
                     </div >
                 </div>
             </div>
-            <div class="row mt-5" id="invitation" data-aos="fade-down" data-aos-duration="500" data-aos-anchor-placement="center-center">
+            <div class="row mt-5" id="invitation" data-aos="fade-down" data-aos-duration="500">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <p class="text-center mb-2">មានកិត្តិយស</p >
                     <h3 class="text-center mb-2">សូមគោរពអញ្ចើញ</h3>
