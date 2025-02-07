@@ -11,18 +11,18 @@
             <div class="row mt-5">
                 <div class="col-lg-6 col-md-6">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3">
                             <h6>លោក</h6>
                         </div >
-                        <div class="col-lg-9 col-md-9 col-sm-9">
+                        <div class="col-lg-9 col-md-9">
                             <h4 >ម៉ឹកចាន់វាសនា</h4 >
                         </div >
                     </div >
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3">
                             <h6>លោកស្រី</h6>
                         </div >
-                        <div class="col-lg-9 col-md-9 col-sm-9">
+                        <div class="col-lg-9 col-md-9">
                             <h4 >លឹមសុន</h4 >
                         </div >
                     </div >
