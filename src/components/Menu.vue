@@ -1,5 +1,5 @@
 <script setup>
-    import { galleries } from '../router/store.js'
+    import { galleries } from '../router/store.js';
 </script>
 <template>
     <!--Content-->
@@ -7,7 +7,13 @@
         <div class="container w-50">
             <div class="row text-center">
                 <div class="col-lg-12">
-                    <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+                    <h1 class="text-center mb-4" data-aos="fade-up" data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                     <h4 >The Wedding Day</h4 >
                 </div>
             </div>
@@ -89,7 +95,7 @@
                             </div >
                         </div >
                         <div class="row m-0 groom-img">
-                            <div class="box-img col-lg-12 p-0">
+                            <div class="box-img col-lg-12 p-0" data-aos-easing="linear" data-aos-duration="1500">
                                 <img src="/images/bride.jpg" alt="Bride">
                             </div>
                         </div>
