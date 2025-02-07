@@ -97,7 +97,7 @@
                 <div class="col-12 text-center">
                     <h3>និងពិសារភោជនាអាហារដែលនឹងប្រព្រឹត្តទៅ</h3>
                     <p class="mt-2 lh-lg text-modify">
-                    នៅ ថ្ងៃ<span class="text-warning fs-5 fw-medium">សុក្រ </span>
+                    នៅ ថ្ងៃ<span class="text-warning fs-5 fw-medium">សៅរ៍ </span>
                     ទី<span class="text-warning fs-5 fw-medium">១៥ </span>
                     ខែ<span class="text-warning fs-5 fw-medium">មីនា </span>
                     ឆ្នាំ<span class="text-warning fs-5 fw-medium">២០២៥ </span>
