@@ -5,19 +5,13 @@
     <!--Content-->
     <div class="container-fluid">
         <div class="container w-50">
-            <div class="row text-center">
+            <div class="row text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
                 <div class="col-lg-12">
-                    <h1 class="text-center mb-4" data-aos="fade-up" data-aos-offset="200"
-    data-aos-delay="50"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
-                    <h4 >The Wedding Day</h4 >
+                    <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+                    <h4>The Wedding Day</h4>
                 </div>
             </div>
-            <div class="row mt-5" id="parents">
+            <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <div class="col-lg-6 col-md-6">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3">
@@ -55,7 +49,7 @@
                     </div >
                 </div>
             </div>
-            <div class="row mt-5" id="invitation">
+            <div class="row mt-5" id="invitation" data-aos="fade-down" data-aos-duration="500" data-aos-anchor-placement="center-center">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <p class="text-center mb-2">មានកិត្តិយស</p >
                     <h3 class="text-center mb-2">សូមគោរពអញ្ចើញ</h3>
