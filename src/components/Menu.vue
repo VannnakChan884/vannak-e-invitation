@@ -8,25 +8,25 @@
                     <h4 >The Wedding Day</h4 >
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="parents">
                 <div class="col-lg-6 col-md-6">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
                             <h6>លោក</h6>
-                        </div >
-                        <div class="col-lg-9 col-md-9">
-                            <h4 >ម៉ឹកចាន់វាសនា</h4 >
-                        </div >
-                    </div >
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9">
+                            <h4>ម៉ឹកចាន់វាសនា</h4>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
                             <h6>លោកស្រី</h6>
-                        </div >
-                        <div class="col-lg-9 col-md-9">
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9">
                             <h4 >លឹមសុន</h4 >
-                        </div >
-                    </div >
-                </div >
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="row text-end">
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -46,7 +46,7 @@
                     </div >
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="invitation">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <p class="text-center mb-2">មានកិត្តិយស</p >
                     <h3 class="text-center mb-2">សូមគោរពអញ្ចើញ</h3>
@@ -58,7 +58,7 @@
                 </div >
             </div >
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6 col-sm-6 box">
+                <div class="col-lg-6 col-md-6 col-sm-6 box groom">
                     <div class="text-center">
                         <div class="row mb-2 m-0">
                             <div class="col-12 mb-3">
@@ -68,7 +68,7 @@
                                 <h4 class="text-warning fw-semibold">ចាន់វណ្ណៈ</h4 >
                             </div >
                         </div >
-                        <div class="row m-0">
+                        <div class="row m-0 groom-img">
                             <div class="box-img col-lg-12 p-0">
                                 <img src="/images/groom.jpg" alt="Groom">
                             </div >
@@ -85,7 +85,7 @@
                                 <h4 class="text-warning fw-semibold">ឃិនស្រីណយ</h4>
                             </div >
                         </div >
-                        <div class="row m-0">
+                        <div class="row m-0 groom-img">
                             <div class="box-img col-lg-12 p-0">
                                 <img src="/images/bride.jpg" alt="Bride">
                             </div>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="date-time">
                 <div class="col-12 text-center">
                     <h3>និងពិសារភោជនាអាហារដែលនឹងប្រព្រឹត្តទៅ</h3>
                     <p class="mt-2 lh-lg text-modify">
@@ -114,7 +114,7 @@
                     <br>(សូមពិនិត្យមើលប្លង់បញ្ជាក់)</p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="event">
                 <div class="col-12 text-center mb-2">
                         <h3>កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍</h3>
                 </div>
@@ -195,7 +195,7 @@
                         </table>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="thank-sorry">
                 <div class="col-12">
                     <h3 class="text-center">សេចក្ដីថ្លែងអំណរគុណ និងសូមអភ័យទោស</h3>
                     <p class="lh-lg mt-2 text-modify">យើងខ្ញុំ សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅ ចំពោះការអញ្ចើញចូលរួមជាភ្ញៀវកិត្តិយស
@@ -205,7 +205,7 @@
                     និងភ្ញៀវកិត្តិយសទាំងអស់មានសុខភាពល្អ និងទទួលបានជោគជ័យគ្រប់ភារកិច្ច។</p>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5" id="location">
                 <div class="col-12 text-center">
                     <h3>ទីតាំងកម្មវិធី</h3>
                     <p class="lh-lg mt-2">ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត</p>
@@ -239,8 +239,8 @@
     }
     .box{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center !important;
+        align-items: center !important;
     }
     .box-img{
         width: 250px;
@@ -259,12 +259,21 @@
         object-fit: cover;
         border-radius: 3%;
     }
+    .groom-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .footer-container{
         padding: 50px 0;
     }
 
     .container-fluid .footer-container .footer-slogain{
         margin-bottom: 15px;
+    }
+    .table tr td{
+        padding-left: 0;
+        padding-right: 0;
     }
     .table>:not(caption)>*>*{
         background: none;
