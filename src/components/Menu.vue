@@ -1,3 +1,6 @@
+<script setup>
+    import { galleries } from '../router/store.js'
+</script>
 <template>
     <!--Content-->
     <div class="container-fluid">
@@ -213,11 +216,21 @@
                 <div class="col-12 text-center mt-3">
                     <button type="button" class="btn btn-outline-warning btn-lg">
                         <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" class="text-warning text-decoration-none">
-                        ទីតាំងផ្ទះការ <i class="fa-solid fa-map fa-bounce fa-xl"></i>
+                        ទីតាំងផ្ទះការ <i class="fa-solid fa-map fa-bounce fa-lg"></i>
                         </a>
                     </button>
                     <div class="location-img mt-5">
                         <img src="/images/location.jpg" class="img-fluid" alt="Location">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h3>កម្រងរូបភាព</h3>
+                </div>
+                <div v-for="(gallery, i) in galleries" :key="i" class="col-lg-4 col-md-4 col-sm-4 col-4 mt-4">
+                    <div class="gallery">
+                        <img :src="gallery" alt="Image Gallery">
                     </div>
                 </div>
             </div>
@@ -316,5 +329,23 @@
         height: 98%;
         object-fit: cover;
         border-radius: 5px;
+    }
+    .gallery{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 10px 0 #ffffff4b;
+    }
+    .gallery img{
+        width: 99%;
+        height: 99%;
+        object-fit: cover;
+        border-radius: 3px;
+        margin: 10px;
     }
 </style>
