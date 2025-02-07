@@ -1,5 +1,18 @@
 <script setup>
     import { galleries } from '../router/store.js';
+    import { ref } from 'vue';
+
+    const audio = ref(null);
+    const isPlaying = ref(false);
+
+    const toggleMusic = () => {
+    if (isPlaying.value) {
+        audio.value.pause();
+    } else {
+        audio.value.play();
+    }
+    isPlaying.value = !isPlaying.value;
+    };
 </script>
 <template>
     <!--Content-->
@@ -242,6 +255,24 @@
             </div>
         </div>
     </div>
+    <div class="container bg-warning" id="audio">
+        <div class="row m-0 text-center">
+            <div class="col-12 p-0 mb-3 box-icon" @click="toggleMusic">
+                <audio controls autoplay loop ref="audio">
+                    <source src="/audio/Noly Record.mp3" type="audio/mp3">
+                </audio>
+                <div class="music-icon">
+                    <span v-if="isPlaying"><i class="fa-solid fa-headphones fa-beat fa-lg"></i></span>
+                    <span v-else><i class="fa-solid fa-play fa-lg"></i></span>
+                </div>
+            </div>
+            <div class="col-12 p-0 box-icon">
+                <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn rounded-5 text-warning text-decoration-none">
+                    <i class="fa-solid fa-map fa-bounce fa-lg text-light"></i>
+                </a>
+            </div>
+        </div>
+    </div>
     <!--Footer-->
     <div class="container-fluid text-center">
         <div class="container">
@@ -261,6 +292,7 @@
     .container-fluid{
         background-color:#000000a9;
         padding: 50px;
+        position: relative;
     }
     .text-modify{
         text-align: justify;
@@ -293,7 +325,6 @@
         justify-content: center;
         align-items: center;
     }
-
     .container-fluid .footer-container .footer-slogain{
         margin-bottom: 15px;
     }
@@ -353,5 +384,29 @@
         object-fit: cover;
         border-radius: 3px;
         margin: 10px;
+    }
+    audio{
+        display: none;
+    }
+    #audio{
+        position: absolute;
+        width: 50px !important;
+        height: 110px !important;
+        bottom: 7%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        overflow: hidden;
+        right: 5%;
+        transform: translate(-5%, -7%);
+        z-index: 10;
+    }
+    #audio .box-icon{
+        padding: 10px;
+    }
+    #audio .music-icon{
+        padding: 6px 12px;
+        cursor: pointer;
     }
 </style>
