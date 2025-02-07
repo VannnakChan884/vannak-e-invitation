@@ -63,7 +63,7 @@
             <div class="row mt-3">
                 <div class="col-lg-6 col-md-6 col-sm-6 box groom">
                     <div class="text-center">
-                        <div class="row mb-2 m-0">
+                        <div class="row mb-2 m-0" data-aos="fade-up">
                             <div class="col-12 mb-3">
                                 <p>កូនប្រុសនាម</p>
                             </div>
@@ -72,7 +72,10 @@
                             </div >
                         </div >
                         <div class="row m-0 groom-img">
-                            <div class="box-img col-lg-12 p-0">
+                            <div class="box-img col-lg-12 p-0" data-aos="fade-right"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">
                                 <img src="/images/groom.jpg" alt="Groom">
                             </div >
                         </div >
@@ -80,7 +83,7 @@
                 </div >
                 <div class="col-lg-6 col-md-6 col-sm-6 box">
                     <div class="text-center">
-                        <div class="row mb-2 m-0">
+                        <div class="row mb-2 m-0" data-aos="fade-up">
                             <div class="col-12 mb-3">
                                 <p>កូនស្រីនាម</p>
                             </div>
@@ -89,7 +92,10 @@
                             </div >
                         </div >
                         <div class="row m-0 groom-img">
-                            <div class="box-img col-lg-12 p-0" data-aos-easing="linear" data-aos-duration="1500">
+                            <div class="box-img col-lg-12 p-0" data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">
                                 <img src="/images/bride.jpg" alt="Bride">
                             </div>
                         </div>
