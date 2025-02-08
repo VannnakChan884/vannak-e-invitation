@@ -24,13 +24,12 @@
     </div>
     <!--Content-->
     <div class="container-fluid" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container w-50">
+        <div class="container w-50 pt-3">
             <div class="row text-center" 
             data-aos="fade-down" 
             data-aos-anchor-placement="center-center"
             data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
-            >
+            data-aos-easing="ease-in-out">
                 <div class="col-lg-12">
                     <h1 class="text-center mb-3 gradient-text">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                     <span class="fs-2">The Wedding Day</span>
@@ -97,14 +96,15 @@
                             </div >
                         </div >
                         <div class="row m-0 groom-img">
-                            <div class="box-img col-lg-12 p-0" data-aos="fade-right"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
-     data-aos-duration="500">
+                            <div class="box-img col-lg-12 p-0" 
+                            data-aos="fade-right"
+                            data-aos-anchor="#example-anchor"
+                            data-aos-offset="500"
+                            data-aos-duration="500">
                                 <img src="/images/groom.jpg" alt="Groom">
                             </div >
                         </div >
-                </div >
+                    </div >
                 </div >
                 <div class="col-lg-6 col-md-6 col-sm-6 box">
                     <div class="text-center">
@@ -117,10 +117,11 @@
                             </div >
                         </div >
                         <div class="row m-0 groom-img">
-                            <div class="box-img col-lg-12 p-0" data-aos="fade-left"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
-     data-aos-duration="500">
+                            <div class="box-img col-lg-12 p-0" 
+                            data-aos="fade-left"
+                            data-aos-anchor="#example-anchor"
+                            data-aos-offset="500"
+                            data-aos-duration="500">
                                 <img src="/images/bride.jpg" alt="Bride">
                             </div>
                         </div>
