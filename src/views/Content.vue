@@ -19,8 +19,8 @@
 </script>
 <template>
     <!-- Font Size Slider -->
-    <div id="font-size" class="container">
-        <input type="range" id="fontSize" class="vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
+    <div id="font-size">
+        <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
     <!--Content-->
     <div class="container-fluid" :style="{ fontSize: fontSize + 'px' }">

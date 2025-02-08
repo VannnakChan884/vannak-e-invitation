@@ -144,4 +144,7 @@ p {
   #audio,#font-size{
     position: fixed !important;
   }
+  #font-size{
+    width: 60px !important;
+  }
 }
