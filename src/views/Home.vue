@@ -18,14 +18,14 @@
   #home-box{
     width: 100%;
     height: 100vh;
-    background-color:#000000a9 !important;
+    background-color:rgba(0, 0, 0, 0.3) !important;
     position: relative;
   }
   #home-box .box-btn{
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     text-align: center;
   }
   .open-box{
