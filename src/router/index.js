@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ContentView from '../views/Content.vue'
+import Home from '../views/Home.vue'
+import Content from '../views/Content.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
+    { 
+      path: '/', 
+      component: Home
+    },
+    { 
+      path: '/invitation',
       name: 'content',
-      component: ContentView
+      component: Content
     },
   ]
 })
