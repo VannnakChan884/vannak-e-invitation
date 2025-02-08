@@ -263,13 +263,13 @@
     </div>
     <div class="container" id="audio">
         <div class="row m-0 text-center">
-            <div class="col-12 p-0 mb-3 box-icon" @click="toggleMusic">
+            <div class="col-12 p-0 mb-3 box-icon">
                 <audio controls autoplay loop ref="audio">
                     <source src="/audio/Noly Record.mp3" type="audio/mp3">
                 </audio>
-                <div class="music-icon">
+                <div class="music-icon" @click="toggleMusic">
                     <span v-if="isPlaying"><i class="fa-solid fa-headphones fa-beat fa-lg"></i></span>
-                    <span v-else><i class="fa-solid fa-play fa-lg"></i></span>
+                    <span v-else><i class="fa-solid fa-music fa-lg"></i></span>
                 </div>
             </div>
             <div class="col-12 p-0 box-icon">
@@ -294,7 +294,7 @@
         </div>
     </div >
 </template>
-<style scope>
+<style>
     .container-fluid{
         background-color:#000000a9;
         padding: 50px;
@@ -427,13 +427,6 @@
         cursor: pointer;
     }
 
-    @keyframes borderColorChange {
-        0% { border: 2px solid pink; }
-        35% { border: 2px solid lightyellow; }
-        55% { border: 2px solid orange; }
-        75% { border: 2px solid orangered; }
-        100% { border: 2px solid red; }
-    }
     .box-img,.location-img,#audio,.gallery{
         animation: borderColorChange 3s infinite;
         animation-timing-function: linear;

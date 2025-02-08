@@ -32,6 +32,19 @@ p {
   margin: 0;
   padding: 0;
 }
+@keyframes borderColorChange {
+  0% { border: 2px solid pink; }
+  35% { border: 2px solid lightyellow; }
+  55% { border: 2px solid orange; }
+  75% { border: 2px solid orangered; }
+  100% { border: 2px solid red; }
+}
+@keyframes backgroundColorChange {
+  0% { background-color: green; }
+  50% { background-color: brown; }
+  100% { background-color: red; }
+}
+
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width:1200px) {
   #audio{
