@@ -51,7 +51,7 @@ p {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width:1200px) {
-  #audio{
+  #audio,#font-size{
     position: fixed !important;
   }
 }
@@ -64,7 +64,7 @@ p {
   .container{
     width: 100% !important;
   }
-  #audio{
+  #audio,#font-size{
     position: fixed !important;
   }
 }
@@ -77,7 +77,7 @@ p {
   .container{
     width: 100% !important;
   }
-  #audio{
+  #audio,#font-size{
     position: fixed !important;
   }
 }
@@ -90,7 +90,7 @@ p {
   .container{
     width: 100% !important;
   }
-  #audio{
+  #audio,#font-size{
     position: fixed !important;
   }
 }
@@ -141,7 +141,7 @@ p {
   .location-img{
     height: 250px !important;
   }
-  #audio{
+  #audio,#font-size{
     position: fixed !important;
   }
 }
