@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Moulpali&family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moulpali&family=Mea+Culpa&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,13 +6,21 @@
 }
 
 body {
-  font-family: 'Moulpali',"Mea Culpa";
+  font-family: "Mea Culpa";
   background-image: url("/background.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
   background-attachment: fixed;
   background-size: cover;
   color: #fff;
+}
+
+h1,h2,h3,h4,h6{
+  font-family: 'Moulpali';
+}
+
+p,table{
+  font-family: "Kantumruy Pro";
 }
 
 ul,

@@ -64,7 +64,7 @@
             </div>
             <div class="row mt-5" id="invitation" data-aos="fade-down" data-aos-duration="500">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <p class="text-center mb-2">មានកិត្តិយស</p >
+                    <h6 class="text-center mb-2">មានកិត្តិយស</h6 >
                     <h3 class="text-center mb-2">សូមគោរពអញ្ចើញ</h3>
                     <p class="text-break lh-lg text-modify">
                     សម្តេចទ្រង់ ឯកឧត្តម លោកជំទាវ​ អ្នកឧកញ៉ា ​ឧកញ៉ា លោក លោក​ស្រី អ្នកនាងកញ្ញា
