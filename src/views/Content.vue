@@ -23,7 +23,7 @@
         <input type="range" id="fontSize" class="vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
     <!--Content-->
-    <div class="container-fluid" :style="{ fontSize: fontSize + 'px' }">
+    <div class="container-fluid" :style="{ fontSize: fontSize + 'px', fontFamily: 'Khmer OS Moulpali' }">
         <div class="container w-50">
             <div class="row text-center" 
             data-aos="fade-down" 
@@ -286,7 +286,7 @@
         </div>
     </div>
     <!--Footer-->
-    <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px' }">
+    <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px', fontFamily: 'Khmer OS Moulpali' }">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12 mb-4">
