@@ -121,9 +121,16 @@ p {
   .container{
     width: 100% !important;
   }
-  .groom{
-    margin-bottom: 30px;
+  .box{
+    width: 50%;
   }
+  .box-img{
+    width: 190px;
+    height: 280px;
+  }
+  /* .groom{
+    margin-bottom: 30px;
+  } */
   .table tr td:first-child{
     width: 100px !important;
     font-size: 12px;

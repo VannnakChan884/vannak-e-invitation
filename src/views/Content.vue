@@ -36,31 +36,31 @@
                 </div>
             </div>
             <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                <div class="col-lg-6 col-md-6">
-                    <div class="row">
+                <div class="col-lg-6 col-md-6 bg-danger" id="box">
+                    <div class="row bg-success">
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <h6>លោក</h6>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-9">
-                            <h4>ម៉ឹកចាន់វាសនា</h4>
+                            <h4>ម៉ឹក ចាន់វាសនា</h4>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row bg-warning">
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <h6>លោកស្រី</h6>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-9">
-                            <h4 >លឹមសុន</h4 >
+                            <h4>លឹម សុន</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6 bg-info" id="box">
                     <div class="row text-end">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <h6>លោក</h6>
                         </div >
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h4>ឃិនណី</h4>
+                            <h4>ឃិន ណី</h4>
                         </div >
                     </div >
                     <div class="row text-end">
@@ -68,7 +68,7 @@
                             <h6>លោកស្រី</h6>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h4>ឡុងវណ្ណនាង</h4>
+                            <h4>ឡុង វណ្ណនាង</h4>
                         </div >
                     </div >
                 </div>
