@@ -302,12 +302,15 @@
 </template>
 <style>
     #font-size{
-        width: 150px;
+        width: 100px;
+        height: 150px;
         position: absolute;
-        bottom: 30%;
-        right: 2.5%;
-        transform: translate(-2.5%, -30%);
-        text-align: center;
+        bottom: 22%;
+        right: 3.7%;
+        transform: translate(-3.7%, -22%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         z-index: 3;
     }
     #font-size .vertical-slider{
