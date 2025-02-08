@@ -14,10 +14,16 @@
     isPlaying.value = !isPlaying.value;
     };
 
+    // Default font size
+    const fontSize = ref(18);
 </script>
 <template>
+    <!-- Font Size Slider -->
+    <div id="font-size" class="container">
+        <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
+    </div>
     <!--Content-->
-    <div class="container-fluid">
+    <div class="container-fluid" :style="{ fontSize: fontSize + 'px' }">
         <div class="container w-50">
             <div class="row text-center" 
             data-aos="fade-down" 
@@ -280,7 +286,7 @@
         </div>
     </div>
     <!--Footer-->
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px' }">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12 mb-4">
@@ -295,10 +301,32 @@
     </div >
 </template>
 <style>
+    #font-size{
+        width: 150px;
+        position: absolute;
+        bottom: 30%;
+        right: 2.5%;
+        transform: translate(-2.5%, -30%);
+        text-align: center;
+        z-index: 3;
+    }
+    #font-size .vertical-slider{
+        transform: rotate(-90deg);
+    }
+    #font-size .vertical-text,.minus-text{
+        font-family: 'Popin';
+        font-size: 20px;
+        margin-bottom: 10px;
+        /* transform: rotate(90deg); */
+    }
+    #font-size .minus-text{
+        top: 0;
+    }
     .container-fluid{
         background-color:#000000a9;
         padding: 50px;
         position: relative;
+        transition: font-size 0.3s ease;
     }
     @keyframes colorChange {
         0% { color: pink; }
@@ -408,7 +436,7 @@
     #audio{
         position: absolute;
         width: 50px !important;
-        height: 110px !important;
+        height: 150px !important;
         bottom: 7%;
         display: flex;
         justify-content: center;

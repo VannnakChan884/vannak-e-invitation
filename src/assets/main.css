@@ -4,7 +4,11 @@
   margin: 0;
   padding: 0;
 }
-
+/* Set base font size */
+html {
+  font-size: 16px; /* Default font size */
+  transition: font-size 0.3s ease; /* Smooth transition for font resizing */
+}
 body {
   font-family: "Mea Culpa";
   background-image: url("/background.jpg");
