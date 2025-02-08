@@ -13,14 +13,20 @@
     }
     isPlaying.value = !isPlaying.value;
     };
+
 </script>
 <template>
     <!--Content-->
     <div class="container-fluid">
         <div class="container w-50">
-            <div class="row text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
+            <div class="row text-center" 
+            data-aos="fade-down" 
+            data-aos-anchor-placement="center-center"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            >
                 <div class="col-lg-12">
-                    <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+                    <h1 class="text-center mb-4 gradient-text">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                     <span class="fs-2">The Wedding Day</span>
                 </div>
             </div>
@@ -68,8 +74,8 @@
                     <h3 class="text-center mb-2">សូមគោរពអញ្ចើញ</h3>
                     <p class="text-break lh-lg text-modify">
                     សម្តេចទ្រង់ ឯកឧត្តម លោកជំទាវ​ អ្នកឧកញ៉ា ​ឧកញ៉ា លោក លោក​ស្រី អ្នកនាងកញ្ញា
-                    អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិតិ្តយស ដើម្បីប្រសិទ្ធិពរជ័យ សិរីមង្គលក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍
-                    <br>កូនប្រុស-ស្រីរបស់យើងខ្ញុំ
+                    អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិតិ្តយសដើម្បីប្រសិទ្ធិពរជ័យ សិរីមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍
+                    កូនប្រុស-ស្រី របស់យើងខ្ញុំ
                     </p  >
                 </div >
             </div >
@@ -78,7 +84,7 @@
                     <div class="text-center">
                         <div class="row mb-2 m-0" data-aos="fade-up">
                             <div class="col-12 mb-3">
-                                <p>កូនប្រុសនាម</p>
+                                <h6>កូនប្រុសនាម</h6>
                             </div>
                             <div class="col-12">
                                 <h4 class="text-warning fw-semibold">ចាន់វណ្ណៈ</h4 >
@@ -98,7 +104,7 @@
                     <div class="text-center">
                         <div class="row mb-2 m-0" data-aos="fade-up">
                             <div class="col-12 mb-3">
-                                <p>កូនស្រីនាម</p>
+                                <h6>កូនស្រីនាម</h6>
                             </div>
                             <div class="col-12">
                                 <h4 class="text-warning fw-semibold">ឃិនស្រីណយ</h4>
@@ -294,36 +300,53 @@
         padding: 50px;
         position: relative;
     }
+    @keyframes colorChange {
+        0% { color: pink; }
+        35% { color: lightyellow; }
+        55% { color: orange; }
+        75% { color: orangered; }
+        100% { color: red; }
+    }
+    .gradient-text{
+        animation: colorChange 3s infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+    }
     .text-modify{
         text-align: justify;
-        text-align-last: left;
+        text-align-last: center;
     }
-    .box{
+    .box,.groom-img{
         display: flex;
         justify-content: center !important;
         align-items: center !important;
     }
+    @keyframes borderColorChange {
+        0% { border: 2px solid pink; }
+        35% { border: 2px solid lightyellow; }
+        55% { border: 2px solid orange; }
+        75% { border: 2px solid orangered; }
+        100% { border: 2px solid red; }
+    }
     .box-img{
         width: 250px;
         height: 340px;
-        border: 1px solid#fff;
+        border: 2px solid#fff;
         box-shadow: 1px 1px 10px 0#ffffff4b;
-        border-radius: 4%;
+        border-radius: 15px;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: borderColorChange 3s infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
     }
     .box-img img{
         width: 98%;
         height: 98%;
         object-fit: cover;
-        border-radius: 3%;
-    }
-    .groom-img{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        border-radius: 10px;
     }
     .container-fluid .footer-container .footer-slogain{
         margin-bottom: 15px;
