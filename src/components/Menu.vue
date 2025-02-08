@@ -21,7 +21,7 @@
             <div class="row text-center" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500">
                 <div class="col-lg-12">
                     <h1 class="text-center mb-4">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
-                    <h4>The Wedding Day</h4>
+                    <span class="fs-2">The Wedding Day</span>
                 </div>
             </div>
             <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
