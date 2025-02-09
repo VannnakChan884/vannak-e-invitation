@@ -5,7 +5,17 @@ import { ref,onMounted } from 'vue';
 const router = useRouter();
 
 const isPlaying = ref(false);
-const audio = new Audio('/Noly_Record.mp3'); // Replace with your actual audio file
+const audio = new Audio('/Noly_Record.mp3');
+
+// Ensure autoplay works on mobile after user interaction
+const enableAutoplay = () => {
+  audio.play().then(() => {
+    isPlaying.value = true;
+  }).catch(() => {
+    console.warn("Autoplay blocked. User needs to click to play audio.");
+    isPlaying.value = false; // Prevent console errors
+  });
+};
 
 // Function to toggle audio
 const toggleAudio = () => {
@@ -25,6 +35,11 @@ onMounted(() => {
   }).catch(() => {
     isPlaying.value = false; // Prevent errors if autoplay is blocked
   });
+});
+
+// Run autoplay after the first user click
+onMounted(() => {
+  document.addEventListener("click", enableAutoplay, { once: true }); // Mobile browsers need user interaction
 });
 
 // Expose isPlaying & toggleAudio for all pages
