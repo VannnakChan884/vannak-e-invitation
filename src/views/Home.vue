@@ -1,10 +1,12 @@
 <template>
   <div class="container-fluid">
   <div class="container p-0" id="home-box">
-    <div class="row box-btn m-0">
-      <div class="col-12 p-0 mb-5">
+    <div class="row box-text text-center m-0">
+      <div class="col-12 p-0">
         <h1 class="gradient-text">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
       </div>
+    </div>
+    <div class="row box-btn m-0">
       <div class="col-12 mb-3 p-0">
         <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-light"></i>
       </div>
@@ -34,18 +36,25 @@
     animation-timing-function: linear;
     animation-direction: alternate;  
   }
+  #home-box .box-text{
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+  }
   #home-box .box-btn{
     width: 100%;
     position: absolute;
-    top: 70%;
+    top: 90%;
     left: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -90%);
     text-align: center;
   }
   .open-box{
     animation: backgroundColorChange 5s infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
-    width: 70%;
+    /* width: 20%; */
   }
 </style>

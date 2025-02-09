@@ -24,7 +24,7 @@
     </div>
     <!--Content-->
     <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container w-50 pt-3">
+        <div class="container w-50 pt-5">
             <div class="row text-center" 
             data-aos="fade-down" 
             data-aos-anchor-placement="center-center"
@@ -256,7 +256,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 p-5">
                 <div class="col-12 text-center">
                     <h3>កម្រងរូបភាព</h3>
                 </div>
@@ -290,11 +290,11 @@
     <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px' }">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-12 mb-4">
+                <div class="col-md-12 col-12 mb-3">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
                 </div>
             </div>
-            <div class="footer-copyright">
+            <div class="footer-copyright pb-4">
                 <span>ChanVannak</span>
                 <p>0962665240</p>
             </div>
@@ -316,15 +316,6 @@
     }
     #font-size .vertical-slider{
         transform: rotate(-90deg);
-    }
-    #font-size .vertical-text,.minus-text{
-        font-family: 'Popin';
-        font-size: 20px;
-        margin-bottom: 10px;
-        /* transform: rotate(90deg); */
-    }
-    #font-size .minus-text{
-        top: 0;
     }
     .container-fluid{
         background-color:#000000a9;
