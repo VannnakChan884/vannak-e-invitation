@@ -433,7 +433,7 @@
     #audio{
         position: absolute;
         width: 50px !important;
-        height: 150px !important;
+        height: 120px !important;
         bottom: 7%;
         display: flex;
         justify-content: center;
@@ -443,6 +443,9 @@
         right: 5%;
         transform: translate(-5%, -7%);
         z-index: 10;
+    }
+    #audio:hover{
+        background-color: red;
     }
     #audio .box-icon{
         padding: 10px;
