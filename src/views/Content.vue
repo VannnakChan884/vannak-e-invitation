@@ -260,7 +260,7 @@
                 <div class="col-12 text-center">
                     <h3>កម្រងរូបភាព</h3>
                 </div>
-                <div v-for="(gallery, i) in galleries" :key="i" class="col-lg-4 col-md-4 col-sm-4 col-4 mt-4">
+                <div v-for="(gallery, i) in galleries" :key="i" class="col-lg-2 col-md-3 col-sm-6 col-6 mt-4">
                     <div class="gallery">
                         <img :src="gallery" alt="Image Gallery">
                     </div>
