@@ -36,6 +36,13 @@ p {
   margin: 0;
   padding: 0;
 }
+@keyframes colorChange {
+  0% { color: pink; }
+  35% { color: lightyellow; }
+  55% { color: orange; }
+  75% { color: orangered; }
+  100% { color: red; }
+}
 @keyframes borderColorChange {
   0% { border: 2px solid pink; }
   35% { border: 2px solid lightyellow; }
@@ -115,7 +122,7 @@ p {
   #event .mb-2, .mt-4{
     margin-bottom: 0px !important;
   }
-  .container-fluid{
+  .content{
     padding: 20px 0 !important;
   }
   .container{

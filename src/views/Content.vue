@@ -23,7 +23,7 @@
         <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
     <!--Content-->
-    <div class="container-fluid" :style="{ fontSize: fontSize + 'px' }">
+    <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
         <div class="container w-50 pt-3">
             <div class="row text-center" 
             data-aos="fade-down" 
@@ -38,18 +38,18 @@
             <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <div class="col-lg-6 col-md-6 bg-danger" id="box">
                     <div class="row bg-success">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 p-0">
                             <h6>លោក</h6>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-sm-9">
+                        <div class="col-lg-9 col-md-9 col-sm-9 p-0">
                             <h4>ម៉ឹក ចាន់វាសនា</h4>
                         </div>
                     </div>
                     <div class="row bg-warning">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-3 col-md-3 col-sm-3 p-0">
                             <h6>លោកស្រី</h6>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-sm-9">
+                        <div class="col-lg-9 col-md-9 col-sm-9 p-0">
                             <h4>លឹម សុន</h4>
                         </div>
                     </div>
@@ -331,13 +331,6 @@
         padding: 50px;
         position: relative;
         transition: font-size 0.3s ease;
-    }
-    @keyframes colorChange {
-        0% { color: pink; }
-        35% { color: lightyellow; }
-        55% { color: orange; }
-        75% { color: orangered; }
-        100% { color: red; }
     }
     .gradient-text{
         animation: colorChange 3s infinite;
