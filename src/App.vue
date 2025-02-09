@@ -7,16 +7,6 @@ const router = useRouter();
 const isPlaying = ref(false);
 const audio = new Audio('/Noly_Record.mp3');
 
-// Ensure autoplay works on mobile after user interaction
-const enableAutoplay = () => {
-  audio.play().then(() => {
-    isPlaying.value = true;
-  }).catch(() => {
-    console.warn("Autoplay blocked. User needs to click to play audio.");
-    isPlaying.value = false; // Prevent console errors
-  });
-};
-
 // Function to toggle audio
 const toggleAudio = () => {
   if (isPlaying.value) {
@@ -37,12 +27,6 @@ onMounted(() => {
   });
 });
 
-// Run autoplay after the first user click
-onMounted(() => {
-  document.addEventListener("click", enableAutoplay, { once: true }); // Mobile browsers need user interaction
-});
-
-// Expose isPlaying & toggleAudio for all pages
 
 onMounted(() => {
   if (window.location.pathname !== '/') {

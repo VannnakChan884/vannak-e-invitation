@@ -1,17 +1,12 @@
 <script setup>
-  import { ref, onMounted, onUnmounted, defineProps } from 'vue';
-
-  const props = defineProps(['isPlaying']);
-
-  // Function to change icon when user navigates
-  const goToContent = () => {
-    if (props.isPlaying) {
-      localStorage.setItem('audioPlaying', 'true'); // Store audio state
-    }
-  };
+  import { ref, onMounted, onUnmounted } from 'vue';
 
   // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
   const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
+
+  // For testing style wedding date
+  // const weddingDate = new Date(new Date().getTime() + 20000); // 30 seconds from now
+
 
   // Reactive countdown object
   const countdown = ref({
@@ -20,6 +15,9 @@
     minutes: 0,
     seconds: 0
   });
+
+  // Track if the event has started
+  const eventStarted = ref(false);
 
   let timerInterval = null;
 
@@ -34,8 +32,9 @@
       countdown.value.minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
       countdown.value.seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
     } else {
-      // If the countdown is over
-      countdown.value = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      // Show event message when the countdown reaches 0
+      eventStarted.value = true;
+      clearInterval(timerInterval);
     }
   };
 
@@ -59,11 +58,15 @@
         <!-- Countdown Timer -->
         <div class="countdown">
           <p class="text-warning fs-3 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
-          <div class="timer">
+          <div v-if="!eventStarted" class="timer">
             <span>{{ countdown.days }} ថ្ងៃ</span>
             <span>{{ countdown.hours }} ម៉ោង</span>
             <span>{{ countdown.minutes }} នាទី</span>
             <span>{{ countdown.seconds }} វិនាទី</span>
+          </div>
+          <!-- Show event message when countdown reaches 0 -->
+          <div v-else class="event-message">
+            <p>🎊 កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍កំពុងចាប់ផ្ដើម! 🎉</p>
           </div>
         </div>
       </div>
@@ -131,6 +134,23 @@
     padding: 10px 15px;
     border-radius: 5px;
     font-family: "Kantumruy Pro";
+  }
+
+  /* Event Message with Beating Effect */
+  .event-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    animation: beat 1s infinite alternate ease-in-out;
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
   }
 
   #home-box .box-btn{
