@@ -96,7 +96,7 @@
   }
   /* Countdown Timer */
   .countdown {
-    background: #e3f2fd; /* Light sky blue background */
+    background:rgba(227, 242, 253, 0.14); /* Light sky blue background */
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
