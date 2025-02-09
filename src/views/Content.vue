@@ -1,18 +1,30 @@
 <script setup>
     import { galleries } from '../router/store.js';
-    import { ref } from 'vue';
+    import { ref,onMounted } from 'vue';
 
-    const audio = ref(null);
     const isPlaying = ref(false);
+    const audio = new Audio('/audio/Noly_Record.mp3'); // Replace with your actual audio file
 
-    const toggleMusic = () => {
-    if (isPlaying.value) {
-        audio.value.pause();
-    } else {
-        audio.value.play();
+    // Restore audio state when page loads
+    onMounted(() => {
+    if (localStorage.getItem('audioPlaying') === 'true') {
+        audio.play();
+        isPlaying.value = true;
     }
-    isPlaying.value = !isPlaying.value;
-    };
+    });
+
+    // Function to toggle audio manually
+    const toggleAudio = () => {
+    if (isPlaying.value) {
+        audio.pause();
+        isPlaying.value = false;
+        localStorage.setItem('audioPlaying', 'false');
+    } else {
+        audio.play();
+        isPlaying.value = true;
+        localStorage.setItem('audioPlaying', 'true');
+    }
+    }
 
     // Default font size
     const fontSize = ref(18);
@@ -271,10 +283,8 @@
     <div class="container" id="audio">
         <div class="row m-0 text-center">
             <div class="col-12 p-0 mb-3 box-icon">
-                <audio controls autoplay loop ref="audio">
-                    <source src="/audio/Noly Record.mp3" type="audio/mp3">
-                </audio>
-                <div class="music-icon" @click="toggleMusic">
+                <!-- Audio Icon -->
+                <div @click="toggleAudio" class="music-icon">
                     <span v-if="isPlaying"><i class="fa-solid fa-headphones fa-beat fa-lg"></i></span>
                     <span v-else><i class="fa-solid fa-music fa-lg"></i></span>
                 </div>
@@ -374,6 +384,7 @@
         width: 30px;
     }
     button{
+        background: transparent;
         box-shadow: 1px 1px 10px 0 #fff;
     }
     button:hover .text-warning{
@@ -417,9 +428,6 @@
     }
     .gallery:hover img{
         transform: scale(1.1);
-    }
-    audio{
-        display: none;
     }
     #audio{
         position: absolute;

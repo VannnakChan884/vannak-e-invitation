@@ -1,5 +1,14 @@
 <script setup>
-  import { ref, onMounted, onUnmounted } from 'vue';
+  import { ref, onMounted, onUnmounted, defineProps } from 'vue';
+
+  const props = defineProps(['isPlaying']);
+
+  // Function to change icon when user navigates
+  const goToContent = () => {
+    if (props.isPlaying) {
+      localStorage.setItem('audioPlaying', 'true'); // Store audio state
+    }
+  };
 
   // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
   const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
@@ -44,8 +53,8 @@
 <template>
   <div class="container-fluid">
   <div class="container p-0" id="home-box">
-    <div class="row pt-5">
-      <div class="col-12 p-0 home-container">
+    <div class="row pt-5 m-0">
+      <div class="col-lg-12 col-md-12 col-sm-12 p-0 home-container">
         <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
         <!-- Countdown Timer -->
         <div class="countdown">
@@ -64,11 +73,12 @@
         <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-light"></i>
       </div>
       <div class="col-12 p-0">
-        <button type="button" class="btn btn-outline-warning btn-lg open-box">
-          <a @click="$router.push('/invitation')" class="text-warning text-decoration-none">
-          បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
-          </a>
-        </button>
+        <!-- Button to go to Content Page -->
+        <router-link to="/invitation">
+          <button class="btn btn-outline-warning btn-lg open-box" @click="goToContent">
+            បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -120,7 +130,9 @@
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
+    font-family: "Kantumruy Pro";
   }
+
   #home-box .box-btn{
     width: 100%;
     position: absolute;
