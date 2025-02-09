@@ -256,8 +256,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 p-5">
-                <div class="col-12 text-center">
+            <div class="row mt-5">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                     <h3>កម្រងរូបភាព</h3>
                 </div>
                 <div v-for="(gallery, i) in galleries" :key="i" class="col-lg-2 col-md-3 col-sm-6 col-6 mt-4">
@@ -290,7 +290,7 @@
     <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px' }">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-12 mb-3">
+                <div class="col-md-12 col-12 mb-2 mt-5">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
                 </div>
             </div>

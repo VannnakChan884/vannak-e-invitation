@@ -23,7 +23,7 @@ h1,h2,h3,h5,h4,h6{
   font-family: 'Moulpali';
 }
 
-p,table,a{
+p,table,a,span{
   font-family: "Kantumruy Pro";
 }
 
@@ -154,6 +154,9 @@ p {
   }
   .location-img{
     height: 250px !important;
+  }
+  #audio{
+    background-color: red;
   }
   #audio,#font-size{
     position: fixed !important;
