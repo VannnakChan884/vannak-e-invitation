@@ -45,7 +45,7 @@
   <div class="container-fluid">
   <div class="container p-0" id="home-box">
     <div class="row pt-5">
-      <div class="col-12 home-container">
+      <div class="col-12 p-0 home-container">
         <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
         <!-- Countdown Timer -->
         <div class="countdown">
@@ -77,6 +77,8 @@
 <style>
   .container-fluid{
     padding: 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   #home-box{
     width: 100% !important;
