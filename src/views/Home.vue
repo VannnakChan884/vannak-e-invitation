@@ -38,6 +38,21 @@
     }
   };
 
+  // Function to add event to Google Calendar
+  const addToGoogleCalendar = () => {
+    const eventTitle = "កម្មវិធីមង្គលការរបស់ វណ្ណៈ & ស្រីណយ!";
+    const eventDetails = "ប្រព្រឹត្តទៅនៅ ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥ ត្រូវនឹង ថ្ងៃ២រោច ខែផល្គុន ឆ្នាំរោង ឆស័ក ពុទ្ធសករាជ ២៥៦៨ វេលាម៉ោង ៥:០០នាទីល្ងាច នៅ គេហដ្ឋានខាងស្រី ស្ថិតនៅ ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត!";
+    const location = "https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16"; // Change to your actual wedding location
+
+    // Format date for Google Calendar
+    const startDate = "20250315T063000"; // YYYYMMDDTHHMMSS
+    const endDate = "20250315T113000"; // End time (adjust as needed)
+
+    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+    window.open(googleCalendarUrl, "_blank");
+  };
+
   // Start countdown when component is mounted
   onMounted(() => {
     updateCountdown(); // Initial call
@@ -57,7 +72,18 @@
         <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
         <!-- Countdown Timer -->
         <div class="countdown">
-          <p class="text-warning fs-3 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+          <div class="row">
+            <div class="col-7">
+              <p class="text-warning fs-5 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+            </div>
+            <div class="col-5">
+              <!-- Add to Google Calendar Button -->
+              <button @click="addToGoogleCalendar" class="btn btn-success btn-sm google-calendar-btn p-0">
+                <p><i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> ចំណាំក្នុងប្រតិទិន</p>
+              </button>
+            </div>
+          </div>
+          
           <div v-if="!eventStarted" class="timer">
             <span>{{ countdown.days }} ថ្ងៃ</span>
             <span>{{ countdown.hours }} ម៉ោង</span>
@@ -151,6 +177,19 @@
     100% {
       transform: scale(1.2);
     }
+  }
+
+  /* Google Calendar Button */
+  .google-calendar-btn {
+    width: 130px;
+    font-size: 16px;
+    padding: 5px 5px !important;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .google-calendar-btn:hover {
+    background: #2c8c41;
   }
 
   #home-box .box-btn{
