@@ -168,7 +168,6 @@
                     <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
-            
             <div class="row text-center" 
             data-aos="fade-down" 
             data-aos-anchor-placement="center-center"
@@ -274,8 +273,17 @@
             </div>
             <div class="row mt-5" id="date-time">
                 <div class="col-12 text-center">
-                    <h3>និងពិសារភោជនាអាហារដែលនឹងប្រព្រឹត្តទៅ</h3>
-                    <p class="mt-2 lh-lg text-modify">
+                    <h3 data-aos="fade-up"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="500">
+                        និងពិសារភោជនាអាហារដែលនឹងប្រព្រឹត្តទៅ
+                    </h3>
+                    <p class="mt-2 lh-lg text-modify"
+                        data-aos="fade-up"
+                        data-aos-anchor="#example-anchor"
+                        data-aos-offset="500"
+                        data-aos-duration="500">
                     នៅ ថ្ងៃ<span class="text-warning fs-5 fw-medium">សៅរ៍ </span>
                     ទី<span class="text-warning fs-5 fw-medium">១៥ </span>
                     ខែ<span class="text-warning fs-5 fw-medium">មីនា </span>
@@ -295,13 +303,18 @@
             </div>
             <div class="row mt-5" id="event">
                 <div class="col-12 text-center mb-2">
-                        <h3>កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍</h3>
+                    <h3 data-aos="fade-up"
+                        data-aos-duration="500">
+                    កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍
+                    </h3>
                 </div>
-                <div class="col-12 text-center">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6" 
+                        data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                         <h4 class="mt-4 text-decoration-underline">កម្មវិធីថ្ងៃទី១</h4>
-                        <h5 class="mt-4 text-start">ថ្ងៃសុក្រ ទី១៤ ខែមីនា ឆ្នាំ២០២៥</h5>
-                </div>
-                <div class="col-12">
+                        <h5 class="mt-4 text-start text-warning">ថ្ងៃសុក្រ ទី១៤ ខែមីនា ឆ្នាំ២០២៥</h5>
                         <table class="table table-hover">
                             <tr>
                                 <td>ម៉ោង ០២ៈ០០ រសៀល</td>
@@ -324,12 +337,13 @@
                                 <td>អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារពេលល្ងាច</td>
                             </tr>
                         </table>
-                </div>
-                <div class="col-12 text-center mb-2">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6" 
+                        data-aos="fade-left"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
                         <h4 class="mt-4 text-decoration-underline">កម្មវិធីថ្ងៃទី២</h4>
-                        <h5 class="mt-4 text-start">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</h5>
-                </div>
-                <div class="col-12">
+                        <h5 class="mt-4 text-start text-warning">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</h5>
                         <table class="table table-hover">
                             <tr>
                                 <td>ម៉ោង ០៦ៈ៣០ ព្រឹក</td>
@@ -372,12 +386,19 @@
                                 <td>ទទួលភ្ញៀវកិត្តិយសពិសាភោជនាហារ</td>
                             </tr>
                         </table>
+                    </div>
                 </div>
             </div>
             <div class="row mt-5" id="thank-sorry">
                 <div class="col-12">
-                    <h3 class="text-center">សេចក្ដីថ្លែងអំណរគុណ និងសូមអភ័យទោស</h3>
-                    <p class="lh-lg mt-2 text-modify">យើងខ្ញុំ សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅ ចំពោះការអញ្ចើញចូលរួមជាភ្ញៀវកិត្តិយស
+                    <h3 class="text-center"
+                        data-aos="fade-up"
+                        data-aos-duration="500">
+                        សេចក្ដីថ្លែងអំណរគុណ និងសូមអភ័យទោស
+                    </h3>
+                    <p class="lh-lg mt-2 text-modify"
+                        data-aos="fade-up"
+                        data-aos-duration="600">យើងខ្ញុំ សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅ ចំពោះការអញ្ចើញចូលរួមជាភ្ញៀវកិត្តិយស
                     ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍កូនប្រុស-ស្រីរបស់យើងខ្ញុំ និងសូមខន្តី អភ័យទោស
                     ដោយពុំបានជួបអញ្ចើញដោយផ្ទាល់ និងការសរសេរឈ្មោះរបស់ភ្ញៀវកិត្តិយសមិនបានត្រឹមត្រូវ ឬពុំបានសរសេរឈ្មោះ។
                     សូមជូនពរសម្តេចទ្រង់ ឯកឧត្តម លោកជំទាវ​ អ្នកឧកញ៉ា ​ឧកញ៉ា លោក លោក​ស្រី អ្នកនាងកញ្ញា
@@ -386,23 +407,27 @@
             </div>
             <div class="row mt-5" id="location">
                 <div class="col-12 text-center">
-                    <h3>ទីតាំងកម្មវិធី</h3>
-                    <p class="lh-lg mt-2">ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត</p>
+                    <h3 data-aos="fade-up" data-aos-duration="500">ទីតាំងកម្មវិធី</h3>
+                    <p class="lh-lg mt-2" data-aos="fade-up" data-aos-duration="600">ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត</p>
                 </div>
                 <div class="col-12 text-center mt-3">
-                    <button type="button" class="btn btn-outline-warning btn-lg">
+                    <button type="button" class="btn btn-outline-warning btn-lg" data-aos="fade-up" data-aos-duration="650">
                         <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" class="text-warning text-decoration-none">
                         ទីតាំងផ្ទះការ <i class="fa-solid fa-map fa-bounce fa-lg"></i>
                         </a>
                     </button>
-                    <div class="location-img mt-5">
+                    <div class="location-img mt-5" data-aos="fade-up" data-aos-duration="700">
                         <img src="/images/location.jpg" class="img-fluid" alt="Location">
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                    <h3>កម្រងរូបភាព</h3>
+                    <h3 data-aos="fade-right"
+                        data-aos-offset="300"
+                        data-aos-easing="ease-in-sine">
+                        កម្រងរូបភាព
+                    </h3>
                 </div>
                 <div v-for="(gallery, i) in galleries" :key="i" class="col-lg-2 col-md-3 col-sm-6 col-6 mt-4">
                     <div class="gallery">
@@ -510,7 +535,7 @@
     }
     .container-fluid{
         background-color:#000000a9;
-        padding: 50px;
+        /* padding: 50px; */
         position: relative;
         transition: font-size 0.3s ease;
     }
@@ -573,7 +598,7 @@
     }
     .location-img{
         width: 100%;
-        height: 600px;
+        height: auto;
         border: 1px solid#fff;
         box-shadow: 1px 1px 10px 0#ffffff4b;
         border-radius: 10px;
@@ -581,6 +606,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 5px;
     }
     .location-img img{
         width: 98%;
