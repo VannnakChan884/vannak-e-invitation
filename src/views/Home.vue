@@ -65,8 +65,54 @@
   });
 </script>
 <template>
-
     <div class="container-fluid" id="home-box">
+      <div class="row" id="mobile-screen">
+        <div class="col-lg-7 col-md-7 col-sm-7 side-img"></div> 
+        <div class="col-lg-5 col-md-5 col-sm-5 side-content">
+          <div class="row m-0 text-center">
+            <!-- Countdown Timer -->
+            <div class="col-12 countdown">
+              <div class="row">
+                <div class="col-12 home-container p-0 mb-4">
+                  <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                  <p class="text-danger fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                  <!-- Add to Google Calendar Button -->
+                  <button @click="addToGoogleCalendar" class="btn btn-success btn-sm google-calendar-btn p-0">
+                    <p><i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> ចំណាំក្នុងប្រតិទិន</p>
+                  </button>
+                </div>
+              </div>
+              <div v-if="!eventStarted" class="d-flex justify-content-center gap-2 timer">
+                <span>{{ countdown.days }} ថ្ងៃ</span>
+                <span>{{ countdown.hours }} ម៉ោង</span>
+                <span>{{ countdown.minutes }} នាទី</span>
+                <span>{{ countdown.seconds }} វិនាទី</span>
+              </div>
+              <!-- Show event message when countdown reaches 0 -->
+              <div v-else class="event-message">
+                <p>🎊 កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍កំពុងចាប់ផ្ដើម! 🎉</p>
+              </div>
+            </div>
+            <div class="col-12 mb-3 mt-5 p-0">
+              <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-warning"></i>
+            </div>
+            <div class="col-12 p-0">
+              <!-- Button to go to Content Page -->
+              <router-link to="/invitation">
+                <button class="btn btn-outline-warning btn-lg open-box" @click="goToContent">
+                  បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
+                </button>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row box-btn m-0">
         <!-- Countdown Timer -->
         <div class="col-12 countdown">
@@ -112,6 +158,34 @@
     </div>
 </template>
 <style scoped>
+  .side-img{
+    height: 100vh;
+    background-image: url("/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+  }
+  .side-content{
+    height: 100vh;
+    animation: backgroundColorChange 5s infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    padding: 20px !important;
+    
+  }
+  
+  .side-content .countdown{
+    padding: 50px 20px !important;
+  }
+
+  .side-content .timer span {
+    animation: backgroundColorChange 5s infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 50px;
+  }
   #home-box{
     width: 100% !important;
     height: 100vh;
@@ -130,7 +204,7 @@
   }
   /* Countdown Timer */
   .countdown {
-    background:rgba(227, 242, 253, 0.658); /* Light sky blue background */
+    background:#ffffff60;
     padding: 20px;
     border-radius: 10px;
   }
@@ -186,6 +260,7 @@
     transform: translate(-50%, -90%);
     text-align: center;
     margin: auto;
+    display: none;
   }
   .open-box{
     animation: backgroundColorChange 5s infinite;

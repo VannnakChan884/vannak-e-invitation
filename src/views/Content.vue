@@ -538,6 +538,8 @@
         /* padding: 50px; */
         position: relative;
         transition: font-size 0.3s ease;
+        overflow: hidden;
+        box-sizing: border-box;
     }
     .gradient-text{
         animation: colorChange 3s infinite;
