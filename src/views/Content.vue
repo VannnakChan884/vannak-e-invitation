@@ -12,6 +12,7 @@
         // Delay showing the event message by 3 seconds
         setTimeout(() => {
             showPopup.value = true; // Show message
+            disableScroll(); // Stop scrolling when message appears
             startCountdown(); // Start countdown after message appears
         }, 3000); // 3 seconds delay before showing message
     });
@@ -26,6 +27,7 @@
             if (countdown.value === 0) {
                 clearInterval(interval); // Stop the countdown when it reaches 0
                 showPopup.value = false; // Hide the event message
+                enableScroll(); // Allow scrolling again
 
                 // Wait for the event message to disappear, then play the audio
                 nextTick(() => {
@@ -36,15 +38,16 @@
             }
         }, 1000); // Update countdown every second
     };
-        // setTimeout(() => {
-        //     showPopup.value = false;
-        //     // Wait for the event message to disappear, then play audio
-        //     nextTick(() => {
-        //         if (audioPlayer.value) {
-        //             playAudio();
-        //         }
-        //     });
-        // }, audioDelay); // 10000 ms = 10 seconds
+    
+    // Disable scrolling
+    const disableScroll = () => {
+        document.body.style.overflow = "hidden";
+    };
+
+    // Enable scrolling
+    const enableScroll = () => {
+        document.body.style.overflow = "";
+    };
 
     // Function to play audio (ensuring it's not played before popup closes)
     const playAudio = () => {
