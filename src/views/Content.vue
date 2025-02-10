@@ -1,23 +1,50 @@
 <script setup>
     import { galleries } from '../router/store.js';
-    import { ref } from 'vue';
+    import { ref,onMounted,nextTick } from 'vue';
 
     // Show popup when the page starts
-    const showPopup = ref(true);
+    const showPopup = ref(false);
     const audioPlayer = ref(null);
     const isPlaying = ref(false);
-    const audioDelay = 200; //0.2 seconds delay
+    const countdown = ref(10); // Countdown starts from 20
 
-    // Function to close the popup  and start audio after a delay
-    const closePopup = () => {
-        if (showPopup.value){
-            showPopup.value = false;
-            // Delay audio start after popup closes
-            setTimeout(() => {
-                playAudio();
-            }, audioDelay);
-        }
+    onMounted(() => {
+        // Delay showing the event message by 3 seconds
+        setTimeout(() => {
+            showPopup.value = true; // Show message
+            startCountdown(); // Start countdown after message appears
+        }, 3000); // 3 seconds delay before showing message
+    });
+
+    // Function to close the message after a delay (10 seconds)
+    const startCountdown = () => {
+        const interval = setInterval(() => {
+            if (countdown.value > 0) {
+                countdown.value -= 1; // Decrease the countdown by 1 each second
+            }
+            
+            if (countdown.value === 0) {
+                clearInterval(interval); // Stop the countdown when it reaches 0
+                showPopup.value = false; // Hide the event message
+
+                // Wait for the event message to disappear, then play the audio
+                nextTick(() => {
+                    if (audioPlayer.value) {
+                        playAudio(); // Start playing the audio
+                    }
+                });
+            }
+        }, 1000); // Update countdown every second
     };
+        // setTimeout(() => {
+        //     showPopup.value = false;
+        //     // Wait for the event message to disappear, then play audio
+        //     nextTick(() => {
+        //         if (audioPlayer.value) {
+        //             playAudio();
+        //         }
+        //     });
+        // }, audioDelay); // 10000 ms = 10 seconds
 
     // Function to play audio (ensuring it's not played before popup closes)
     const playAudio = () => {
@@ -56,8 +83,8 @@
         <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
     <!--Content-->
-    <div class="container-fluid" id="content" @click="closePopup" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container pt-5" id="container-box">
+    <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
+        <div class="container pt-5" id="container-box" @click="closePopup">
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-warning">
@@ -65,6 +92,7 @@
                     <h2>🙏 Apology to Our Guests</h2>
                     <p>We sincerely apologize that we couldn't invite you personally. Please accept this as our heartfelt invitation to celebrate our special day together.</p>
                     <p>We are so happy to have you here!</p>
+                    <span>{{ countdown }} seconds</span>
                 </div>
             </div>
             
