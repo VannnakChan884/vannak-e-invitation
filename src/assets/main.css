@@ -188,4 +188,7 @@ p {
   #home-box #mobile-screen{
     display: none !important;
   }
+  #parents #box{
+    width: 50% !important;
+  }
 }

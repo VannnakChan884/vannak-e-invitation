@@ -178,40 +178,25 @@
                     <span class="fs-2">The Wedding Day</span>
                 </div>
             </div>
-            <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                <div class="col-lg-6 col-md-6" id="box">
+            <div class="row mt-5" id="parents"
+            data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="col-lg-6 col-md-6 col-sm-6" id="box">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 p-0">
-                            <h6>លោក</h6>
+                        <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                            <h4><span>លោក</span> ម៉ឹក ចាន់វាសនា</h4>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-sm-9 p-0">
-                            <h4>ម៉ឹក ចាន់វាសនា</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 p-0">
-                            <h6>លោកស្រី</h6>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-sm-9 p-0">
-                            <h4>លឹម សុន</h4>
+                        <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                            <h4><span>លោកស្រី</span> លឹម សុន</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6" id="box">
+                <div class="col-lg-6 col-md-6 col-sm-6" id="box">
                     <div class="row text-end">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h6>លោក</h6>
+                        <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                            <h4><span>លោក</span> ឃិន ណី</h4>
                         </div >
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h4>ឃិន ណី</h4>
-                        </div >
-                    </div >
-                    <div class="row text-end">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h6>លោកស្រី</h6>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <h4>ឡុង វណ្ណនាង</h4>
+                        <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                            <h4><span>លោកស្រី</span> ឡុង វណ្ណនាង</h4>
                         </div >
                     </div >
                 </div>
@@ -447,6 +432,7 @@
                 </div>
                 <!-- Audio Element -->
                 <audio ref="audioPlayer" loop>
+                    <source src="/audio/Glomyy_ព្រេងកថា_Fairytales_feat_KZ.mp3" type="audio/mp3">
                     <source src="/audio/Noly_Record.mp3" type="audio/mp3">
                 </audio>
             </div>
@@ -464,14 +450,14 @@
         </div>
     </div>
     <!--Footer-->
-    <div class="container-fluid text-center" :style="{ fontSize: fontSize + 'px' }">
+    <div class="container-fluid text-center pb-5" :style="{ fontSize: fontSize + 'px' }">
         <div class="container">
-            <div class="row">
+            <div class="row" data-aos="fade-up" data-aos-duration="500">
                 <div class="col-md-12 col-12 mb-2 mt-5">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
                 </div>
             </div>
-            <div class="footer-copyright pb-4">
+            <div class="footer-copyright pb-4" data-aos="fade-up" data-aos-duration="600">
                 <span>ChanVannak</span>
                 <p>0962665240</p>
             </div>
