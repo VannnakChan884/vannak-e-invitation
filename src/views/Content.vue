@@ -2,29 +2,44 @@
     import { galleries } from '../router/store.js';
     import { ref,onMounted } from 'vue';
 
+    // Show popup when the page starts
+    const showPopup = ref(true);
     const isPlaying = ref(false);
-    const audio = new Audio('/audio/Noly_Record.mp3'); // Replace with your actual audio file
+    const audio = new Audio('/audio/Noly_Record.mp3'); // Actual audio file
 
-    // Restore audio state when page loads
-    onMounted(() => {
-    if (localStorage.getItem('audioPlaying') === 'true') {
-        audio.play();
-        isPlaying.value = true;
-    }
-    });
+    // Function to close the popup
+    const closePopup = () => {
+        if (showPopup.value){
+            showPopup.value = false;
+
+            // Play audio after popup closes
+            setTimeout(() => {
+                if (localStorage.getItem('audioPlaying') === 'true') {
+                    audio.play();
+                    isPlaying.value = true;
+                }
+            }, 500);
+        }
+    };
 
     // Function to toggle audio manually
     const toggleAudio = () => {
-    if (isPlaying.value) {
-        audio.pause();
-        isPlaying.value = false;
-        localStorage.setItem('audioPlaying', 'false');
-    } else {
-        audio.play();
-        isPlaying.value = true;
-        localStorage.setItem('audioPlaying', 'true');
+        if (isPlaying.value) {
+            audio.pause();
+            isPlaying.value = false;
+            localStorage.setItem('audioPlaying', 'false');
+        } else {
+            audio.play();
+            isPlaying.value = true;
+            localStorage.setItem('audioPlaying', 'true');
+        }
     }
-    }
+
+    // Restore audio state when page loads
+    onMounted(() => {
+        // Auto-show the popup when the content page starts
+        showPopup.value = true;
+    });
 
     // Default font size
     const fontSize = ref(18);
@@ -35,8 +50,18 @@
         <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
     <!--Content-->
-    <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
+    <div class="container-fluid" id="content" @click="closePopup" :style="{ fontSize: fontSize + 'px' }">
         <div class="container w-50 pt-5">
+            <!-- Apology Popup -->
+            <div v-if="showPopup" class="popup-overlay">
+                <div class="popup-box text-warning">
+                    <h1>🎉 Welcome to Our Wedding Celebration</h1>
+                    <h2>🙏 Apology to Our Guests</h2>
+                    <p>We sincerely apologize that we couldn't invite you personally. Please accept this as our heartfelt invitation to celebrate our special day together.</p>
+                    <p>We are so happy to have you here!</p>
+                </div>
+            </div>
+            
             <div class="row text-center" 
             data-aos="fade-down" 
             data-aos-anchor-placement="center-center"
@@ -311,7 +336,32 @@
         </div>
     </div >
 </template>
-<style>
+<style scoped>
+    /* Styling for popup overlay */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    /* Styling for popup box */
+    .popup-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80%;
+        max-width: 700px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
     #font-size{
         width: 100px;
         height: 150px;
@@ -441,7 +491,7 @@
         overflow: hidden;
         right: 5%;
         transform: translate(-5%, -7%);
-        z-index: 10;
+        z-index: 9;
     }
     #audio:hover{
         background-color: red;
