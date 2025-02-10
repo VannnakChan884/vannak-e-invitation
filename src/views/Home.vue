@@ -112,7 +112,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
   .container-fluid{
     padding: 0 !important;
     overflow: hidden;
