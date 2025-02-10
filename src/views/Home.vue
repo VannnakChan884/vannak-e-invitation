@@ -65,21 +65,21 @@
   });
 </script>
 <template>
-  <div class="container-fluid">
-    <div class="container" id="home-box">
-      <div class="row pt-5 m-0">
-        <div class="col-lg-12 col-md-12 col-sm-12 p-0 home-container">
-          <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
-        </div>
-      </div>
+
+    <div class="container-fluid" id="home-box">
       <div class="row box-btn m-0">
         <!-- Countdown Timer -->
         <div class="col-12 countdown">
+          <div class="row">
+            <div class="col-12 home-container p-0 mb-5">
+              <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
+            </div>
+          </div>
           <div class="row mb-4">
-            <div class="col-7">
+            <div class="col-lg-7 col-md-7 col-sm-7">
               <p class="text-warning fs-5 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
             </div>
-            <div class="col-5">
+            <div class="col-lg-5 col-md-5 col-sm-5">
               <!-- Add to Google Calendar Button -->
               <button @click="addToGoogleCalendar" class="btn btn-success btn-sm google-calendar-btn p-0">
                 <p><i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> ចំណាំក្នុងប្រតិទិន</p>
@@ -110,18 +110,12 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <style scoped>
-  .container-fluid{
-    padding: 0 !important;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
   #home-box{
     width: 100% !important;
     height: 100vh;
-    /* background-color:rgba(0, 0, 0, 0.3) !important; */
+    background-color:rgba(0, 0, 0, 0.3) !important;
     overflow: hidden;
     position: relative;
   }
@@ -133,12 +127,11 @@
   /* Home page styling */
   .home-container {
     text-align: center;
-    padding: 20px;
   }
   /* Countdown Timer */
   .countdown {
     background:rgba(227, 242, 253, 0.658); /* Light sky blue background */
-    padding: 20px;
+    padding: 12px;
     border-radius: 10px;
   }
 

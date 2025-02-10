@@ -4,41 +4,59 @@
 
     // Show popup when the page starts
     const showPopup = ref(true);
+    const audioPlayer = ref(null);
     const isPlaying = ref(false);
-    const audio = new Audio('/audio/Noly_Record.mp3'); // Actual audio file
+    const audioDelay = 2000; //2 seconds delay
 
-    // Function to close the popup
+    // Function to close the popup  and start audio after a delay
     const closePopup = () => {
         if (showPopup.value){
             showPopup.value = false;
-
-            // Play audio after popup closes
+            // Delay audio start after popup closes
             setTimeout(() => {
-                if (localStorage.getItem('audioPlaying') === 'true') {
-                    audio.play();
-                    isPlaying.value = true;
-                }
-            }, 300);
+                playAudio();
+            }, audioDelay);
         }
     };
 
     // Function to toggle audio manually
     const toggleAudio = () => {
-        if (isPlaying.value) {
-            audio.pause();
-            isPlaying.value = false;
-            localStorage.setItem('audioPlaying', 'false');
-        } else {
-            audio.play();
-            isPlaying.value = true;
-            localStorage.setItem('audioPlaying', 'true');
+        if (audioPlayer.value) {
+            if (isPlaying.value) {
+                audioPlayer.value.pause();
+            } else {
+                playAudio();
+            }
+            isPlaying.value = !isPlaying.value;
+            localStorage.setItem("audioPlaying", isPlaying.value);
         }
-    }
+    };
+
+    // Function to play audio
+    const playAudio = () => {
+        if (audioPlayer.value) {
+            const playPromise = audioPlayer.value.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        isPlaying.value = true;
+                        localStorage.setItem("audioPlaying", "true");
+                    })
+                    .catch((error) => console.log("Autoplay blocked:", error));
+            }
+        }
+    };
 
     // Restore audio state when page loads
     onMounted(() => {
         // Auto-show the popup when the content page starts
         showPopup.value = true;
+        const savedAudioState = localStorage.getItem("audioPlaying");
+        if (savedAudioState === "true") {
+            setTimeout(() => {
+                playAudio();
+            }, audioDelay);
+        }
     });
 
     // Default font size
@@ -51,7 +69,7 @@
     </div>
     <!--Content-->
     <div class="container-fluid" id="content" @click="closePopup" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container w-50 pt-5">
+        <div class="container pt-5" id="container-box">
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-warning">
@@ -309,10 +327,14 @@
         <div class="row m-0 text-center">
             <div class="col-12 p-0 mb-3 box-icon">
                 <!-- Audio Icon -->
-                <div @click="toggleAudio" class="music-icon">
+                <div class="audio-control" @click.stop="toggleAudio">
                     <span v-if="isPlaying"><i class="fa-solid fa-headphones fa-beat fa-lg"></i></span>
                     <span v-else><i class="fa-solid fa-music fa-lg"></i></span>
                 </div>
+                <!-- Audio Element -->
+                <audio ref="audioPlayer" loop>
+                    <source src="/audio/Noly_Record.mp3" type="audio/mp3">
+                </audio>
             </div>
             <div class="col-12 p-0 box-icon">
                 <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn rounded-5 text-warning text-decoration-none">
@@ -336,7 +358,7 @@
         </div>
     </div >
 </template>
-<style scoped>
+<style>
     /* Styling for popup overlay */
     .popup-overlay {
         position: fixed;
@@ -499,7 +521,7 @@
     #audio .box-icon{
         padding: 10px;
     }
-    #audio .music-icon{
+    #audio .audio-control{
         padding: 6px 12px;
         cursor: pointer;
     }
