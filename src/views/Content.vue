@@ -1,12 +1,12 @@
 <script setup>
     import { galleries } from '../router/store.js';
-    import { ref,onMounted } from 'vue';
+    import { ref } from 'vue';
 
     // Show popup when the page starts
     const showPopup = ref(true);
     const audioPlayer = ref(null);
     const isPlaying = ref(false);
-    const audioDelay = 2000; //2 seconds delay
+    const audioDelay = 200; //0.2 seconds delay
 
     // Function to close the popup  and start audio after a delay
     const closePopup = () => {
@@ -19,45 +19,33 @@
         }
     };
 
-    // Function to toggle audio manually
-    const toggleAudio = () => {
-        if (audioPlayer.value) {
-            if (isPlaying.value) {
-                audioPlayer.value.pause();
-            } else {
-                playAudio();
-            }
-            isPlaying.value = !isPlaying.value;
-            localStorage.setItem("audioPlaying", isPlaying.value);
-        }
-    };
-
-    // Function to play audio
+    // Function to play audio (ensuring it's not played before popup closes)
     const playAudio = () => {
-        if (audioPlayer.value) {
+        if (!showPopup.value && audioPlayer.value) {
             const playPromise = audioPlayer.value.play();
             if (playPromise !== undefined) {
                 playPromise
-                    .then(() => {
-                        isPlaying.value = true;
-                        localStorage.setItem("audioPlaying", "true");
-                    })
-                    .catch((error) => console.log("Autoplay blocked:", error));
+                .then(() => {
+                    isPlaying.value = true;
+                    localStorage.setItem("audioPlaying", "true");
+                })
+                .catch((error) => console.log("Autoplay blocked:", error));
             }
         }
     };
 
-    // Restore audio state when page loads
-    onMounted(() => {
-        // Auto-show the popup when the content page starts
-        showPopup.value = true;
-        const savedAudioState = localStorage.getItem("audioPlaying");
-        if (savedAudioState === "true") {
-            setTimeout(() => {
-                playAudio();
-            }, audioDelay);
+    // Function to toggle audio manually
+    const toggleAudio = () => {
+    if (audioPlayer.value) {
+        if (isPlaying.value) {
+            audioPlayer.value.pause();
+            isPlaying.value = false;
+        } else {
+            playAudio();
         }
-    });
+        localStorage.setItem("audioPlaying", isPlaying.value);
+    }
+    };
 
     // Default font size
     const fontSize = ref(18);
