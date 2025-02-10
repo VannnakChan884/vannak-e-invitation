@@ -18,7 +18,7 @@
                     audio.play();
                     isPlaying.value = true;
                 }
-            }, 500);
+            }, 300);
         }
     };
 
