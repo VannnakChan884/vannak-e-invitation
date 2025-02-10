@@ -45,8 +45,8 @@
     const location = "https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16"; // Actual wedding location
 
     // Format date for Google Calendar
-    const startDate = "20250315T063000"; // YYYYMMDDTHHMMSS
-    const endDate = "20250315T113000"; // End time (adjust as needed) 2025/03/15 11:30 PM
+    const startDate = "20250314T140000"; // YYYYMMDDTHHMMSS
+    const endDate = "20250315T233000"; // End time (adjust as needed) 2025/03/15 11:30 PM
 
     const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
 
