@@ -35,7 +35,6 @@ onMounted(() => {
     router.push('/'); // Redirect to Home if refreshed
   }
 });
-
 </script>
 <template>
   <RouterView />

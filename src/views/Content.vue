@@ -1,12 +1,12 @@
 <script setup>
     import { galleries } from '../router/store.js';
-    import { ref,onMounted,nextTick } from 'vue';
+    import { ref,onMounted,nextTick, onUnmounted } from 'vue';
 
     // Show popup when the page starts
     const showPopup = ref(false);
     const audioPlayer = ref(null);
     const isPlaying = ref(true); // Track audio state (playing or paused)
-    const countdown = ref(10); // Countdown starts from 20
+    const countdownMessage = ref(10); // Countdown starts from 20
 
     onMounted(() => {
         // Start playing audio when content page loads
@@ -19,16 +19,19 @@
             disableScroll(); // Stop scrolling when message appears
             startCountdown(); // Start countdown after message appears
         }, 3000); // 3 seconds delay before showing message
+
+        updateCountdown(); // Initial call
+        timerInterval = setInterval(updateCountdown, 1000); // Update every second
     });
 
     // Function to close the message after a delay (10 seconds)
     const startCountdown = () => {
         const interval = setInterval(() => {
-            if (countdown.value > 0) {
-                countdown.value -= 1; // Decrease the countdown by 1 each second
+            if (countdownMessage.value > 0) {
+                countdownMessage.value -= 1; // Decrease the countdown by 1 each second
             }
             
-            if (countdown.value === 0) {
+            if (countdownMessage.value === 0) {
                 clearInterval(interval); // Stop the countdown when it reaches 0
                 showPopup.value = false; // Hide the event message
                 enableScroll(); // Allow scrolling again
@@ -76,16 +79,73 @@
 
     // Function to toggle audio manually
     const toggleAudio = () => {
-    if (audioPlayer.value) {
-        if (isPlaying.value) {
-            audioPlayer.value.pause();
-            isPlaying.value = false;
-        } else {
-            playAudio();
+        if (audioPlayer.value) {
+            if (isPlaying.value) {
+                audioPlayer.value.pause();
+                isPlaying.value = false;
+            } else {
+                playAudio();
+            }
+            localStorage.setItem("audioPlaying", isPlaying.value);
         }
-        localStorage.setItem("audioPlaying", isPlaying.value);
+    };
+
+    // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
+    const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
+
+    // For testing style wedding date
+    // const weddingDate = new Date(new Date().getTime() + 20000); // 30 seconds from now
+
+
+    // Reactive countdown object
+    const countdown = ref({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+    });
+
+    // Track if the event has started
+    const eventStarted = ref(false);
+
+    let timerInterval = null;
+
+    // Function to update the countdown
+    const updateCountdown = () => {
+    const now = new Date().getTime();
+    const timeDifference = weddingDate - now;
+
+    if (timeDifference > 0) {
+        countdown.value.days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        countdown.value.hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        countdown.value.minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        countdown.value.seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    } else {
+        // Show event message when the countdown reaches 0
+        eventStarted.value = true;
+        clearInterval(timerInterval);
     }
     };
+
+    // Function to add event to Google Calendar
+    const addToGoogleCalendar = () => {
+    const eventTitle = "កម្មវិធីមង្គលការរបស់ វណ្ណៈ & ស្រីណយ!";
+    const eventDetails = "ប្រព្រឹត្តទៅនៅ ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥ ត្រូវនឹង ថ្ងៃ២រោច ខែផល្គុន ឆ្នាំរោង ឆស័ក ពុទ្ធសករាជ ២៥៦៨ វេលាម៉ោង ៥:០០នាទីល្ងាច នៅ គេហដ្ឋានខាងស្រី ស្ថិតនៅ ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត!";
+    const location = "https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16"; // Actual wedding location
+
+    // Format date for Google Calendar
+    const startDate = "20250314T140000"; // YYYYMMDDTHHMMSS
+    const endDate = "20250315T233000"; // End time (adjust as needed) 2025/03/15 11:30 PM
+
+    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
+
+    window.open(googleCalendarUrl, "_blank");
+    };
+
+    // Clear the interval when the component is unmounted
+    onUnmounted(() => {
+    clearInterval(timerInterval);
+    });
 
     // Default font size
     const fontSize = ref(18);
@@ -105,7 +165,7 @@
                     <h2>🙏 Apology to Our Guests</h2>
                     <p>We sincerely apologize that we couldn't invite you personally. Please accept this as our heartfelt invitation to celebrate our special day together.</p>
                     <p>We are so happy to have you here!</p>
-                    <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdown }}</p>
+                    <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
             
@@ -365,9 +425,15 @@
                     <source src="/audio/Noly_Record.mp3" type="audio/mp3">
                 </audio>
             </div>
+            <div class="col-12 p-0 mb-3 box-icon">
+                <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn rounded-5 text-decoration-none">
+                    <i class="fa-solid fa-map fa-lg text-light"></i>
+                </a>
+            </div>
             <div class="col-12 p-0 box-icon">
-                <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn rounded-5 text-warning text-decoration-none">
-                    <i class="fa-solid fa-map fa-bounce fa-lg text-light"></i>
+                <!-- Add to Google Calendar Button -->
+                <a class="btn btn-sm google-calendar-btn p-0 text-decoration-none" @click="addToGoogleCalendar">
+                    <i class="fa-solid fa-calendar fa-lg"></i>
                 </a>
             </div>
         </div>
@@ -547,7 +613,7 @@
     #audio{
         position: absolute;
         width: 50px !important;
-        height: 120px !important;
+        height: 180px !important;
         bottom: 7%;
         display: flex;
         justify-content: center;
@@ -563,6 +629,10 @@
     }
     #audio .box-icon{
         padding: 10px;
+    }
+    #audio .box-icon i{
+        font-size: 25px;
+        color: #fff;
     }
     #audio .audio-control{
         padding: 6px 12px;
