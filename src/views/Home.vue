@@ -66,13 +66,16 @@
 </script>
 <template>
   <div class="container-fluid">
-  <div class="container p-0" id="home-box">
-    <div class="row pt-5 m-0">
-      <div class="col-lg-12 col-md-12 col-sm-12 p-0 home-container">
-        <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
+    <div class="container" id="home-box">
+      <div class="row pt-5 m-0">
+        <div class="col-lg-12 col-md-12 col-sm-12 p-0 home-container">
+          <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
+        </div>
+      </div>
+      <div class="row box-btn m-0">
         <!-- Countdown Timer -->
-        <div class="countdown">
-          <div class="row">
+        <div class="col-12 countdown">
+          <div class="row mb-4">
             <div class="col-7">
               <p class="text-warning fs-5 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
             </div>
@@ -83,8 +86,7 @@
               </button>
             </div>
           </div>
-          
-          <div v-if="!eventStarted" class="timer">
+          <div v-if="!eventStarted" class="d-flex justify-content-around gap-2 timer">
             <span>{{ countdown.days }} ថ្ងៃ</span>
             <span>{{ countdown.hours }} ម៉ោង</span>
             <span>{{ countdown.minutes }} នាទី</span>
@@ -95,22 +97,19 @@
             <p>🎊 កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍កំពុងចាប់ផ្ដើម! 🎉</p>
           </div>
         </div>
+        <div class="col-12 mb-3 mt-5 p-0">
+          <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-warning"></i>
+        </div>
+        <div class="col-12 p-0">
+          <!-- Button to go to Content Page -->
+          <router-link to="/invitation">
+            <button class="btn btn-outline-warning btn-lg open-box" @click="goToContent">
+              បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
+            </button>
+          </router-link>
+        </div>
       </div>
     </div>
-    <div class="row box-btn m-0">
-      <div class="col-12 mb-3 p-0">
-        <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-light"></i>
-      </div>
-      <div class="col-12 p-0">
-        <!-- Button to go to Content Page -->
-        <router-link to="/invitation">
-          <button class="btn btn-outline-warning btn-lg open-box" @click="goToContent">
-            បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
-          </button>
-        </router-link>
-      </div>
-    </div>
-  </div>
   </div>
 </template>
 <style>
@@ -123,6 +122,7 @@
     width: 100% !important;
     height: 100vh;
     /* background-color:rgba(0, 0, 0, 0.3) !important; */
+    overflow: hidden;
     position: relative;
   }
   .gradient-text{
@@ -137,29 +137,23 @@
   }
   /* Countdown Timer */
   .countdown {
-    background:rgba(227, 242, 253, 0.14); /* Light sky blue background */
+    background:rgba(227, 242, 253, 0.658); /* Light sky blue background */
     padding: 20px;
     border-radius: 10px;
-    display: inline-block;
-    margin-top: 20px;
   }
 
   .timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
     font-size: 20px;
     font-weight: bold;
+    font-family: "Kantumruy Pro";
   }
 
   .timer span {
     animation: backgroundColorChange 5s infinite;
     animation-timing-function: linear;
     animation-direction: alternate;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-family: "Kantumruy Pro";
+    padding: 20px;
+    border-radius: 15px;
   }
 
   /* Event Message with Beating Effect */
@@ -193,12 +187,12 @@
   }
 
   #home-box .box-btn{
-    width: 100%;
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -90%);
     text-align: center;
+    margin: auto;
   }
   .open-box{
     animation: backgroundColorChange 5s infinite;
