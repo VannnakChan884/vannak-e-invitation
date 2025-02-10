@@ -71,13 +71,13 @@
         <!-- Countdown Timer -->
         <div class="col-12 countdown">
           <div class="row">
-            <div class="col-12 home-container p-0 mb-5">
+            <div class="col-12 home-container p-0 mb-3">
               <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col-lg-7 col-md-7 col-sm-7">
-              <p class="text-warning fs-5 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+              <p class="text-danger fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5">
               <!-- Add to Google Calendar Button -->
@@ -131,7 +131,7 @@
   /* Countdown Timer */
   .countdown {
     background:rgba(227, 242, 253, 0.658); /* Light sky blue background */
-    padding: 12px;
+    padding: 20px;
     border-radius: 10px;
   }
 

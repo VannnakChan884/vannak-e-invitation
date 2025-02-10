@@ -105,7 +105,7 @@ p {
 /* Extra small devices(portrait phones, less than 576px) */
 @media (min-width: 344px) and (max-width: 575.98px) {
   h1{
-    font-size: 25px;
+    font-size: 20px;
   }
   h3{
     font-size: 16px !important;
