@@ -5,13 +5,17 @@
     // Show popup when the page starts
     const showPopup = ref(false);
     const audioPlayer = ref(null);
-    const isPlaying = ref(false);
+    const isPlaying = ref(true); // Track audio state (playing or paused)
     const countdown = ref(10); // Countdown starts from 20
 
     onMounted(() => {
+        // Start playing audio when content page loads
+        playAudio();
+
         // Delay showing the event message by 3 seconds
         setTimeout(() => {
             showPopup.value = true; // Show message
+            pauseAudio();// Pause audio when message appears
             disableScroll(); // Stop scrolling when message appears
             startCountdown(); // Start countdown after message appears
         }, 3000); // 3 seconds delay before showing message
@@ -29,11 +33,9 @@
                 showPopup.value = false; // Hide the event message
                 enableScroll(); // Allow scrolling again
 
-                // Wait for the event message to disappear, then play the audio
+                // Wait for the event message to disappear, then resume audio
                 nextTick(() => {
-                    if (audioPlayer.value) {
-                        playAudio(); // Start playing the audio
-                    }
+                    playAudio();
                 });
             }
         }, 1000); // Update countdown every second
@@ -56,11 +58,19 @@
             if (playPromise !== undefined) {
                 playPromise
                 .then(() => {
-                    isPlaying.value = true;
+                    isPlaying.value = true;// Update icon to 🔊
                     localStorage.setItem("audioPlaying", "true");
                 })
                 .catch((error) => console.log("Autoplay blocked:", error));
             }
+        }
+    };
+
+    // Pause audio function
+    const pauseAudio = () => {
+        if (audioPlayer.value) {
+            audioPlayer.value.pause();
+            isPlaying.value = false;// Update icon to 🔇
         }
     };
 
