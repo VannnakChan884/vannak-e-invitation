@@ -97,7 +97,7 @@
     </div>
     <!--Content-->
     <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container pt-5" id="container-box" @click="closePopup">
+        <div class="container pt-5" id="container-box">
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-warning">
@@ -105,7 +105,7 @@
                     <h2>🙏 Apology to Our Guests</h2>
                     <p>We sincerely apologize that we couldn't invite you personally. Please accept this as our heartfelt invitation to celebrate our special day together.</p>
                     <p>We are so happy to have you here!</p>
-                    <span>{{ countdown }} seconds</span>
+                    <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdown }}</p>
                 </div>
             </div>
             
@@ -120,8 +120,8 @@
                 </div>
             </div>
             <div class="row mt-5" id="parents" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                <div class="col-lg-6 col-md-6 bg-danger" id="box">
-                    <div class="row bg-success">
+                <div class="col-lg-6 col-md-6" id="box">
+                    <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 p-0">
                             <h6>លោក</h6>
                         </div>
@@ -129,7 +129,7 @@
                             <h4>ម៉ឹក ចាន់វាសនា</h4>
                         </div>
                     </div>
-                    <div class="row bg-warning">
+                    <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 p-0">
                             <h6>លោកស្រី</h6>
                         </div>
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 bg-info" id="box">
+                <div class="col-lg-6 col-md-6" id="box">
                     <div class="row text-end">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <h6>លោក</h6>
@@ -411,6 +411,20 @@
         width: 80%;
         max-width: 700px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    .message-countdown{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -15%;
+        right: -3.5%;
+        transform: translate(3.5%, 15%);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #font-size{
