@@ -6,7 +6,6 @@ self.addEventListener("install", (event) => {
       // Cache all necessary files dynamically
       return cache.addAll([
         "/",
-        "/index.html",
         "/manifest.json",
         "/icons/icon-192x192.png",
         "/icons/icon-512x512.png",
@@ -24,7 +23,7 @@ self.addEventListener("fetch", (event) => {
       return (
         response ||
         fetch(event.request).catch(() => {
-          return caches.match("/index.html"); // Fallback to index.html if offline
+          return caches.match("/"); // Fallback to index.html if offline
         })
       );
     })
