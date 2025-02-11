@@ -41,7 +41,7 @@ p {
   35% { color: lightyellow; }
   55% { color: orange; }
   75% { color: orangered; }
-  100% { color: red; }
+  100% { color: #ff0000; }
 }
 @keyframes borderColorChange {
   0% { border: 2px solid pink; }
