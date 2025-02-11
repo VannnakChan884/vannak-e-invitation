@@ -58,6 +58,17 @@ p {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width:1200px) {
+  #audio{
+    width: 70px !important;
+    height: 200px !important;
+    background-color: #ff000083;
+  }
+  #audio .box-icon{
+    padding: 13px;
+  }
+  #audio .box-icon i{
+    font-size: 27px;
+  }
   #audio,#font-size{
     position: fixed !important;
   }
@@ -70,6 +81,9 @@ p {
   }
   .container{
     width: 100% !important;
+  }
+  #audio{
+    background-color: #ff000083;
   }
   #audio,#font-size{
     position: fixed !important;
@@ -90,6 +104,9 @@ p {
   .container{
     width: 100% !important;
   }
+  #audio{
+    background-color: #ff000083;
+  }
   #audio,#font-size{
     position: fixed !important;
   }
@@ -108,6 +125,9 @@ p {
   }
   .container{
     width: 100% !important;
+  }
+  #audio{
+    background-color: #ff000083;
   }
   #audio,#font-size{
     position: fixed !important;
@@ -181,6 +201,7 @@ p {
   }
   #font-size{
     width: 60px !important;
+    display: none !important;
   }
   #home-box .box-btn{
     display: block !important;

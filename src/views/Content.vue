@@ -422,11 +422,11 @@
             </div>
         </div>
     </div>
-    <div class="container" id="audio">
+    <div class="container p-0" id="audio">
         <div class="row m-0 text-center">
-            <div class="col-12 p-0 mb-3 box-icon">
+            <div class="col-12 box-icon">
                 <!-- Audio Icon -->
-                <div class="audio-control" @click.stop="toggleAudio">
+                <div class="audio-control p-0" @click.stop="toggleAudio">
                     <span v-if="isPlaying"><i class="fa-solid fa-headphones fa-beat fa-lg"></i></span>
                     <span v-else><i class="fa-solid fa-music fa-lg"></i></span>
                 </div>
@@ -436,12 +436,12 @@
                     <source src="/audio/Noly_Record.mp3" type="audio/mp3">
                 </audio>
             </div>
-            <div class="col-12 p-0 mb-3 box-icon">
-                <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn rounded-5 text-decoration-none">
+            <div class="col-12 box-icon">
+                <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn p-0 rounded-circle text-decoration-none">
                     <i class="fa-solid fa-map fa-lg text-light"></i>
                 </a>
             </div>
-            <div class="col-12 p-0 box-icon">
+            <div class="col-12 box-icon">
                 <!-- Add to Google Calendar Button -->
                 <a class="btn btn-sm google-calendar-btn p-0 text-decoration-none" @click="addToGoogleCalendar">
                     <i class="fa-solid fa-calendar fa-lg"></i>
@@ -632,26 +632,26 @@
     }
     #audio{
         position: absolute;
-        width: 50px !important;
-        height: 180px !important;
-        bottom: 7%;
+        width: 40px !important;
+        height: 130px !important;
+        top: 95%;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 50px;
         overflow: hidden;
-        right: 5%;
-        transform: translate(-5%, -7%);
+        left: 93%;
+        transform: translate(-93%, -95%);
         z-index: 9;
     }
     #audio:hover{
         background-color: red;
     }
     #audio .box-icon{
-        padding: 10px;
+        padding: 3px;
     }
     #audio .box-icon i{
-        font-size: 25px;
+        font-size: 20px;
         color: #fff;
     }
     #audio .audio-control{
