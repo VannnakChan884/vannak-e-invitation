@@ -229,6 +229,9 @@
     </div>
 </template>
 <style scoped>
+  #mobile-screen{
+    display: none;
+  }
   .side-img{
     height: 100vh;
     background-image: url("/background.jpg");
@@ -338,7 +341,6 @@
     transform: translate(-50%, -90%);
     text-align: center;
     margin: auto;
-    display: none;
   }
   .open-box{
     animation: backgroundColorChange 5s infinite;
