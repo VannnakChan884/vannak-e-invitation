@@ -1,5 +1,74 @@
 <script setup>
+  import Shepherd from 'shepherd.js';
   import { ref, onMounted, onUnmounted } from 'vue';
+
+  const startTour = () => {
+    const tour = new Shepherd.Tour({
+      useModalOverlay: true,
+      defaultStepOptions: {
+        classes: 'custom-tour', // Custom class for styling
+        scrollTo: true,
+      },
+    });
+
+    tour.addStep({
+      id: 'welcome',
+      title: '🎉 Welcome!',
+      text: 'This is my digital wedding invitation tour!',
+      attachTo: { 
+        element: '.event-date', 
+        on: 'left' 
+      },
+      buttons: [{ 
+        text: 'Next', 
+        action: tour.next 
+      }],
+    });
+
+    tour.addStep({
+      id: 'Add-to-Google-Caledar',
+      title: '📅 កត់ទុកក្នុងប្រតិទិន',
+      text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
+      attachTo: {
+        element: '.google-calendar-btn',
+        on: 'right'
+      },
+      buttons: [
+        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+        { text: 'បន្ទាប់', action: tour.next }
+      ]
+    });
+
+    tour.addStep({
+      id: 'countdown',
+      title: '⏳ ពេលវេលារាប់ថយក្រោយ',
+      text: 'នេះបង្ហាញពីពេលវេលានៅសល់រហូតដល់ថ្ងៃរៀបការ!',
+      attachTo: { 
+        element: '.timer', 
+        on: 'left' 
+      },
+      buttons: [
+        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+        { text: 'បន្ទាប់', action: tour.next }
+      ],
+    });
+
+    tour.addStep({
+      id: 'rsvp',
+      title: '💌 អ្នកត្រូវបានអញ្ចើញ',
+      text: 'សូមធ្វើការបើកសំបុត្ររបស់អ្នកនៅទីនេះ!',
+      attachTo: { 
+        element: '.open-box', 
+        on: 'left' 
+      },
+      buttons: [
+        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+        { text: 'បិទ', action: tour.complete },
+      ],
+    });
+
+    tour.start();
+  };
 
   // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
   const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
@@ -55,6 +124,7 @@
 
   // Start countdown when component is mounted
   onMounted(() => {
+    setTimeout(startTour, 2000); // Start the tour after 2 seconds
     updateCountdown(); // Initial call
     timerInterval = setInterval(updateCountdown, 1000); // Update every second
   });
@@ -128,7 +198,8 @@
             <div class="col-lg-5 col-md-5 col-sm-5">
               <!-- Add to Google Calendar Button -->
               <button @click="addToGoogleCalendar" class="btn btn-success btn-sm google-calendar-btn p-0">
-                <p><i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> ចំណាំក្នុងប្រតិទិន</p>
+                <i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> 
+                ចំណាំក្នុងប្រតិទិន
               </button>
             </div>
           </div>

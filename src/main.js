@@ -5,6 +5,7 @@ import './assets/main.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './registerServiceWorker'
+import 'shepherd.js/dist/css/shepherd.css'
 
 const app = createApp(App)
 
