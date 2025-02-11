@@ -3,7 +3,6 @@ export const galleries = ref([
     "/gallery/15.jpg",
     "/gallery/17.jpg",
     "/gallery/18.jpg",
-    "/gallery/20.jpg",
     "/gallery/21.jpg",
     "/gallery/22.jpg",
     "/gallery/23.jpg",

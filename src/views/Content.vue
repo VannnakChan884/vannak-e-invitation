@@ -157,7 +157,7 @@
     </div>
     <!--Content-->
     <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container pt-5" id="container-box">
+        <div class="container pt-4" id="container-box">
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-dark">
@@ -165,7 +165,7 @@
                     <p class="text-apology">យើងខ្ញុំសុំអភ័យទោសដោយស្មោះ ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
                         សូមទទួលយកការអញ្ជើញដ៏ស្មោះស្ម័គ្ររបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
                         រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នកនៅថ្ងៃពិធីមង្គលរបស់យើងខ្ញុំ!</p>
-                    <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
+                    <p class="bg-danger message-countdown rounded-circle fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
             <div class="row text-center" 
@@ -181,7 +181,7 @@
             <div class="row mt-5" id="parents"
             data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <div class="col-lg-6 col-md-6 col-sm-6" id="box">
-                    <div class="row">
+                    <div class="row m-0">
                         <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                             <h4><span>លោក</span> ម៉ឹក ចាន់វាសនា</h4>
                         </div>
@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6" id="box">
-                    <div class="row text-end">
+                    <div class="row text-end m-0">
                         <div class="col-lg-12 col-md-12 col-sm-12 p-0">
                             <h4><span>លោក</span> ឃិន ណី</h4>
                         </div >
@@ -501,9 +501,9 @@
         position: absolute;
         width: 50px;
         height: 50px;
-        top: -15%;
+        top: -13%;
         right: -3.5%;
-        transform: translate(3.5%, 15%);
+        transform: translate(3.5%, 13%);
         text-align: center;
         display: flex;
         justify-content: center;
