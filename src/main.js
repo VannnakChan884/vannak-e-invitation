@@ -15,12 +15,23 @@ app.mount('#app')
 AOS.init({})
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-        console.log('Service Worker registered with scope: ', registration.scope);
-      }).catch((error) => {
-        console.log('Service Worker registration failed: ', error);
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.error('Service Worker registration failed:', error);
       });
-    });
-  }
+  });
+}
+
+window.addEventListener('offline', () => {
+  alert("You are now offline. Please check your internet connection.");
+});
+
+window.addEventListener('online', () => {
+  alert("You are back online.");
+});
+
   
