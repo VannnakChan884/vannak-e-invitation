@@ -246,7 +246,7 @@
   }
   
   .side-content .countdown{
-    padding: 50px 20px !important;
+    padding: 20px !important;
   }
 
   .side-content .countdown .row .home-container .gradient-text{

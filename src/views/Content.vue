@@ -432,6 +432,7 @@
                 </div>
                 <!-- Audio Element -->
                 <audio ref="audioPlayer" loop>
+                    <source src="/audio/NolyRecord_ ប្រណម_feat_KanhchnaChet.mp3" type="audio/mp3">
                     <source src="/audio/Glomyy_ព្រេងកថា_Fairytales_feat_KZ.mp3" type="audio/mp3">
                     <source src="/audio/Noly_Record.mp3" type="audio/mp3">
                 </audio>
