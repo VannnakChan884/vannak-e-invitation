@@ -174,7 +174,7 @@ p {
     height: 250px !important;
   }
   #audio{
-    background-color: red;
+    background-color: #ff000083;
   }
   #audio,#font-size{
     position: fixed !important;
@@ -190,5 +190,10 @@ p {
   }
   #parents #box{
     width: 50% !important;
+  }
+
+  /* Styling for popup overlay */
+  .popup-overlay .popup-box {
+      width: 90% !important;
   }
 }

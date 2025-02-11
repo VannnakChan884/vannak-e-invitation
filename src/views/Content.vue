@@ -160,11 +160,11 @@
         <div class="container pt-5" id="container-box">
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
-                <div class="popup-box text-warning">
-                    <h1>🎉 Welcome to Our Wedding Celebration</h1>
-                    <h2>🙏 Apology to Our Guests</h2>
-                    <p>We sincerely apologize that we couldn't invite you personally. Please accept this as our heartfelt invitation to celebrate our special day together.</p>
-                    <p>We are so happy to have you here!</p>
+                <div class="popup-box text-dark">
+                    <h2 class="mb-3">សារសុំការអធ្យាស្រ័យ🙏</h2>
+                    <p class="text-apology">យើងខ្ញុំសុំអភ័យទោសដោយស្មោះ ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
+                        សូមទទួលយកការអញ្ជើញដ៏ស្មោះស្ម័គ្ររបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
+                        រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នកនៅថ្ងៃពិធីមង្គលរបស់យើងខ្ញុំ!</p>
                     <p class="bg-danger message-countdown rounded-5 fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
@@ -486,9 +486,15 @@
         border-radius: 10px;
         text-align: center;
         width: 80%;
-        max-width: 700px;
+        max-width: 900px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         position: relative;
+    }
+
+    .popup-overlay .popup-box .text-apology{
+        text-align: justify;
+        /* text-align-last: center; */
+        font-size: 18px !important;
     }
 
     .message-countdown{
