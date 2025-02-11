@@ -12,12 +12,41 @@
     });
 
     tour.addStep({
+      id: 'Introduction',
+      title: '🔔 សេចក្ដីណែនាំ!',
+      text: `<h4 class="mb-3 text-decoration-underline">How to install on mobile:</h4>
+        <div class="row"> 
+          <ul class="col-12 mb-3">
+            <li><h5>📱 For Android (Chrome)</h5></li>
+            <li>1. Open this link <a href="https://vannak.netlify.app/">RSVP</a></li>
+            <li>2. In Chrome click on (⋮)</li>
+            <li>3. Select "Add to Home screen.</li>
+            <li>4. Click Install, it's like an app on their home screen!</li>
+          </ul>
+          <ul class="col-12">
+            <li><h5>📱 For iPhone (Safari)</h5></li>
+            <li>1. Open this link <a href="https://vannak.netlify.app/">RSVP</a></li>
+            <li>2. In Safari click the Share button (⬆️).</li>
+            <li>3. Scroll down and select Add to Home Screen.</li>
+            <li>4. Click Add, It will appear like an app on the home screen!</li>
+          </ul>
+        </div>`,
+      attachTo: {
+        element: '#home-box',
+      },
+      buttons: [
+        {text: 'Next', 
+        action: tour.next }
+      ],
+    });
+
+    tour.addStep({
       id: 'welcome',
-      title: '🎉 Welcome!',
-      text: 'This is my digital wedding invitation tour!',
+      title: '🎉 ថ្ងៃពិធីមង្គល',
+      text: 'នេះជាថ្ងៃទីពីរនៃពិធីមង្គលការរបស់យើងខ្ញុំ (ថ្ងៃស៊ី)។',
       attachTo: { 
-        element: '.event-date', 
-        on: 'left' 
+        element: '.wedding-date', 
+        on: 'top' 
       },
       buttons: [{ 
         text: 'Next', 
@@ -41,11 +70,11 @@
 
     tour.addStep({
       id: 'countdown',
-      title: '⏳ ពេលវេលារាប់ថយក្រោយ',
+      title: '⏳ រាប់ថយក្រោយ',
       text: 'នេះបង្ហាញពីពេលវេលានៅសល់រហូតដល់ថ្ងៃរៀបការ!',
       attachTo: { 
         element: '.timer', 
-        on: 'left' 
+        on: 'bottom' 
       },
       buttons: [
         { text: 'ត្រឡប់ក្រោយ', action: tour.back },
@@ -59,7 +88,7 @@
       text: 'សូមធ្វើការបើកសំបុត្ររបស់អ្នកនៅទីនេះ!',
       attachTo: { 
         element: '.open-box', 
-        on: 'left' 
+        on: 'top' 
       },
       buttons: [
         { text: 'ត្រឡប់ក្រោយ', action: tour.back },
@@ -149,7 +178,7 @@
               </div>
               <div class="row mb-4">
                 <div class="col-lg-7 col-md-7 col-sm-7">
-                  <p class="text-danger fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+                  <p class="text-danger fw-bold fs-4 pb-3 wedding-date">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
                   <!-- Add to Google Calendar Button -->
@@ -183,55 +212,9 @@
           </div>
         </div>
       </div>
-      <div class="row box-btn m-0">
-        <!-- Countdown Timer -->
-        <div class="col-12 countdown">
-          <div class="row">
-            <div class="col-12 home-container p-0 mb-3">
-              <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
-            </div>
-          </div>
-          <div class="row mb-4">
-            <div class="col-lg-7 col-md-7 col-sm-7">
-              <p class="text-danger fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-              <!-- Add to Google Calendar Button -->
-              <button @click="addToGoogleCalendar" class="btn btn-success btn-sm google-calendar-btn p-0">
-                <i class="fa-solid fa-calendar fa-beat-fade fa-xs"></i> 
-                ចំណាំក្នុងប្រតិទិន
-              </button>
-            </div>
-          </div>
-          <div v-if="!eventStarted" class="d-flex justify-content-around gap-2 timer">
-            <span>{{ countdown.days }} ថ្ងៃ</span>
-            <span>{{ countdown.hours }} ម៉ោង</span>
-            <span>{{ countdown.minutes }} នាទី</span>
-            <span>{{ countdown.seconds }} វិនាទី</span>
-          </div>
-          <!-- Show event message when countdown reaches 0 -->
-          <div v-else class="event-message">
-            <p>🎊 កម្មវិធីសិរីសួស្ដីអាពាហ៍ពិពាហ៍កំពុងចាប់ផ្ដើម! 🎉</p>
-          </div>
-        </div>
-        <div class="col-12 mb-3 mt-5 p-0">
-          <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-warning"></i>
-        </div>
-        <div class="col-12 p-0">
-          <!-- Button to go to Content Page -->
-          <router-link to="/invitation">
-            <button class="btn btn-outline-warning btn-lg open-box" @click="goToContent">
-              បើកសំបុត្រ <i class="fa-solid fa-envelope fa-shake fa-lg"></i>
-            </button>
-          </router-link>
-        </div>
-      </div>
     </div>
 </template>
 <style scoped>
-  #mobile-screen{
-    display: none;
-  }
   .side-img{
     height: 100vh;
     background-image: url("/background.jpg");

@@ -1,6 +1,61 @@
 <script setup>
+    import Shepherd from 'shepherd.js';
     import { galleries } from '../router/store.js';
     import { ref,onMounted,nextTick, onUnmounted } from 'vue';
+
+    const startTour = () => {
+        const tour = new Shepherd.Tour({
+        useModalOverlay: true,
+        defaultStepOptions: {
+            classes: 'custom-tour', // Custom class for styling
+            scrollTo: true,
+        },
+        });
+
+        tour.addStep({
+        id: 'audio-control',
+        title: '🎵 ចម្រៀង',
+        text: '⏯️ Play or Pause បទចម្រៀង។',
+        attachTo: { 
+            element: '.audio-control', 
+            on: 'left' 
+        },
+        buttons: [{ 
+            text: 'Next', 
+            action: tour.next 
+        }],
+        });
+
+        tour.addStep({
+        id: 'location',
+        title: '📍 ទីតាំងផ្ទះការ',
+        text: 'សូមធ្វើការចុចបើកមើលទីតាំងផ្ទះការតាម Google Maps! 🗺️',
+        attachTo: { 
+            element: '#maps-icon', 
+            on: 'left' 
+        },
+        buttons: [
+            { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+            { text: 'បន្ទាប់', action: tour.next }
+        ],
+        });
+
+        tour.addStep({
+        id: 'Add-to-Google-Caledar',
+        title: '📅 កត់ទុកក្នុងប្រតិទិន',
+        text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
+        attachTo: {
+            element: '.google-calendar-btn',
+            on: 'left'
+        },
+        buttons: [
+            { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+            { text: 'បន្ទាប់', action: tour.complete }
+        ]
+        });
+
+        tour.start();
+    };
 
     // Show popup when the page starts
     const showPopup = ref(false);
@@ -42,6 +97,7 @@
                 });
             }
         }, 1000); // Update countdown every second
+        setTimeout(startTour, 12000); // Start the tour after 12 seconds
     };
     
     // Disable scrolling
@@ -99,10 +155,10 @@
 
     // Reactive countdown object
     const countdown = ref({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
     });
 
     // Track if the event has started
@@ -437,7 +493,7 @@
                     <source src="/audio/Noly_Record.mp3" type="audio/mp3">
                 </audio>
             </div>
-            <div class="col-12 box-icon">
+            <div class="col-12 box-icon" id="maps-icon">
                 <a href="https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16" target="_blank" class="btn p-0 rounded-circle text-decoration-none">
                     <i class="fa-solid fa-map fa-lg text-light"></i>
                 </a>
