@@ -224,11 +224,37 @@ p {
     display: none !important;
   }
   #home-box .box-btn{
-    display: block !important;
+    /* display: block !important; */
   }
   #home-box #mobile-screen{
-    display: none !important;
+    /* display: none !important; */
+
   }
+
+  #home-box #mobile-screen .side-img{
+    position: relative !important;
+  }
+
+  #home-box #mobile-screen .side-content{
+    position: absolute !important;
+    background-color: #00000044 !important;
+  }
+
+  #home-box #mobile-screen .side-content .row .countdown{
+    margin-top: 80%;
+  }
+
+  #home-box #mobile-screen .side-content .timer{
+    gap: 5px !important;
+  }
+
+  #home-box #mobile-screen .side-content .timer span{
+    width: 100% !important;
+    height: auto !important;
+    font-size: 18px !important;
+    padding: 12px !important;
+  }
+
   #parents #box{
     width: 50% !important;
   }

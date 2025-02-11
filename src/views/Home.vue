@@ -124,7 +124,7 @@
 
   // Start countdown when component is mounted
   onMounted(() => {
-    setTimeout(startTour, 2000); // Start the tour after 2 seconds
+    setTimeout(startTour, 500); // Start the tour after 2 seconds
     updateCountdown(); // Initial call
     timerInterval = setInterval(updateCountdown, 1000); // Update every second
   });
@@ -139,17 +139,17 @@
       <div class="row" id="mobile-screen">
         <div class="col-lg-7 col-md-7 col-sm-7 side-img"></div> 
         <div class="col-lg-5 col-md-5 col-sm-5 side-content">
-          <div class="row m-0 text-center">
+          <div class="row m-0 text-center overflow-hidden">
             <!-- Countdown Timer -->
             <div class="col-12 countdown">
               <div class="row mb-4">
                 <div class="col-12 home-container p-0">
-                  <h1 class="text-light">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
+                  <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
                 </div>
               </div>
               <div class="row mb-4">
                 <div class="col-lg-7 col-md-7 col-sm-7">
-                  <p class="text-white fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
+                  <p class="text-danger fw-bold fs-4 pb-3">ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥</p>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5">
                   <!-- Add to Google Calendar Button -->
@@ -170,7 +170,7 @@
               </div>
             </div>
             <div class="col-12 mb-3 mt-5 p-0">
-              <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-warning"></i>
+              <i class="fa-solid fa-chevron-down fa-bounce fa-lg text-danger"></i>
             </div>
             <div class="col-12 p-0">
               <!-- Button to go to Content Page -->
@@ -247,6 +247,12 @@
   
   .side-content .countdown{
     padding: 50px 20px !important;
+  }
+
+  .side-content .countdown .row .home-container .gradient-text{
+    animation: colorChange 3s infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
   }
 
   .side-content .timer span {
