@@ -165,7 +165,7 @@
                     <p class="text-apology">យើងខ្ញុំសុំអភ័យទោសដោយស្មោះ ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
                         សូមទទួលយកការអញ្ជើញដ៏ស្មោះស្ម័គ្ររបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
                         រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នកនៅថ្ងៃពិធីមង្គលរបស់យើងខ្ញុំ!</p>
-                    <p class="bg-danger message-countdown rounded-circle fs-2 fw-bold border border-light border-3">{{ countdownMessage }}</p>
+                    <p class="bg-danger message-countdown rounded-circle fs-2 fw-bold border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
             <div class="row text-center" 
