@@ -1,4 +1,5 @@
-const CACHE_NAME = 'wedding-invite-v2';
+const CACHE_NAME = "wedding-invite-v3"; // Change the version here
+
 const urlsToCache = [
   '/',
   '/index.html',
@@ -23,20 +24,21 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate service worker and clear old caches
-self.addEventListener('activate', (event) => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);// Delete old cache versions
-          }
-        })
-      );
-    })
+      caches.keys().then((cacheNames) => {
+          return Promise.all(
+              cacheNames.map((cache) => {
+                  if (cache !== CACHE_NAME) {
+                      console.log("Deleting old cache:", cache);
+                      return caches.delete(cache);
+                  }
+              })
+          );
+      })
   );
 });
+
 
 // Intercept network requests and serve from cache if available
 self.addEventListener('fetch', (event) => {
