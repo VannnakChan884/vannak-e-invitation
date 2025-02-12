@@ -144,7 +144,6 @@
             <div class="col-12 countdown">
               <div class="row mb-4">
                 <div class="col-12 home-container p-0">
-                  <span>Test update available! 12/02/2025</span>
                   <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
                 </div>
               </div>
