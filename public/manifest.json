@@ -3,8 +3,8 @@
     "short_name": "Wedding Invite",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "##ff0000", 
-    "theme_color": "##ff0000",
+    "background_color": "#ff0000", 
+    "theme_color": "#ff0000",
     "description": "A beautiful wedding invitation for our special day.",
     "icons": [
       {
