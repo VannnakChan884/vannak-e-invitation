@@ -50,7 +50,7 @@
         },
         buttons: [
             { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-            { text: 'បន្ទាប់', action: tour.complete }
+            { text: 'បិទ', action: tour.complete }
         ]
         });
 
