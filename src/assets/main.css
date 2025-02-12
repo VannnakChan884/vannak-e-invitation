@@ -56,6 +56,10 @@ p {
   color: red !important;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @keyframes colorChange {
   0% { color: pink; }
   35% { color: lightyellow; }

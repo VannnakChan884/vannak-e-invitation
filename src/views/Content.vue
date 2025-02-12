@@ -6,52 +6,69 @@
     const startTour = () => {
         const tour = new Shepherd.Tour({
         useModalOverlay: true,
-        defaultStepOptions: {
-            classes: 'custom-tour', // Custom class for styling
-            scrollTo: true,
-        },
+            defaultStepOptions: {
+                classes: 'custom-tour', // Custom class for styling
+                scrollTo: true,
+            },
+        });
+
+        // Disable scrolling when the tour starts
+        tour.on('start', () => {
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.height = '100vh'; // Ensure full viewport height
+        });
+
+        // Re-enable scrolling when the tour ends
+        tour.on('complete', () => {
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.height = 'auto'; 
+        });
+
+        tour.on('cancel', () => {
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto';
         });
 
         tour.addStep({
-        id: 'audio-control',
-        title: '🎵 ចម្រៀង',
-        text: '⏯️ Play or Pause បទចម្រៀង។',
-        attachTo: { 
-            element: '.audio-control', 
-            on: 'left' 
-        },
-        buttons: [{ 
-            text: 'Next', 
-            action: tour.next 
-        }],
+            id: 'audio-control',
+            title: '🎵 ចម្រៀង',
+            text: '⏯️ Play or Pause បទចម្រៀង។',
+            attachTo: { 
+                element: '.audio-control', 
+                on: 'left' 
+            },
+            buttons: [{ 
+                text: 'Next', 
+                action: tour.next 
+            }],
         });
 
         tour.addStep({
-        id: 'location',
-        title: '📍 ទីតាំងផ្ទះការ',
-        text: 'សូមធ្វើការចុចបើកមើលទីតាំងផ្ទះការតាម Google Maps! 🗺️',
-        attachTo: { 
-            element: '#maps-icon', 
-            on: 'left' 
-        },
-        buttons: [
-            { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-            { text: 'បន្ទាប់', action: tour.next }
-        ],
+            id: 'location',
+            title: '📍 ទីតាំងផ្ទះការ',
+            text: 'សូមធ្វើការចុចបើកមើលទីតាំងផ្ទះការតាម Google Maps! 🗺️',
+            attachTo: { 
+                element: '#maps-icon', 
+                on: 'left' 
+            },
+            buttons: [
+                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+                { text: 'បន្ទាប់', action: tour.next }
+            ],
         });
 
         tour.addStep({
-        id: 'Add-to-Google-Caledar',
-        title: '📅 កត់ទុកក្នុងប្រតិទិន',
-        text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
-        attachTo: {
-            element: '.google-calendar-btn',
-            on: 'left'
-        },
-        buttons: [
-            { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-            { text: 'បិទ', action: tour.complete }
-        ]
+            id: 'Add-to-Google-Caledar',
+            title: '📅 កត់ទុកក្នុងប្រតិទិន',
+            text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
+            attachTo: {
+                element: '.google-calendar-btn',
+                on: 'left'
+            },
+            buttons: [
+                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+                { text: 'បិទ', action: tour.complete }
+            ]
         });
 
         tour.start();
