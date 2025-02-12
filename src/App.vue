@@ -1,10 +1,15 @@
 <script setup>
 import { useRouter } from 'vue-router';
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const router = useRouter();
+const updateAvailable = ref(false);
 
 onMounted(() => {
+  window.addEventListener('swUpdated', () => {
+    updateAvailable.value = true; // Show notification
+  });
+
   // 🔒 Disable Right Click
   document.addEventListener("contextmenu", (event) => event.preventDefault());
 
@@ -35,7 +40,31 @@ onMounted(() => {
     router.push('/'); // Redirect to Home if refreshed
   }
 });
+
+const refreshPage = () => {
+  window.location.reload(); // Refresh page when clicked
+};
 </script>
 <template>
+  <div>
+    <!-- Update Notification -->
+    <div v-if="updateAvailable" class="update-banner">
+        A new version is available!  
+        <button @click="refreshPage">Refresh</button>
+    </div>
+  </div>
   <RouterView />
 </template>
+
+<style>
+.update-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffcc00;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+</style>

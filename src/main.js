@@ -16,16 +16,33 @@ app.mount('#app')
 AOS.init({})
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration) => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch((error) => {
-        console.error('Service Worker registration failed:', error);
+  navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+    registration.addEventListener('updatefound', () => {
+      const newWorker = registration.installing;
+      newWorker.addEventListener('statechange', () => {
+        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+          // Ask user if they want to refresh
+          if (confirm('A new update is available! Do you want to refresh?')) {
+            window.location.reload();
+          }
+        }
       });
+    });
   });
 }
+
+
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/service-worker.js')
+//       .then((registration) => {
+//         console.log('Service Worker registered with scope:', registration.scope);
+//       })
+//       .catch((error) => {
+//         console.error('Service Worker registration failed:', error);
+//       });
+//   });
+// }
 
 window.addEventListener('offline', () => {
   alert("You are now offline. Please check your internet connection.");

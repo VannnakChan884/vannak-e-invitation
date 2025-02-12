@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wedding-cache-v1';
+const CACHE_NAME = 'wedding-invite-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -18,8 +18,22 @@ const urlsToCache = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('Caching essential files...');
       return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+// Activate service worker and clear old caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);// Delete old cache versions
+          }
+        })
+      );
     })
   );
 });
@@ -40,17 +54,17 @@ self.addEventListener('fetch', (event) => {
 });
 
 // Cleanup old caches when a new service worker is activated
-self.addEventListener('activate', (event) => {
-  const cacheWhitelist = [CACHE_NAME];
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName); // Delete old cache versions
-          }
-        })
-      );
-    })
-  );
-});
+// self.addEventListener('activate', (event) => {
+//   const cacheWhitelist = [CACHE_NAME];
+//   event.waitUntil(
+//     caches.keys().then((cacheNames) => {
+//       return Promise.all(
+//         cacheNames.map((cacheName) => {
+//           if (!cacheWhitelist.includes(cacheName)) {
+//             return caches.delete(cacheName);
+//           }
+//         })
+//       );
+//     })
+//   );
+// });
