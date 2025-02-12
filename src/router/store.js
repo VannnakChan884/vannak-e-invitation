@@ -18,19 +18,15 @@ export const galleries = ref([
 
 export const socialLinks = ref({
     Facebook: {
-        url: 'https://www.facebook.com/vannakchan4544/',
+        url: 'https://www.facebook.com/vannak.chan.612/',
         icon: "fa-facebook",
-    },
-    Tittok: {
-        url: 'https://www.tiktok.com/@vannakchan884',
-        icon: "fa-tiktok"
-    },
-    Instagram: {
-        url: 'https://www.instagram.com/vannakchan884/',
-        icon: "fa-instagram"
     },
     Linkin: {
         url: 'https://www.linkedin.com/in/chan-vannak/',
         icon: "fa-linkedin-in"
     },
+    Telegram: {
+        url: 'https://t.me/vannak40',
+        icon: "fa-telegram"
+    }
 })

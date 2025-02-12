@@ -81,20 +81,6 @@
             },
             buttons: [
                 { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-                { text: 'បន្ទាប់', action: tour.next }
-            ]
-        });
-        
-        tour.addStep({
-            id: 'Phone',
-            title: '📞 លេខទូរសព្ទ',
-            text: '096 26 65 240',
-            attachTo: {
-                element: '.fa-phone',
-                on: 'right'
-            },
-            buttons: [
-                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
                 { text: 'បិទ', action: tour.complete }
             ]
         });
@@ -563,8 +549,6 @@
                 <a :href="link.url" target="_blank" v-for="(link, i) in socialLinks" :key="i">
                     <i :class="['fa-brands', link.icon]"></i>
                 </a>
-                <a><i class="fa-solid fa-phone fa-shake fa-lg"></i></a>
-                <a><i class="fa-brands fa-telegram fa-shake fa-lg"></i></a>
             </div>
         </div>
         <div data-aos="fade-up" data-aos-duration="700">
@@ -779,7 +763,7 @@
         background-color: #f7f7f7;
         color: #333;
         text-align: center;
-        padding: 60px;
+        padding: 80px;
         font-family: 'Arial', sans-serif;
     }
 
