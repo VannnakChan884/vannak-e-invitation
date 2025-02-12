@@ -1,6 +1,6 @@
 <script setup>
     import Shepherd from 'shepherd.js';
-    import { galleries } from '../router/store.js';
+    import { galleries, socialLinks } from '../router/store.js';
     import { ref,onMounted,nextTick, onUnmounted } from 'vue';
 
     const startTour = () => {
@@ -67,6 +67,34 @@
             },
             buttons: [
                 { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+                { text: 'បន្ទាប់', action: tour.next }
+            ]
+        });
+        
+        tour.addStep({
+            id: 'Telegram',
+            title: '📩 Telegram',
+            text: `<a href="https://t.me/vannak40">@vannak40</a>`,
+            attachTo: {
+                element: '.fa-telegram',
+                on: 'left'
+            },
+            buttons: [
+                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
+                { text: 'បន្ទាប់', action: tour.next }
+            ]
+        });
+        
+        tour.addStep({
+            id: 'Phone',
+            title: '📞 លេខទូរសព្ទ',
+            text: '096 26 65 240',
+            attachTo: {
+                element: '.fa-phone',
+                on: 'right'
+            },
+            buttons: [
+                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
                 { text: 'បិទ', action: tour.complete }
             ]
         });
@@ -94,6 +122,9 @@
 
         updateCountdown(); // Initial call
         timerInterval = setInterval(updateCountdown, 1000); // Update every second
+
+        // Set the current year when the component is mounted
+        currentYear.value = new Date().getFullYear()
     });
 
     // Function to close the message after a delay (10 seconds)
@@ -166,10 +197,6 @@
     // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
     const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
 
-    // For testing style wedding date
-    // const weddingDate = new Date(new Date().getTime() + 20000); // 30 seconds from now
-
-
     // Reactive countdown object
     const countdown = ref({
         days: 0,
@@ -222,6 +249,9 @@
 
     // Default font size
     const fontSize = ref(18);
+
+    // Create a reactive ref to hold the current year
+    const currentYear = ref('')
 </script>
 <template>
     <!-- Font Size Slider -->
@@ -479,7 +509,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 mb-5" id="gallery-box">
                 <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                     <h3 data-aos="fade-right"
                         data-aos-offset="300"
@@ -524,19 +554,24 @@
         </div>
     </div>
     <!--Footer-->
-    <div class="container-fluid text-center pb-5" :style="{ fontSize: fontSize + 'px' }">
-        <div class="container">
-            <div class="row" data-aos="fade-up" data-aos-duration="500">
-                <div class="col-md-12 col-12 mb-2 mt-5">
+    <footer class="wedding-footer" :style="{ fontSize: fontSize + 'px' }">
+        <div class="footer-content">
+            <div class="mt-3 mb-3" data-aos="fade-up" data-aos-duration="500">
                     <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
-                </div>
             </div>
-            <div class="footer-copyright pb-4" data-aos="fade-up" data-aos-duration="600">
-                <span>ChanVannak</span>
-                <p>0962665240</p>
+            <div class="social-icons mb-3" data-aos="fade-up" data-aos-duration="600">
+                <a :href="link.url" target="_blank" v-for="(link, i) in socialLinks" :key="i">
+                    <i :class="['fa-brands', link.icon]"></i>
+                </a>
+                <a><i class="fa-solid fa-phone fa-shake fa-lg"></i></a>
+                <a><i class="fa-brands fa-telegram fa-shake fa-lg"></i></a>
             </div>
         </div>
-    </div >
+        <div data-aos="fade-up" data-aos-duration="700">
+            <p class="footer-tagline mb-3">Thank you for being part of our special day! 💍</p>
+            <p>&copy; {{ currentYear }} My Wedding. All rights reserved.</p>
+        </div>
+    </footer>
 </template>
 <style>
     /* Styling for popup overlay */
@@ -737,5 +772,58 @@
         animation: borderColorChange 3s infinite;
         animation-timing-function: linear;
         animation-direction: alternate;
+    }
+
+    /* Footer */
+    .wedding-footer {
+        background-color: #f7f7f7;
+        color: #333;
+        text-align: center;
+        padding: 60px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .wedding-footer .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .wedding-footer .footer-content p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .wedding-footer .footer-tagline {
+        font-size: 12px;
+        color: #888;
+        margin-top: 15px;
+        font-style: italic;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px; /* Space between icons */
+        margin-top: 5px;
+    }
+
+    .social-icons a {
+        font-size: 30px;
+        color: #333;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover i{
+        color: #007bff;
+        transform: scale(1.2);
+    }
+
+    .social-icons .fa-phone{
+        font-size: 30px;
+        cursor: pointer;
     }
 </style>

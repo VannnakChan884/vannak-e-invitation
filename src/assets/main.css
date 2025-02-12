@@ -56,6 +56,14 @@ p {
   color: red !important;
 }
 
+/* Customize the Shepherd text */
+/* .shepherd-text img{
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: cover;
+} */
+
+
 .no-scroll {
   overflow: hidden;
 }

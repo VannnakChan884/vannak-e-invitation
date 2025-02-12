@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+
 export const galleries = ref([
     "/gallery/15.jpg",
     "/gallery/17.jpg",
@@ -14,3 +15,22 @@ export const galleries = ref([
     "/gallery/29.jpg",
     "/gallery/30.jpg",
 ])
+
+export const socialLinks = ref({
+    Facebook: {
+        url: 'https://www.facebook.com/vannakchan4544/',
+        icon: "fa-facebook",
+    },
+    Tittok: {
+        url: 'https://www.tiktok.com/@vannakchan884',
+        icon: "fa-tiktok"
+    },
+    Instagram: {
+        url: 'https://www.instagram.com/vannakchan884/',
+        icon: "fa-instagram"
+    },
+    Linkin: {
+        url: 'https://www.linkedin.com/in/chan-vannak/',
+        icon: "fa-linkedin-in"
+    },
+})
