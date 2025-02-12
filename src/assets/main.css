@@ -315,7 +315,7 @@ p {
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 90%;
+    margin-top: 75% !important;
   }
 
   #home-box #mobile-screen .side-content .timer{
@@ -441,7 +441,7 @@ p {
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 90%;
+    margin-top: 75%;
   }
 
   #home-box #mobile-screen .side-content .timer{
