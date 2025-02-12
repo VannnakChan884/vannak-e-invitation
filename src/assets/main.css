@@ -92,6 +92,28 @@ p {
   #audio,#font-size{
     position: fixed !important;
   }
+  #home-box{
+    padding: 0 !important;
+  }
+
+  #home-box #mobile-screen{
+    margin: 0 !important;
+  }
+
+  #home-box #mobile-screen .side-img{
+    display: block !important;
+  }
+
+  #home-box #mobile-screen .side-content .timer{
+    gap: 5px !important;
+  }
+
+  #home-box #mobile-screen .side-content .timer span{
+    width: 100% !important;
+    height: auto !important;
+    font-size: 40px !important;
+    padding: 12px !important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -108,17 +130,31 @@ p {
   #audio,#font-size{
     position: fixed !important;
   }
+  #home-box{
+    padding: 0 !important;
+  }
+
+  #home-box #mobile-screen{
+    margin: 0 !important;
+  }
+
   #home-box #mobile-screen .side-img{
     position: relative !important;
+    display: none !important;
   }
 
   #home-box #mobile-screen .side-content{
+    width: 100% !important;
     position: absolute !important;
     background-color: #00000044 !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 80%;
+    margin-top: 45% !important;
+    padding: 40px !important;
   }
 
   #home-box #mobile-screen .side-content .timer{
@@ -128,7 +164,7 @@ p {
   #home-box #mobile-screen .side-content .timer span{
     width: 100% !important;
     height: auto !important;
-    font-size: 18px !important;
+    font-size: 40px !important;
     padding: 12px !important;
   }
 
@@ -156,17 +192,27 @@ p {
   #audio,#font-size{
     position: fixed !important;
   }
+  #home-box{
+    padding: 0 !important;
+  }
+
+  #home-box #mobile-screen{
+    margin: 0 !important;
+  }
+
   #home-box #mobile-screen .side-img{
     position: relative !important;
+    display: none !important;
   }
 
   #home-box #mobile-screen .side-content{
+    width: 100% !important;
     position: absolute !important;
     background-color: #00000044 !important;
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 80%;
+    margin-top: 70%;
   }
 
   #home-box #mobile-screen .side-content .timer{
@@ -176,7 +222,7 @@ p {
   #home-box #mobile-screen .side-content .timer span{
     width: 100% !important;
     height: auto !important;
-    font-size: 18px !important;
+    font-size: 40px !important;
     padding: 12px !important;
   }
 
@@ -204,17 +250,27 @@ p {
   #audio,#font-size{
     position: fixed !important;
   }
+  #home-box{
+    padding: 0 !important;
+  }
+
+  #home-box #mobile-screen{
+    margin: 0 !important;
+  }
+  
   #home-box #mobile-screen .side-img{
     position: relative !important;
+    display: none !important;
   }
 
   #home-box #mobile-screen .side-content{
+    width: 100% !important;
     position: absolute !important;
     background-color: #00000044 !important;
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 80%;
+    margin-top: 90%;
   }
 
   #home-box #mobile-screen .side-content .timer{
@@ -224,7 +280,7 @@ p {
   #home-box #mobile-screen .side-content .timer span{
     width: 100% !important;
     height: auto !important;
-    font-size: 18px !important;
+    font-size: 30px !important;
     padding: 12px !important;
   }
 
@@ -239,9 +295,9 @@ p {
 }
 
 /* Extra small devices(portrait phones, less than 576px) */
-@media (min-width: 344px) and (max-width: 575.98px) {
+@media (min-width: 320px) and (max-width: 575.98px) {
   h1{
-    font-size: 20px;
+    font-size: 16px;
   }
   h3{
     font-size: 16px !important;
@@ -252,7 +308,9 @@ p {
   h5, h6, p{
     font-size: 12px !important;
   }
-
+  .fs-4{
+    font-size: 20px !important;
+  }
   /* Custom styles for the tour */
   .custom-tour {
     max-width: 200px !important;
@@ -318,28 +376,37 @@ p {
     display: none !important;
   }
 
+  #home-box{
+    padding: 0 !important;
+  }
+
+  #home-box #mobile-screen{
+    margin: 0 !important;
+  }
+
   #home-box #mobile-screen .side-img{
     position: relative !important;
+    display: none !important;
   }
 
   #home-box #mobile-screen .side-content{
+    width: 100% !important;
     position: absolute !important;
     background-color: #00000044 !important;
   }
 
   #home-box #mobile-screen .side-content .row .countdown{
-    margin-top: 80%;
+    margin-top: 90%;
   }
 
   #home-box #mobile-screen .side-content .timer{
-    gap: 5px !important;
+    gap: 4px !important;
   }
 
   #home-box #mobile-screen .side-content .timer span{
-    width: 100% !important;
     height: auto !important;
-    font-size: 18px !important;
-    padding: 12px !important;
+    font-size: 20px !important;
+    padding: 10px !important;
   }
 
   #parents #box{

@@ -12,35 +12,6 @@
     });
 
     tour.addStep({
-      id: 'Introduction',
-      title: '🔔 សេចក្ដីណែនាំ!',
-      text: `<h4 class="mb-3 text-decoration-underline">How to install on mobile:</h4>
-        <div class="row"> 
-          <ul class="col-12 mb-3">
-            <li><h5>📱 For Android (Chrome)</h5></li>
-            <li>1. Open this link <a href="https://vannak.netlify.app/">RSVP</a></li>
-            <li>2. In Chrome click on (⋮)</li>
-            <li>3. Select "Add to Home screen.</li>
-            <li>4. Click Install, it's like an app on their home screen!</li>
-          </ul>
-          <ul class="col-12">
-            <li><h5>📱 For iPhone (Safari)</h5></li>
-            <li>1. Open this link <a href="https://vannak.netlify.app/">RSVP</a></li>
-            <li>2. In Safari click the Share button (⬆️).</li>
-            <li>3. Scroll down and select Add to Home Screen.</li>
-            <li>4. Click Add, It will appear like an app on the home screen!</li>
-          </ul>
-        </div>`,
-      attachTo: {
-        element: '#home-box',
-      },
-      buttons: [
-        {text: 'Next', 
-        action: tour.next }
-      ],
-    });
-
-    tour.addStep({
       id: 'welcome',
       title: '🎉 ថ្ងៃពិធីមង្គល',
       text: 'នេះជាថ្ងៃទីពីរនៃពិធីមង្គលការរបស់យើងខ្ញុំ (ថ្ងៃស៊ី)។',
