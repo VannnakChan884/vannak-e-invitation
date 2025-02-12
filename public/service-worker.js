@@ -24,20 +24,20 @@ self.addEventListener('install', (event) => {
   );
 });
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-      caches.keys().then((cacheNames) => {
-          return Promise.all(
-              cacheNames.map((cache) => {
-                  if (cache !== CACHE_NAME) {
-                      console.log("Deleting old cache:", cache);
-                      return caches.delete(cache);
-                  }
-              })
-          );
-      })
-  );
-});
+// self.addEventListener("activate", (event) => {
+//   event.waitUntil(
+//       caches.keys().then((cacheNames) => {
+//           return Promise.all(
+//               cacheNames.map((cache) => {
+//                   if (cache !== CACHE_NAME) {
+//                       console.log("Deleting old cache:", cache);
+//                       return caches.delete(cache);
+//                   }
+//               })
+//           );
+//       })
+//   );
+// });
 
 
 // Intercept network requests and serve from cache if available
