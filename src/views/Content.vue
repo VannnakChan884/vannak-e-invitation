@@ -3,7 +3,13 @@
     import { galleries, socialLinks } from '../router/store.js';
     import { ref,onMounted,nextTick, onUnmounted } from 'vue';
 
+    const tourSkipped = ref(false); // Track if the user skips the tour
+    
     const startTour = () => {
+        if (localStorage.getItem('skipTour') === 'true') {
+            return; // Don't show the tour if the user already skipped
+        }
+
         const tour = new Shepherd.Tour({
         useModalOverlay: true,
             defaultStepOptions: {
@@ -37,10 +43,9 @@
                 element: '.audio-control', 
                 on: 'left' 
             },
-            buttons: [{ 
-                text: 'Next', 
-                action: tour.next 
-            }],
+            buttons: [
+                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+                { text: 'Next', action: tour.next }],
         });
 
         tour.addStep({
@@ -52,8 +57,9 @@
                 on: 'left' 
             },
             buttons: [
-                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-                { text: 'បន្ទាប់', action: tour.next }
+                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+                { text: 'Back', action: tour.back },
+                { text: 'Next', action: tour.next }
             ],
         });
 
@@ -66,8 +72,9 @@
                 on: 'left'
             },
             buttons: [
-                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-                { text: 'បន្ទាប់', action: tour.next }
+                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+                { text: 'Back', action: tour.back },
+                { text: 'Next', action: tour.next }
             ]
         });
         
@@ -80,12 +87,18 @@
                 on: 'left'
             },
             buttons: [
-                { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-                { text: 'បិទ', action: tour.complete }
+                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+                { text: 'Back', action: tour.back },
+                { text: 'Ok', action: tour.complete }
             ]
         });
 
         tour.start();
+    };
+
+    const skipTour = (tour) => {
+        localStorage.setItem('skipTour', 'true'); // Save that the user skipped
+        tour.complete(); // Close the tour
     };
 
     // Show popup when the page starts

@@ -57,11 +57,44 @@ p {
 }
 
 /* Customize the Shepherd text */
-/* .shepherd-text img{
-  width: 150px !important;
-  height: 150px !important;
-  object-fit: cover;
-} */
+.shepherd-text {
+  font-size: 16px !important;
+  color: #333 !important;
+}
+
+/* Customize the Shepherd buttons */
+.shepherd-button {
+  background-color: #007bff !important; /* Blue button */
+  color: white !important;
+  border-radius: 5px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  border: none !important;
+}
+
+.shepherd-button:hover {
+  background-color: #0056b3 !important; /* Darker blue on hover */
+}
+
+/* Style the next and back buttons differently */
+.shepherd-button:first-child {
+  background-color: #28a745 !important; /* Green for next button */
+}
+
+.shepherd-button:last-child {
+  background-color: #dc3545 !important; /* Red for cancel/finish button */
+}
+
+/* Customize the arrow (tooltip pointer) */
+.shepherd-arrow {
+  color: #ffffff !important;
+}
+
+/* Customize the Shepherd modal overlay */
+.shepherd-modal-overlay-container {
+  background-color: rgba(0, 0, 0, 0.5) !important; 
+}
 
 
 .no-scroll {

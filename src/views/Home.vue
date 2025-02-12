@@ -2,7 +2,13 @@
   import Shepherd from 'shepherd.js';
   import { ref, onMounted, onUnmounted } from 'vue';
 
+  const tourSkipped = ref(false); // Track if the user skips the tour
+
   const startTour = () => {
+    if (localStorage.getItem('skipTour') === 'true') {
+      return; // Don't show the tour if the user already skipped
+    }
+
     const tour = new Shepherd.Tour({
       useModalOverlay: true,
       defaultStepOptions: {
@@ -19,10 +25,9 @@
         element: '.wedding-date', 
         on: 'top' 
       },
-      buttons: [{ 
-        text: 'Next', 
-        action: tour.next 
-      }],
+      buttons: [
+        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+        { text: 'Next', action: tour.next }],
     });
 
     tour.addStep({
@@ -34,8 +39,9 @@
         on: 'right'
       },
       buttons: [
-        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-        { text: 'បន្ទាប់', action: tour.next }
+        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next }
       ]
     });
 
@@ -48,8 +54,9 @@
         on: 'bottom' 
       },
       buttons: [
-        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-        { text: 'បន្ទាប់', action: tour.next }
+        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next }
       ],
     });
 
@@ -62,12 +69,18 @@
         on: 'top' 
       },
       buttons: [
-        { text: 'ត្រឡប់ក្រោយ', action: tour.back },
-        { text: 'បិទ', action: tour.complete },
+        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+        { text: 'Back', action: tour.back },
+        { text: 'Ok', action: tour.complete },
       ],
     });
 
     tour.start();
+  };
+
+  const skipTour = (tour) => {
+    localStorage.setItem('skipTour', 'true'); // Save that the user skipped
+    tour.complete(); // Close the tour
   };
 
   // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
@@ -124,7 +137,7 @@
 
   // Start countdown when component is mounted
   onMounted(() => {
-    setTimeout(startTour, 500); // Start the tour after 2 seconds
+    setTimeout(startTour, 1000); // Start the tour after 1seconds
     updateCountdown(); // Initial call
     timerInterval = setInterval(updateCountdown, 1000); // Update every second
   });
@@ -142,6 +155,7 @@
           <div class="row m-0 text-center overflow-hidden">
             <!-- Countdown Timer -->
             <div class="col-12 countdown">
+              <!-- <button @click="skipTour(tour)" v-if="!tourSkipped" class="btn btn-danger">Skip Tour</button> -->
               <div class="row mb-4">
                 <div class="col-12 home-container p-0">
                   <h1 class="gradient-text">🎉 សិរីមង្គលអាពាហ៍ពិពាហ៍ 🎉</h1>
