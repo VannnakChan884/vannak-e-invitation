@@ -4,13 +4,14 @@
 
     // Form fields
     const name = ref("");
-    const email = ref("");
+    // const email = ref("");
     const attending = ref("");
     const guests = ref("");
 
     // Computed property to check if all fields are filled
     const isFormValid = computed(() => {
-        return name.value && email.value && attending.value && guests.value;
+        return name.value && attending.value && guests.value;
+        // return name.value && email.value && attending.value && guests.value;
     });
 
     // Handle form submission
@@ -19,7 +20,7 @@
 
         const formData = {
             name: name.value,
-            email: email.value,
+            // email: email.value,
             attending: attending.value,
             guests: guests.value,
         };
@@ -31,7 +32,7 @@
             () => {
                 alert("✅ លោកអ្នកបានឆ្លើយតប! 🎉 Thank you for your response!🙏");
                 name.value = "";
-                email.value = "";
+                // email.value = "";
                 attending.value = "";
                 guests.value = "";
             },
@@ -51,10 +52,10 @@
         <label for="name" class="form-label">ឈ្មោះរបស់អ្នក</label>
         <input type="text" class="form-control" id="name" v-model="name" placeholder="ឈ្មោះរបស់អ្នក" required />
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 mb-3" data-aos="fade-up" data-aos-duration="600">
+      <!-- <div class="col-lg-6 col-md-12 col-sm-12 mb-3" data-aos="fade-up" data-aos-duration="600">
         <label for="email" class="form-label">អ៊ីម៉ែលរបស់អ្នក</label>
         <input type="email" class="form-control" id="email" v-model="email" placeholder="name@gmail.com"/>
-      </div>
+      </div> -->
       <div class="col-lg-6 col-md-6 col-sm-6 mb-3" data-aos="fade-up" data-aos-duration="650">
         <label for="attending" class="form-label">តើអ្នកនឹងចូលរួមទេ?</label>
         <select v-model="attending" id="attending" class="form-select" required>
