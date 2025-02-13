@@ -2,6 +2,7 @@
     import Shepherd from 'shepherd.js';
     import { galleries, socialLinks } from '../router/store.js';
     import { ref,onMounted,nextTick, onUnmounted } from 'vue';
+    import Rsvp from '@/components/rsvp.vue';
 
     const tourSkipped = ref(false); // Track if the user skips the tour
     
@@ -521,6 +522,9 @@
                         <img :src="gallery" alt="Image Gallery">
                     </div>
                 </div>
+            </div>
+            <div class="row mb-5">
+                <Rsvp />
             </div>
         </div>
     </div>
