@@ -1,258 +1,47 @@
 <script setup>
-    import Shepherd from 'shepherd.js';
-    import { galleries, socialLinks } from '../router/store.js';
-    import { ref,onMounted,nextTick, onUnmounted } from 'vue';
     import Rsvp from '@/components/rsvp.vue';
+    import { ref, onMounted } from 'vue';
+    import { startContentTour} from '../router/tourSetup.js';
+    import { galleries, socialLinks } from '../router/store.js';
+    import { useAudio } from '../router/useAudio.js';
+    import { useCountdown } from '../router/useCountdown.js';
+    import { usePopup } from '../router/usePopup.js';
+    import { useGoogleCalendar } from '../router/useGoogleCalendar.js';
+    import { useFontSize } from '../router/useFontSize.js';
 
-    const tourSkipped = ref(false); // Track if the user skips the tour
-    
-    const startTour = () => {
-        if (localStorage.getItem('skipTour') === 'true') {
-            return; // Don't show the tour if the user already skipped
-        }
+    // Audio controls
+    const { audioPlayer, isPlaying, playAudio, pauseAudio, toggleAudio } = useAudio();
 
-        const tour = new Shepherd.Tour({
-        useModalOverlay: true,
-            defaultStepOptions: {
-                classes: 'custom-tour', // Custom class for styling
-                scrollTo: true,
-            },
-        });
+    // Countdown setup
+    const weddingDate = new Date(2025, 2, 15, 6, 30, 0);
+    const { countdown, eventStarted, startCountdown } = useCountdown(weddingDate);
 
-        // Disable scrolling when the tour starts
-        tour.on('start', () => {
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-            document.body.style.height = '100vh'; // Ensure full viewport height
-        });
+    // Popup setup
+    const { showPopup, countdownMessage, disableScroll, enableScroll, startCountdown: startPopupCountdown } = usePopup(startContentTour);
 
-        // Re-enable scrolling when the tour ends
-        tour.on('complete', () => {
-            document.body.style.overflow = 'auto'; // Restore scrolling
-            document.body.style.height = 'auto'; 
-        });
+    // Google Calendar function
+    const { addToGoogleCalendar } = useGoogleCalendar();
 
-        tour.on('cancel', () => {
-            document.body.style.overflow = 'auto';
-            document.body.style.height = 'auto';
-        });
+    // Font size handling
+    const { fontSize, increaseFontSize, decreaseFontSize } = useFontSize();
 
-        tour.addStep({
-            id: 'audio-control',
-            title: '🎵 ចម្រៀង',
-            text: '⏯️ Play or Pause បទចម្រៀង។',
-            attachTo: { 
-                element: '.audio-control', 
-                on: 'left' 
-            },
-            buttons: [
-                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-                { text: 'Next', action: tour.next }],
-        });
-
-        tour.addStep({
-            id: 'location',
-            title: '📍 ទីតាំងផ្ទះការ',
-            text: 'សូមធ្វើការចុចបើកមើលទីតាំងផ្ទះការតាម Google Maps! 🗺️',
-            attachTo: { 
-                element: '#maps-icon', 
-                on: 'left' 
-            },
-            buttons: [
-                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-                { text: 'Back', action: tour.back },
-                { text: 'Next', action: tour.next }
-            ],
-        });
-
-        tour.addStep({
-            id: 'Add-to-Google-Caledar',
-            title: '📅 កត់ទុកក្នុងប្រតិទិន',
-            text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
-            attachTo: {
-                element: '.google-calendar-btn',
-                on: 'left'
-            },
-            buttons: [
-                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-                { text: 'Back', action: tour.back },
-                { text: 'Next', action: tour.next }
-            ]
-        });
-        
-        tour.addStep({
-            id: 'Telegram',
-            title: '📩 Telegram',
-            text: `<a href="https://t.me/vannak40">@vannak40</a>`,
-            attachTo: {
-                element: '.fa-telegram',
-                on: 'left'
-            },
-            buttons: [
-                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-                { text: 'Back', action: tour.back },
-                { text: 'Ok', action: tour.complete }
-            ]
-        });
-
-        tour.start();
-    };
-
-    const skipTour = (tour) => {
-        localStorage.setItem('skipTour', 'true'); // Save that the user skipped
-        tour.complete(); // Close the tour
-    };
-
-    // Show popup when the page starts
-    const showPopup = ref(false);
-    const audioPlayer = ref(null);
-    const isPlaying = ref(true); // Track audio state (playing or paused)
-    const countdownMessage = ref(10); // Countdown starts from 20
+    // Current year (dynamic)
+    const currentYear = ref(new Date().getFullYear());
 
     onMounted(() => {
-        // Start playing audio when content page loads
         playAudio();
-
-        // Delay showing the event message by 3 seconds
         setTimeout(() => {
-            showPopup.value = true; // Show message
-            pauseAudio();// Pause audio when message appears
-            disableScroll(); // Stop scrolling when message appears
-            startCountdown(); // Start countdown after message appears
-        }, 3000); // 3 seconds delay before showing message
+            showPopup.value = true;
+            pauseAudio();
+            disableScroll();
+            startPopupCountdown();
+        }, 3000);
 
-        updateCountdown(); // Initial call
-        timerInterval = setInterval(updateCountdown, 1000); // Update every second
-
-        // Set the current year when the component is mounted
-        currentYear.value = new Date().getFullYear()
+        startCountdown(); // Start countdown timer
     });
 
-    // Function to close the message after a delay (10 seconds)
-    const startCountdown = () => {
-        const interval = setInterval(() => {
-            if (countdownMessage.value > 0) {
-                countdownMessage.value -= 1; // Decrease the countdown by 1 each second
-            }
-            
-            if (countdownMessage.value === 0) {
-                clearInterval(interval); // Stop the countdown when it reaches 0
-                showPopup.value = false; // Hide the event message
-                enableScroll(); // Allow scrolling again
-
-                // Wait for the event message to disappear, then resume audio
-                nextTick(() => {
-                    playAudio();
-                });
-            }
-        }, 1000); // Update countdown every second
-        setTimeout(startTour, 12000); // Start the tour after 12 seconds
-    };
-    
-    // Disable scrolling
-    const disableScroll = () => {
-        document.body.style.overflow = "hidden";
-    };
-
-    // Enable scrolling
-    const enableScroll = () => {
-        document.body.style.overflow = "";
-    };
-
-    // Function to play audio (ensuring it's not played before popup closes)
-    const playAudio = () => {
-        if (!showPopup.value && audioPlayer.value) {
-            const playPromise = audioPlayer.value.play();
-            if (playPromise !== undefined) {
-                playPromise
-                .then(() => {
-                    isPlaying.value = true;// Update icon to 🔊
-                    localStorage.setItem("audioPlaying", "true");
-                })
-                .catch((error) => console.log("Autoplay blocked:", error));
-            }
-        }
-    };
-
-    // Pause audio function
-    const pauseAudio = () => {
-        if (audioPlayer.value) {
-            audioPlayer.value.pause();
-            isPlaying.value = false;// Update icon to 🔇
-        }
-    };
-
-    // Function to toggle audio manually
-    const toggleAudio = () => {
-        if (audioPlayer.value) {
-            if (isPlaying.value) {
-                audioPlayer.value.pause();
-                isPlaying.value = false;
-            } else {
-                playAudio();
-            }
-            localStorage.setItem("audioPlaying", isPlaying.value);
-        }
-    };
-
-    // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
-    const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
-
-    // Reactive countdown object
-    const countdown = ref({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-    });
-
-    // Track if the event has started
-    const eventStarted = ref(false);
-
-    let timerInterval = null;
-
-    // Function to update the countdown
-    const updateCountdown = () => {
-    const now = new Date().getTime();
-    const timeDifference = weddingDate - now;
-
-    if (timeDifference > 0) {
-        countdown.value.days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        countdown.value.hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        countdown.value.minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        countdown.value.seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-    } else {
-        // Show event message when the countdown reaches 0
-        eventStarted.value = true;
-        clearInterval(timerInterval);
-    }
-    };
-
-    // Function to add event to Google Calendar
-    const addToGoogleCalendar = () => {
-    const eventTitle = "កម្មវិធីមង្គលការរបស់ វណ្ណៈ & ស្រីណយ!";
-    const eventDetails = "ប្រព្រឹត្តទៅនៅ ថ្ងៃសៅរ៍ ទី១៥ ខែមីនា ឆ្នាំ២០២៥ ត្រូវនឹង ថ្ងៃ២រោច ខែផល្គុន ឆ្នាំរោង ឆស័ក ពុទ្ធសករាជ ២៥៦៨ វេលាម៉ោង ៥:០០នាទីល្ងាច នៅ គេហដ្ឋានខាងស្រី ស្ថិតនៅ ភូមិកសិករ ឃុំសំឡាញ ស្រុកអង្គជ័យ ខេត្តកំពត!";
-    const location = "https://maps.google.com/maps?q=10.865470,104.590876&ll=10.865470,104.590876&z=16"; // Actual wedding location
-
-    // Format date for Google Calendar
-    const startDate = "20250314T140000"; // YYYYMMDDTHHMMSS
-    const endDate = "20250315T233000"; // End time (adjust as needed) 2025/03/15 11:30 PM
-
-    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(location)}&sf=true&output=xml`;
-
-    window.open(googleCalendarUrl, "_blank");
-    };
-
-    // Clear the interval when the component is unmounted
-    onUnmounted(() => {
-    clearInterval(timerInterval);
-    });
-
-    // Default font size
-    const fontSize = ref(18);
-
-    // Create a reactive ref to hold the current year
-    const currentYear = ref('')
 </script>
+
 <template>
     <!-- Font Size Slider -->
     <div id="font-size">
@@ -523,7 +312,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="rsvp">
                 <Rsvp />
             </div>
         </div>
@@ -574,7 +363,7 @@
         </div>
     </footer>
 </template>
-<style>
+<style scoped>
     /* Styling for popup overlay */
     .popup-overlay {
         position: fixed;
@@ -827,4 +616,4 @@
         font-size: 30px;
         cursor: pointer;
     }
-</style>
+</style>../router/usePopup.js../router/useAudio.js../router/useCountdown.js../router/useGoogleCalendar.js../router/useFontSize.js

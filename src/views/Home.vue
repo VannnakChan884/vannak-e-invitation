@@ -1,94 +1,9 @@
 <script setup>
-  import Shepherd from 'shepherd.js';
   import { ref, onMounted, onUnmounted } from 'vue';
-
-  const tourSkipped = ref(false); // Track if the user skips the tour
-
-  const startTour = () => {
-    if (localStorage.getItem('skipTour') === 'true') {
-      return; // Don't show the tour if the user already skipped
-    }
-
-    const tour = new Shepherd.Tour({
-      useModalOverlay: true,
-      defaultStepOptions: {
-        classes: 'custom-tour', // Custom class for styling
-        scrollTo: true,
-      },
-    });
-
-    tour.addStep({
-      id: 'welcome',
-      title: '🎉 ថ្ងៃពិធីមង្គល',
-      text: 'នេះជាថ្ងៃទីពីរនៃពិធីមង្គលការរបស់យើងខ្ញុំ (ថ្ងៃស៊ី)។',
-      attachTo: { 
-        element: '.wedding-date', 
-        on: 'top' 
-      },
-      buttons: [
-        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-        { text: 'Next', action: tour.next }],
-    });
-
-    tour.addStep({
-      id: 'Add-to-Google-Caledar',
-      title: '📅 កត់ទុកក្នុងប្រតិទិន',
-      text: 'សូមធ្វើការកត់ចំណាំការអញ្ចើញរបស់យើងខ្ញុំទៅក្នុង Google Caledar! ✍️',
-      attachTo: {
-        element: '.google-calendar-btn',
-        on: 'right'
-      },
-      buttons: [
-        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-        { text: 'Back', action: tour.back },
-        { text: 'Next', action: tour.next }
-      ]
-    });
-
-    tour.addStep({
-      id: 'countdown',
-      title: '⏳ រាប់ថយក្រោយ',
-      text: 'នេះបង្ហាញពីពេលវេលានៅសល់រហូតដល់ថ្ងៃរៀបការ!',
-      attachTo: { 
-        element: '.timer', 
-        on: 'bottom' 
-      },
-      buttons: [
-        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-        { text: 'Back', action: tour.back },
-        { text: 'Next', action: tour.next }
-      ],
-    });
-
-    tour.addStep({
-      id: 'rsvp',
-      title: '💌 អ្នកត្រូវបានអញ្ចើញ',
-      text: 'សូមធ្វើការបើកសំបុត្ររបស់អ្នកនៅទីនេះ!',
-      attachTo: { 
-        element: '.open-box', 
-        on: 'top' 
-      },
-      buttons: [
-        { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
-        { text: 'Back', action: tour.back },
-        { text: 'Ok', action: tour.complete },
-      ],
-    });
-
-    tour.start();
-  };
-
-  const skipTour = (tour) => {
-    localStorage.setItem('skipTour', 'true'); // Save that the user skipped
-    tour.complete(); // Close the tour
-  };
+  import { startHomeTour } from '@/router/tourSetup.js'; // Importing the tour setup function
 
   // Set the wedding date (YYYY, MM (0-based), DD, HH, MM, SS)
   const weddingDate = new Date(2025, 2, 15, 6, 30, 0); // March 15, 2025, at 06:30 AM
-
-  // For testing style wedding date
-  // const weddingDate = new Date(new Date().getTime() + 20000); // 30 seconds from now
-
 
   // Reactive countdown object
   const countdown = ref({
@@ -137,7 +52,7 @@
 
   // Start countdown when component is mounted
   onMounted(() => {
-    setTimeout(startTour, 1000); // Start the tour after 1seconds
+    setTimeout(startHomeTour, 1000); // Start the tour after 1 second
     updateCountdown(); // Initial call
     timerInterval = setInterval(updateCountdown, 1000); // Update every second
   });
@@ -147,6 +62,7 @@
     clearInterval(timerInterval);
   });
 </script>
+
 <template>
     <div class="container-fluid" id="home-box">
       <div class="row" id="mobile-screen">

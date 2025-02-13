@@ -13,7 +13,6 @@ export const galleries = ref([
     "/gallery/27.jpg",
     "/gallery/28.jpg",
     "/gallery/29.jpg",
-    "/gallery/30.jpg",
 ])
 
 export const socialLinks = ref({
