@@ -80,6 +80,21 @@
         });
         
         tour.addStep({
+            id: 'RSVP',
+            title: '🔁 ការឆ្លើយតប',
+            text: 'សូមធ្វើឆ្លើយតបមកយើងខ្ញុំដោយបំំពេញ Form ខាងក្រោម រួចចុចបញ្ចូន!',
+            attachTo: {
+                element: '#rsvp-title',
+                on: 'bottom'
+            },
+            buttons: [
+                { text: 'Skip', action: () => skipTour(tour) }, // Skip Tour
+                { text: 'Back', action: tour.back },
+                { text: 'Next', action: tour.next }
+            ]
+        });
+        
+        tour.addStep({
             id: 'Telegram',
             title: '📩 Telegram',
             text: `<a href="https://t.me/vannak40">@vannak40</a>`,
@@ -264,10 +279,10 @@
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-dark">
-                    <h2 class="mb-3">សារសុំការអធ្យាស្រ័យ🙏</h2>
-                    <p class="text-apology">យើងខ្ញុំសុំអភ័យទោសដោយស្មោះ ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
-                        សូមទទួលយកការអញ្ជើញដ៏ស្មោះស្ម័គ្ររបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
-                        រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នកនៅថ្ងៃពិធីមង្គលរបស់យើងខ្ញុំ!</p>
+                    <h2 class="mb-3">សុំការអធ្យាស្រ័យ🙏</h2>
+                    <p class="text-apology">យើងខ្ញុំសុំអភ័យទោស ដែលមិនបានជួបអញ្ជើញដោយផ្ទាល់។ 
+                        សូមទទួលយកការអញ្ជើញ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
+                    </p>
                     <p class="bg-danger message-countdown rounded-circle fs-2 fw-bold border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
@@ -523,7 +538,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="rsvp">
                 <Rsvp />
             </div>
         </div>
