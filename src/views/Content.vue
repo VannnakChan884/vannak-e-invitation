@@ -82,7 +82,7 @@
         tour.addStep({
             id: 'RSVP',
             title: '🔁 ការឆ្លើយតប',
-            text: 'សូមធ្វើឆ្លើយតបមកយើងខ្ញុំដោយបំំពេញ Form ខាងក្រោម រួចចុចបញ្ចូន!',
+            text: 'សូមធ្វើការឆ្លើយតបមកយើងខ្ញុំដោយបំំពេញ Form ខាងក្រោម រួចចុចបញ្ចូន!',
             attachTo: {
                 element: '#rsvp-title',
                 on: 'bottom'
@@ -572,10 +572,10 @@
         </div>
     </div>
     <!--Footer-->
-    <footer class="wedding-footer" :style="{ fontSize: fontSize + 'px' }">
+    <footer class="wedding-footer">
         <div class="footer-content">
             <div class="mt-3 mb-3" data-aos="fade-up" data-aos-duration="500">
-                    <h3 class="footer-slogain">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
+                    <h3 class="footer-slogain" :style="{ fontSize: fontSize + 'px' }">ទំនាក់ទំនងម្ចាស់កម្មវិធី</h3>
             </div>
             <div class="social-icons mb-3" data-aos="fade-up" data-aos-duration="600">
                 <a :href="link.url" target="_blank" v-for="(link, i) in socialLinks" :key="i">
@@ -583,9 +583,9 @@
                 </a>
             </div>
         </div>
-        <div data-aos="fade-up" data-aos-duration="700">
-            <p class="footer-tagline mb-3">Thank you for being part of our special day! 💍</p>
-            <p>&copy; {{ currentYear }} My Wedding. All rights reserved.</p>
+        <div data-aos="zoom-in-up">
+            <p class="footer-tagline mb-3" :style="{ fontSize: fontSize + 'px' }">Thank you for being part of our special day! 💍</p>
+            <p :style="{ fontSize: fontSize + 'px' }">&copy; {{ currentYear }} My Wedding. All rights reserved.</p>
         </div>
     </footer>
 </template>
@@ -795,7 +795,7 @@
         background-color: #f7f7f7;
         color: #333;
         text-align: center;
-        padding: 80px;
+        padding: 65px;
         font-family: 'Arial', sans-serif;
     }
 
