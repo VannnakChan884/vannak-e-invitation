@@ -46,6 +46,7 @@
 <template>
   <div class="rsvp-form">
     <h2 class="mb-4 text-center" id="rsvp-title">ទទួលយកការអញ្ចើញ</h2>
+    <p>រាល់វត្តមានរបស់អ្នកទាំងអស់គ្នា</p>
     <form class="row g-3" @submit.prevent="handleRSVP">
       <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
         <label for="name" class="form-label">ឈ្មោះរបស់អ្នក</label>
@@ -53,7 +54,7 @@
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
         <label for="email" class="form-label">អ៊ីម៉ែលរបស់អ្នក</label>
-        <input type="email" class="form-control" id="email" v-model="email" placeholder="name@gmail.com" required />
+        <input type="email" class="form-control" id="email" v-model="email" placeholder="name@gmail.com"/>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
         <label for="attending" class="form-label">តើអ្នកនឹងចូលរួមទេ?</label>
