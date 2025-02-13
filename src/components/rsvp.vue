@@ -45,7 +45,7 @@
 
 <template>
   <div class="rsvp-form">
-    <h2 class="mb-4 text-center">💌 ទទួលយកការអញ្ចើញ</h2>
+    <h2 class="mb-4 text-center">ទទួលយកការអញ្ចើញ</h2>
     <form class="row g-3" @submit.prevent="handleRSVP">
       <div class="col-lg-6 col-md-12 col-sm-12 mb-3">
         <label for="name" class="form-label">ឈ្មោះរបស់អ្នក</label>

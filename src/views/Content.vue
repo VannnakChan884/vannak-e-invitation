@@ -53,14 +53,14 @@
             <!-- Apology Popup -->
             <div v-if="showPopup" class="popup-overlay">
                 <div class="popup-box text-dark">
-                    <h2 class="mb-3">សារសុំការអធ្យាស្រ័យ🙏</h2>
-                    <p class="text-apology">យើងខ្ញុំសុំអភ័យទោសដោយស្មោះ ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
-                        សូមទទួលយកការអញ្ជើញដ៏ស្មោះស្ម័គ្ររបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
-                        រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នកនៅថ្ងៃពិធីមង្គលរបស់យើងខ្ញុំ!</p>
+                    <h2 class="mb-3">សុំការអធ្យាស្រ័យ🙏</h2>
+                    <p class="text-apology">យើងខ្ញុំសុំអភ័យទោស ដែលមិនបានជួបអញ្ជើញអ្នកដោយផ្ទាល់។ 
+                        សូមទទួលយកការអញ្ជើញរបស់យើងខ្ញុំ ដើម្បីអបអរថ្ងៃពិសេសរបស់យើងខ្ញុំទាំងអស់គ្នា។ 
+                        រីករាយណាស់ដែលមានវត្តមាននៃការអញ្ចើញចូលរួមរបស់អ្នក!🥰</p>
                     <p class="bg-danger message-countdown rounded-circle fs-2 fw-bold border-light border-3">{{ countdownMessage }}</p>
                 </div>
             </div>
-            <div class="row text-center" 
+            <div class="row text-center" id="welcome" 
             data-aos="fade-down" 
             data-aos-anchor-placement="center-center"
             data-aos-duration="1000"
@@ -104,7 +104,7 @@
                     </p  >
                 </div >
             </div >
-            <div class="row mt-3">
+            <div class="row mt-3" id="groom-bride">
                 <div class="col-lg-6 col-md-6 col-sm-6 box groom">
                     <div class="text-center">
                         <div class="row mb-2 m-0" data-aos="fade-up">
@@ -328,8 +328,8 @@
                 <!-- Audio Element -->
                 <audio ref="audioPlayer" loop>
                     <source src="/audio/NolyRecord_ ប្រណម_feat_KanhchnaChet.mp3" type="audio/mp3">
-                    <source src="/audio/Glomyy_ព្រេងកថា_Fairytales_feat_KZ.mp3" type="audio/mp3">
-                    <source src="/audio/Noly_Record.mp3" type="audio/mp3">
+                    <!-- <source src="/audio/Glomyy_ព្រេងកថា_Fairytales_feat_KZ.mp3" type="audio/mp3">
+                    <source src="/audio/Noly_Record.mp3" type="audio/mp3"> -->
                 </audio>
             </div>
             <div class="col-12 box-icon" id="maps-icon">
@@ -339,7 +339,7 @@
             </div>
             <div class="col-12 box-icon">
                 <!-- Add to Google Calendar Button -->
-                <a class="btn btn-sm google-calendar-btn p-0 text-decoration-none" @click="addToGoogleCalendar">
+                <a class="btn btn-sm google-calendar-btn p-0 text-decoration-none" target="_blank" @click="addToGoogleCalendar">
                     <i class="fa-solid fa-calendar fa-lg"></i>
                 </a>
             </div>
@@ -363,7 +363,7 @@
         </div>
     </footer>
 </template>
-<style scoped>
+<style>
     /* Styling for popup overlay */
     .popup-overlay {
         position: fixed;
@@ -616,4 +616,4 @@
         font-size: 30px;
         cursor: pointer;
     }
-</style>../router/usePopup.js../router/useAudio.js../router/useCountdown.js../router/useGoogleCalendar.js../router/useFontSize.js
+</style>
