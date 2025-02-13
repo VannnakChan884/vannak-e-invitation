@@ -1,5 +1,6 @@
+// src/composables/usePopup.js
 import { ref, nextTick } from 'vue';
-import { useAudio } from '../router/useAudio';
+import { useAudio } from './useAudio';
 
 export function usePopup(startTour) {
     const showPopup = ref(false);
@@ -15,7 +16,13 @@ export function usePopup(startTour) {
     };
 
     const startCountdown = () => {
+        console.log("Countdown started...");
+        
+        // Pause audio when popup appears
+        pauseAudio();
+        
         const interval = setInterval(() => {
+            console.log("Countdown:", countdownMessage.value);
             if (countdownMessage.value > 0) {
                 countdownMessage.value -= 1;
             }
@@ -23,8 +30,10 @@ export function usePopup(startTour) {
                 clearInterval(interval);
                 showPopup.value = false;
                 enableScroll();
+                console.log("Closing popup, playing audio...");
                 nextTick(() => {
                     playAudio();
+                    console.log("Audio should be playing now.");
                 });
             }
         }, 1000);

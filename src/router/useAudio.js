@@ -1,9 +1,9 @@
+// src/composables/useAudio.js
 import { ref } from 'vue';
 
 export function useAudio() {
     const audioPlayer = ref(null);
     const isPlaying = ref(true); // Track audio state (playing or paused)
-    // const showPopup = ref(false);
 
     const playAudio = () => {
         if (audioPlayer.value) {
