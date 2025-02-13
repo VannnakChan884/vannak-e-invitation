@@ -574,7 +574,7 @@
         </div>
     </footer>
 </template>
-<style scoped>
+<style>
     /* Styling for popup overlay */
     .popup-overlay {
         position: fixed;
