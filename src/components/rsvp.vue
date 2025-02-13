@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import emailjs from "emailjs-com";
 
 const name = ref("");
@@ -7,13 +7,13 @@ const email = ref("");
 const attending = ref("");
 const guests = ref("");
 
-const sendRSVP = (event) => {
-  event.preventDefault(); // Prevent default form submission
+// Computed property to check if all fields are filled
+const isFormValid = computed(() => {
+  return name.value && email.value && attending.value && guests.value;
+});
 
-  if (!attending.value) {
-    alert("សូមជ្រើសរើសថាតើអ្នកនឹងចូលរួមឬអត់!");
-    return;
-  }
+const sendRSVP = (event) => {
+  event.preventDefault();
 
   const templateParams = {
     name: name.value,
@@ -45,7 +45,7 @@ const sendRSVP = (event) => {
 
 <template>
   <div class="rsvp-form">
-    <h2 class="mb-4 text-center">💌 សូមឆ្លើយតប</h2>
+    <h2 class="mb-4 text-center">💌 ទទួលយកការអញ្ចើញ</h2>
     <form class="row g-3" @submit.prevent="sendRSVP">
       <div class="col-lg-12 col-md-12 col-sm-12 mb-3">
         <label for="name" class="form-label">ឈ្មោះរបស់អ្នក</label>
@@ -59,8 +59,8 @@ const sendRSVP = (event) => {
         <label for="attending" class="form-label">បញ្ជាក់</label>
         <select v-model="attending" id="attending" class="form-select" required>
           <option value="" disabled>តើអ្នកនឹងចូលរួមទេ?</option>
-          <option value="Yes">ចូលរួម</option>
-          <option value="No">មិនបានចូលរួម</option>
+          <option value="ចូលរួម">ចូលរួម</option>
+          <option value="មិនបានចូលរួម">មិនបានចូលរួម</option>
         </select>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
@@ -68,7 +68,7 @@ const sendRSVP = (event) => {
         <input type="number" class="form-control" id="guests" v-model="guests" placeholder="0" required />
       </div>
       <div class="col-12 mb-5">
-        <button type="submit" class="btn btn-primary">បញ្ចូនការឆ្លើយតប</button>
+        <button type="submit" class="btn btn-primary" :disabled="!isFormValid">បញ្ចូនការឆ្លើយតប</button>
       </div>
     </form>
   </div>
@@ -77,5 +77,9 @@ const sendRSVP = (event) => {
 <style scoped>
 .rsvp-form {
   font-family: "Kantumruy Pro";
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 </style>
