@@ -583,7 +583,7 @@
                 </a>
             </div>
         </div>
-        <div data-aos="zoom-in-up">
+        <div>
             <p class="footer-tagline mb-3" :style="{ fontSize: fontSize + 'px' }">Thank you for being part of our special day! 💍</p>
             <p :style="{ fontSize: fontSize + 'px' }">&copy; {{ currentYear }} My Wedding. All rights reserved.</p>
         </div>
