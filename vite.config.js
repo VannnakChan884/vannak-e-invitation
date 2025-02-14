@@ -13,15 +13,15 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        entryFileNames: "assets/[name]-[hash].js",
+        entryFileNames: "assets/index-BV8qYjGL.js",
         chunkFileNames: "assets/[name]-[hash].js",
-        assetFileNames: "assets/[name]-[hash].[ext]",
+        assetFileNames: "assets/index-BuHmtDJf.css",
       },
     },
   },
   server: {
     headers: {
-      'Cache-Control': 'no-store',  // Avoid caching issues during dev
+      'Cache-Control': 'no-store',  // Prevents caching issues
     },
   },
 });
