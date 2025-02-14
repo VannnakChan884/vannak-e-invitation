@@ -1,29 +1,26 @@
-/* eslint-disable no-console */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service Worker registered with scope:', registration.scope);
 
-import { register } from 'register-service-worker'
+        // Listen for updates to the service worker
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          console.log('New Service Worker found:', newWorker);
 
-if (process.env.NODE_ENV === 'production') {
-  register(`${process.env.BASE_URL}service-worker.js`, {
-    ready () {
-      console.log('App is ready to work offline.');
-    },
-    registered () {
-      console.log('PWA has been registered.');
-    },
-    cached () {
-      console.log('Content has been cached for offline use.');
-    },
-    updatefound () {
-      console.log('New update is downloading.');
-    },
-    updated () {
-      console.log('New content is available. Refresh to update.');
-    },
-    offline () {
-      console.log('No internet, but still works offline!');
-    },
-    error (error) {
-      console.error('Service Worker registration failed:', error);
-    }
-  })
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // Notify user about the update
+              if (confirm('A new version is available. Do you want to refresh?')) {
+                window.location.reload();
+              }
+            }
+          });
+        });
+      })
+      .catch(error => {
+        console.error('Service Worker registration failed:', error);
+      });
+  });
 }

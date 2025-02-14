@@ -1,17 +1,18 @@
-const CACHE_NAME = "wedding-invite-v4";
+const CACHE_NAME = "wedding-invite-v5";
 
-// const urlsToCache = [
-//   '/',
-//   '/index.html',
-//   '/assets/index-7I3zK-Fm.js',
-//   '/assets/index-DrPzGCUk.css',
-//   '/icons/icon-192x192.png',
-//   '/icons/icon-512x512.png',
-//   '/manifest.json',
-//   '/offline.html', // Add offline.html to the cache (this page will show when offline)
-//   '/background.jpg',
-//   '/logo.png',
-// ];
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/assets/index-Dz-cPjqz.js',
+  '/assets/index-DaNLjw2T.css',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/manifest.json',
+  '/offline.html', // Add offline.html to the cache (this page will show when offline)
+  '/background.jpg',
+  '/logo.png',
+  '/audio/NolyRecord_ ប្រណម_feat_KanhchnaChet.mp3'
+];
 
 // Install the service worker and cache the specified assets
 // self.addEventListener('install', (event) => {
