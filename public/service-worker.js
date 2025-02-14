@@ -3,8 +3,8 @@ const CACHE_NAME = "wedding-invite-v5";
 const urlsToCache = [
   '/',
   '/index.html',
-  '/assets/index-Dz-cPjqz.js',
-  '/assets/index-DaNLjw2T.css',
+  '/assets/index-BV8qYjGL.js',
+  '/assets/index-BuHmtDJf.css',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
   '/manifest.json',
@@ -15,13 +15,13 @@ const urlsToCache = [
 ];
 
 // Install the service worker and cache the specified assets
-// self.addEventListener('install', (event) => {
-//   event.waitUntil(
-//     caches.open(CACHE_NAME).then((cache) => {
-//       return cache.addAll(urlsToCache);
-//     })
-//   );
-// });
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
 
 // Cleanup old caches when a new service worker is activated
 self.addEventListener('activate', (event) => {
