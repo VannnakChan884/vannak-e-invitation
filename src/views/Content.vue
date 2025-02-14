@@ -121,7 +121,7 @@
     const showPopup = ref(false);
     const audioPlayer = ref(null);
     const isPlaying = ref(true); // Track audio state (playing or paused)
-    const countdownMessage = ref(10); // Countdown starts from 20
+    const countdownMessage = ref(5); // Countdown starts from 5
 
     onMounted(() => {
         // Start playing audio when content page loads

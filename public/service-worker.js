@@ -1,25 +1,25 @@
 const CACHE_NAME = "wedding-invite-v5";
 
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/assets/*',
-  '/icons/*',
-  '/manifest.json',
-  '/offline.html', // Add offline.html to the cache (this page will show when offline)
-  '/background.jpg',
-  '/logo.png',
-  '/audio/*'
-];
+// const urlsToCache = [
+//   '/',
+//   '/index.html',
+//   '/assets/*',
+//   '/icons/*',
+//   '/manifest.json',
+//   '/offline.html', // Add offline.html to the cache (this page will show when offline)
+//   '/background.jpg',
+//   '/logo.png',
+//   '/audio/*'
+// ];
 
 // Install the service worker and cache the specified assets
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
+// self.addEventListener('install', (event) => {
+//   event.waitUntil(
+//     caches.open(CACHE_NAME).then((cache) => {
+//       return cache.addAll(urlsToCache);
+//     })
+//   );
+// });
 
 // Cleanup old caches when a new service worker is activated
 self.addEventListener('activate', (event) => {
