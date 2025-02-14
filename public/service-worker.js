@@ -3,15 +3,13 @@ const CACHE_NAME = "wedding-invite-v5";
 const urlsToCache = [
   '/',
   '/index.html',
-  '/assets/index-BV8qYjGL.js',
-  '/assets/index-BuHmtDJf.css',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
+  '/assets/*',
+  '/icons/*',
   '/manifest.json',
   '/offline.html', // Add offline.html to the cache (this page will show when offline)
   '/background.jpg',
   '/logo.png',
-  '/audio/NolyRecord_ ប្រណម_feat_KanhchnaChet.mp3'
+  '/audio/*'
 ];
 
 // Install the service worker and cache the specified assets
