@@ -273,6 +273,7 @@
     <div id="font-size">
         <input type="range" id="fontSize" class="form-range vertical-slider" min="12" max="36" step="2" v-model="fontSize"/>
     </div>
+    <div class="background"></div>
     <!--Content-->
     <div class="container-fluid" id="content" :style="{ fontSize: fontSize + 'px' }">
         <div class="container pt-4" id="container-box">
@@ -590,6 +591,18 @@
     </footer>
 </template>
 <style>
+.background {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateZ(0);
+  z-index: -1;
+}
     /* Styling for popup overlay */
     .popup-overlay {
         position: fixed;
@@ -792,7 +805,7 @@
 
     /* Footer */
     .wedding-footer {
-        background-color: #f7f7f7;
+        background-color: #f7f7f7 !important;
         color: #333;
         text-align: center;
         padding: 65px;

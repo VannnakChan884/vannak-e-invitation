@@ -12,11 +12,11 @@ html {
 }
 body {
   font-family: "Mea Culpa";
-  background-image: url("/background.jpg");
+  /* background-image: url("/background.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
   color: #fff;
 }
 
